@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إتمام الطلب | DISKA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container header-container">
+
+            <!-- Logo (Correct Structure) -->
+        <a href="index.html" class="logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+                <!-- <span>Wholesale Deals Platform</span> -->
+            </a>
+
+            <!-- Search Bar -->
+            <div class="search-box">
+                <input type="text" placeholder="ابحث عن منتج، مورد، أو علامة تجارية...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
+            <!-- User Actions -->
+            <div class="header-actions">
+                <div class="action-item">
+                    <a href="login.html" class="action-item" style="text-decoration: none; color: inherit;">
+                        <i class="fas fa-wallet"></i>
+                        <div class="info">
+                            <span>المحفظة</span>
+                            <strong>تسجيل دخول</strong>
+                        </div>
+                    </a>
+                </div>
+                <a href="cart.html" class="action-item cart-icon" style="text-decoration: none; color: inherit;">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge">2</span>
+                </a>
+                <!-- Mobile Menu Button (Hidden on Desktop) -->
+                <div class="action-item mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-sidebar">
+        <div class="sidebar-header">
+            <h3>القائمة</h3>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="login.html"><i class="fas fa-wallet"></i> المحفظة / دخول</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
+            <li><a href="offers.html"><i class="fas fa-tags"></i> العروض</a></li>
+            <li><a href="#"><i class="fas fa-headset"></i> اتصل بنا</a></li>
+        </ul>
+    </div>
+    <!-- Overlay (الخلفية الغامقة لما القائمة تفتح) -->
+    <div class="menu-overlay"></div>
+    <section class="checkout-section">
+        <div class="container">
+            <h2>إتمام الطلب</h2>
+            <div class="checkout-grid">
+
+                <!-- نموذج البيانات -->
+                <div class="checkout-form">
+                    <h3>عنوان التوصيل</h3>
+                    <form>
+                        <div class="form-group">
+                            <label>اسم المحل / التاجر</label>
+                            <input type="text" placeholder="مثال: سوبر ماركت الأمانة">
+                        </div>
+                        <div class="form-group">
+                            <label>رقم الموبايل</label>
+                            <input type="tel" placeholder="01xxxxxxxxx">
+                        </div>
+                        <div class="form-group">
+                            <label>العنوان بالتفصيل</label>
+                            <input type="text" placeholder="الشارع، رقم العمارة، علامة مميزة">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>المحافظة</label>
+                                <select>
+                                    <option>القاهرة</option>
+                                    <option>الجيزة</option>
+                                    <option>الإسكندرية</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>المنطقة</label>
+                                <select>
+                                    <option>مدينة نصر</option>
+                                    <option>مصر الجديدة</option>
+                                    <option>التجمع</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <h3>طريقة الدفع</h3>
+                        <div class="payment-options">
+                            <label class="payment-card selected">
+                                <input type="radio" name="payment" checked>
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>دفع عند الاستلام (كاش)</span>
+                            </label>
+                            <label class="payment-card">
+                                <input type="radio" name="payment">
+                                <i class="fas fa-wallet"></i>
+                                <span>محفظة DISKA</span>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- ملخص الطلب -->
+                <div class="order-summary-box">
+                    <h3>ملخص الطلب</h3>
+                    <div class="summary-items">
+                        <div class="s-item">
+                            <span>بيبسي 2.5 لتر (x5)</span>
+                            <span>959.95 ج.م</span>
+                        </div>
+                        <div class="s-item">
+                            <span>شاي العروسة (x1)</span>
+                            <span>206.25 ج.م</span>
+                        </div>
+                    </div>
+                    <div class="summary-divider"></div>
+                    <div class="summary-row">
+                        <span>المجموع</span>
+                        <span>1166.20 ج.م</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>التوصيل</span>
+                        <span class="free">مجاني</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>الإجمالي</span>
+                        <span>1166.20 ج.م</span>
+                    </div>
+                    <button class="btn primary w-100" onclick="alert('تم استلام طلبك بنجاح!')">تأكيد الطلب</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 DISKA - Wholesale Deals Platform</p>
+    </footer>
+
+</body>
+
+</html>

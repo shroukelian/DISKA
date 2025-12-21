@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سلة المشتريات | DISKA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
+
+            <!-- Logo (Correct Structure) -->
+         <a href="index.html" class="logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+                <!-- <span>Wholesale Deals Platform</span> -->
+            </a>
+
+            <!-- Search Bar -->
+            <div class="search-box">
+                <input type="text" placeholder="ابحث عن منتج، مورد، أو علامة تجارية...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
+            <!-- User Actions -->
+            <div class="header-actions">
+                <div class="action-item">
+                    <a href="login.html" class="action-item" style="text-decoration: none; color: inherit;">
+                        <i class="fas fa-wallet"></i>
+                        <div class="info">
+                            <span>المحفظة</span>
+                            <strong>تسجيل دخول</strong>
+                        </div>
+                    </a>
+                </div>
+                <a href="cart.html" class="action-item cart-icon" style="text-decoration: none; color: inherit;">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge">2</span>
+                </a>
+                <!-- Mobile Menu Button (Hidden on Desktop) -->
+                <div class="action-item mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-sidebar">
+        <div class="sidebar-header">
+            <h3>القائمة</h3>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="login.html"><i class="fas fa-wallet"></i> المحفظة / دخول</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
+            <li><a href="offers.html"><i class="fas fa-tags"></i> العروض</a></li>
+            <li><a href="#"><i class="fas fa-headset"></i> اتصل بنا</a></li>
+        </ul>
+    </div>
+    <!-- Overlay (الخلفية الغامقة لما القائمة تفتح) -->
+    <div class="menu-overlay"></div>
+    <!-- Cart Section -->
+    <section class="cart-section">
+        <div class="container">
+            <h2>سلة المشتريات (2 منتجات)</h2>
+
+            <div class="cart-layout">
+                <!-- قائمة المنتجات -->
+                <div class="cart-items">
+                    <!-- Item 1 -->
+                    <div class="cart-item">
+                        <img src="images/pepsi.webp" alt="Pepsi">
+                        <div class="item-details">
+                            <h4>بيبسي 2.5 لتر (كرتونة)</h4>
+                            <span class="price">191.99 ج.م</span>
+                        </div>
+                        <div class="item-actions">
+                            <div class="qty-control small">
+                                <button class="minus">-</button>
+                                <input type="number" value="5">
+                                <button class="plus">+</button>
+                            </div>
+                            <span class="total-item-price">959.95 ج.م</span>
+                            <button class="remove-btn"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="cart-item">
+                        <img src="images/شاى العروسه.webp" alt="Tea">
+                        <div class="item-details">
+                            <h4>شاي العروسة ناعم 40 جم (كرتونة)</h4>
+                            <span class="price">206.25 ج.م</span>
+                        </div>
+                        <div class="item-actions">
+                            <div class="qty-control small">
+                                <button class="minus">-</button>
+                                <input type="number" value="1">
+                                <button class="plus">+</button>
+                            </div>
+                            <span class="total-item-price">206.25 ج.م</span>
+                            <button class="remove-btn"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ملخص الطلب -->
+                <div class="cart-summary">
+                    <h3>ملخص الطلب</h3>
+                    <div class="summary-row">
+                        <span>المجموع الفرعي</span>
+                        <span>1166.20 ج.م</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>الضريبة (14%)</span>
+                        <span>163.26 ج.م</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>الإجمالي</span>
+                        <span>1329.46 ج.م</span>
+                    </div>
+                    <!-- حولناه لرابط a عشان ينقلنا للصفحة -->
+                    <a href="checkout.html" class="btn primary w-100"
+                        style="text-align: center; text-decoration: none;">إتمام الشراء</a> <a href="index.html"
+                        class="continue-shopping">متابعة التسوق</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 DISKA - Wholesale Deals Platform</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

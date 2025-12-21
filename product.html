@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بيبسي 2.5 لتر | DISKA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- نفس الهيدر بتاع الصفحة الرئيسية -->
+    <header class="main-header">
+        <div class="container header-container">
+
+            <!-- Logo (Correct Structure) -->
+          <a href="index.html" class="logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+                <!-- <span>Wholesale Deals Platform</span> -->
+            </a>
+
+            <!-- Search Bar -->
+            <div class="search-box">
+                <input type="text" placeholder="ابحث عن منتج، مورد، أو علامة تجارية...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
+            <!-- User Actions -->
+            <div class="header-actions">
+                <div class="action-item">
+                    <a href="login.html" class="action-item" style="text-decoration: none; color: inherit;">
+                        <i class="fas fa-wallet"></i>
+                        <div class="info">
+                            <span>المحفظة</span>
+                            <strong>تسجيل دخول</strong>
+                        </div>
+                    </a>
+                </div>
+                <a href="cart.html" class="action-item cart-icon" style="text-decoration: none; color: inherit;">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge">2</span>
+                </a>
+                <!-- Mobile Menu Button (Hidden on Desktop) -->
+                <div class="action-item mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-sidebar">
+        <div class="sidebar-header">
+            <h3>القائمة</h3>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="login.html"><i class="fas fa-wallet"></i> المحفظة / دخول</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
+            <li><a href="offers.html"><i class="fas fa-tags"></i> العروض</a></li>
+            <li><a href="#"><i class="fas fa-headset"></i> اتصل بنا</a></li>
+        </ul>
+    </div>
+    <!-- Overlay (الخلفية الغامقة لما القائمة تفتح) -->
+    <div class="menu-overlay"></div>
+
+    <!-- Product Details -->
+    <section class="product-details-section">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="index.html">الرئيسية</a> / <a href="#">مشروبات</a> / <span>بيبسي 2.5 لتر</span>
+            </div>
+
+            <div class="details-grid">
+                <!-- Product Image -->
+                <div class="details-img">
+                    <img src="images/pepsi.webp" alt="Pepsi">
+                </div>
+
+                <!-- Product Info -->
+                <div class="details-info">
+                    <span class="brand-tag">بيبسي</span>
+                    <h1>بيبسي مشروب غازي - 2.5 لتر (كرتونة)</h1>
+                    <p class="sku">كود المنتج: #54822 | الوحدة: كرتونة (6 زجاجات)</p>
+
+                    <div class="main-price">
+                        <strong>191.99 ج.م</strong>
+                        <span class="old">201.00 ج.م</span>
+                    </div>
+
+                    <!-- جدول أسعار الجملة -->
+                    <div class="wholesale-table">
+                        <h4>أسعار الجملة (الشرائح)</h4>
+                        <table>
+                            <tr>
+                                <th>الكمية</th>
+                                <th>السعر للوحدة</th>
+                                <th>التوفير</th>
+                            </tr>
+                            <tr>
+                                <td>1 - 4</td>
+                                <td>191.99 ج.م</td>
+                                <td>-</td>
+                            </tr>
+                            <tr class="highlight">
+                                <td>5 - 19</td>
+                                <td>185.00 ج.م</td>
+                                <td>35 ج.م</td>
+                            </tr>
+                            <tr>
+                                <td>20+</td>
+                                <td>180.00 ج.م</td>
+                                <td>120 ج.م</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Add to Cart Actions -->
+                    <div class="details-actions">
+                        <div class="qty-control">
+                            <button class="minus">-</button>
+                            <input type="number" value="1">
+                            <button class="plus">+</button>
+                        </div>
+                        <button class="btn primary add-big-btn">إضافة للسلة <i class="fas fa-cart-plus"></i></button>
+                    </div>
+
+                    <div class="meta-info">
+                        <p><i class="fas fa-truck"></i> توصيل خلال 24 ساعة</p>
+                        <p><i class="fas fa-undo"></i> استرجاع مجاني في حالة التلف</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 DISKA - Wholesale Deals Platform</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تصفح المنتجات | DISKA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
+       <a href="index.html" class="logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+                <!-- <span>Wholesale Deals Platform</span> -->
+            </a>
+            <div class="search-box">
+                <input type="text" placeholder="ابحث عن منتج...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-actions">
+                <a href="cart.html" class="action-item cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge">2</span>
+                </a>
+                <div class="action-item mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+       <div class="mobile-sidebar">
+        <div class="sidebar-header">
+            <h3>القائمة</h3>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="login.html"><i class="fas fa-wallet"></i> المحفظة / دخول</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
+            <li><a href="offers.html"><i class="fas fa-tags"></i> العروض</a></li>
+            <li><a href="#"><i class="fas fa-headset"></i> اتصل بنا</a></li>
+        </ul>
+    </div>
+    <!-- Overlay (الخلفية الغامقة لما القائمة تفتح) -->
+    <div class="menu-overlay"></div>
+
+    <!-- Category Content -->
+    <section class="category-section">
+        <div class="container">
+            
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="index.html">الرئيسية</a> / <span>مشروبات</span>
+            </div>
+
+            <div class="category-layout">
+                
+                <!-- Sidebar Filters (الفلاتر) -->
+                <aside class="sidebar">
+                    <div class="filter-group">
+                        <h3>الأقسام الفرعية</h3>
+                        <label><input type="checkbox"> مياه غازية</label>
+                        <label><input type="checkbox"> عصائر</label>
+                        <label><input type="checkbox"> مياه معدنية</label>
+                        <label><input type="checkbox"> مشروبات طاقة</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>الماركة</h3>
+                        <label><input type="checkbox"> بيبسي</label>
+                        <label><input type="checkbox"> كوكاكولا</label>
+                        <label><input type="checkbox"> جهينة</label>
+                        <label><input type="checkbox"> فيروز</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>السعر</h3>
+                        <div class="price-range">
+                            <input type="number" placeholder="من">
+                            <input type="number" placeholder="إلى">
+                        </div>
+                    </div>
+                    
+                    <button class="btn primary w-100">تطبيق الفلتر</button>
+                </aside>
+
+                <!-- Products Grid -->
+                <main class="category-products">
+                    <div class="products-header">
+                        <h2>مشروبات (24 منتج)</h2>
+                        <select>
+                            <option>ترتيب حسب: الأكثر مبيعاً</option>
+                            <option>السعر: من الأقل للأعلى</option>
+                            <option>السعر: من الأعلى للأقل</option>
+                        </select>
+                    </div>
+
+                    <div class="products-grid">
+                        <!-- كرر كروت المنتجات هنا -->
+                        <!-- Product 1 -->
+                        <div class="product-card">
+                            <div class="badges"><span class="discount-badge">خصم 5%</span></div>
+                            <a href="product.html">
+                                <div class="product-img"><img src="images/pepsi.webp" alt="Pepsi"></div>
+                            </a>
+                            <div class="product-info">
+                                <h4>بيبسي 2.5 لتر (كرتونة)</h4>
+                                <div class="pricing">
+                                    <span class="current-price">191.99 ج.م</span>
+                                    <span class="old-price">201.00 ج.م</span>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button class="add-btn">أضف للسلة <i class="fas fa-cart-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="product-card">
+                            <a href="product.html">
+                                <div class="product-img"><img src="images/مشروبات.webp" alt="Juice"></div>
+                            </a>
+                            <div class="product-info">
+                                <h4>عصير جهينة مانجو 1 لتر (12 عبوة)</h4>
+                                <div class="pricing">
+                                    <span class="current-price">320.00 ج.م</span>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button class="add-btn">أضف للسلة <i class="fas fa-cart-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- كرر الكروت عشان تملى الصفحة -->
+                        <div class="product-card">
+                            <div class="product-img"><img src="images/pepsi.webp" alt="Pepsi"></div>
+                            <div class="product-info">
+                                <h4>فيروز أناناس 330 مل (كانز)</h4>
+                                <div class="pricing"><span class="current-price">250.00 ج.م</span></div>
+                                <div class="add-to-cart"><button class="add-btn">أضف للسلة</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 DISKA - Wholesale Deals Platform</p>
+    </footer>
+
+</body>
+</html>

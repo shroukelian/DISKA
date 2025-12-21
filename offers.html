@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عروض خاصة | DISKA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
+          <a href="index.html" class="logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+                <!-- <span>Wholesale Deals Platform</span> -->
+            </a>
+            <div class="search-box">
+                <input type="text" placeholder="ابحث عن منتج...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-actions">
+                <a href="cart.html" class="action-item cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge">2</span>
+                </a>
+                <div class="action-item mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Side Menu (عشان القائمة تشتغل هنا كمان) -->
+    <div class="mobile-sidebar">
+        <div class="sidebar-header">
+            <h3>القائمة</h3>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="login.html"><i class="fas fa-wallet"></i> المحفظة / دخول</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
+            <li><a href="offers.html"><i class="fas fa-tags"></i> العروض</a></li>
+            <li><a href="#"><i class="fas fa-headset"></i> اتصل بنا</a></li>
+        </ul>
+    </div>
+    <div class="menu-overlay"></div>
+
+    <!-- Offers Content -->
+    <section class="category-section">
+        <div class="container">
+            
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="index.html">الرئيسية</a> / <span style="color: var(--danger);">عروض وخصومات</span>
+            </div>
+
+            <!-- Banner بسيط للعروض -->
+            <div class="banner-card" style="margin-bottom: 30px; height: 200px; background: linear-gradient(45deg, #ef4444, #b91c1c);">
+                <div class="banner-content">
+                    <h2 style="font-size: 2rem;">تخفيضات نهاية العام 🔥</h2>
+                    <p>خصومات تصل إلى 20% على المشروبات</p>
+                </div>
+                <!-- صورة تعبيرية -->
+                <div class="banner-image">
+                    <img src="images/مشروبات.webp" alt="Offers" style="transform: none; box-shadow: none;">
+                </div>
+            </div>
+
+            <div class="category-layout">
+                
+                <!-- Sidebar (فلاتر العروض) -->
+                <aside class="sidebar">
+                    <div class="filter-group">
+                        <h3>نسبة الخصم</h3>
+                        <label><input type="checkbox"> خصم 50% وأكثر</label>
+                        <label><input type="checkbox"> خصم 20% - 50%</label>
+                        <label><input type="checkbox"> خصم 10% - 20%</label>
+                    </div>
+                    <button class="btn primary w-100">تطبيق</button>
+                </aside>
+
+                <!-- Products Grid (منتجات عليها خصم فقط) -->
+                <main class="category-products">
+                    <div class="products-header">
+                        <h2>جميع العروض (15 منتج)</h2>
+                    </div>
+
+                    <div class="products-grid">
+                        
+                        <!-- Offer 1 -->
+                        <div class="product-card">
+                            <div class="badges"><span class="discount-badge">خصم 10%</span></div>
+                            <a href="product.html">
+                                <div class="product-img"><img src="images/pepsi.webp" alt="Pepsi"></div>
+                            </a>
+                            <div class="product-info">
+                                <h4>بيبسي 2.5 لتر (كرتونة)</h4>
+                                <div class="pricing">
+                                    <span class="current-price">191.99 ج.م</span>
+                                    <span class="old-price">215.00 ج.م</span>
+                                </div>
+                                <div class="add-to-cart"><button class="add-btn">أضف للسلة</button></div>
+                            </div>
+                        </div>
+
+                        <!-- Offer 2 -->
+                        <div class="product-card">
+                            <div class="badges"><span class="discount-badge">وفر 50 ج.م</span></div>
+                            <a href="product.html">
+                                <div class="product-img"><img src="images/حليب.webp" alt="Milk"></div>
+                            </a>
+                            <div class="product-info">
+                                <h4>حليب بخيره كامل الدسم</h4>
+                                <div class="pricing">
+                                    <span class="current-price">482.75 ج.م</span>
+                                    <span class="old-price">532.00 ج.م</span>
+                                </div>
+                                <div class="add-to-cart"><button class="add-btn">أضف للسلة</button></div>
+                            </div>
+                        </div>
+
+                        <!-- Offer 3 -->
+                        <div class="product-card">
+                            <div class="badges"><span class="discount-badge">عرض خاص</span></div>
+                            <div class="product-img"><img src="images/زيت.webp" alt="Oil"></div>
+                            <div class="product-info">
+                                <h4>زيت كريستال (كرتونة)</h4>
+                                <div class="pricing">
+                                    <span class="current-price">450.00 ج.م</span>
+                                    <span class="old-price">480.00 ج.م</span>
+                                </div>
+                                <div class="add-to-cart"><button class="add-btn">أضف للسلة</button></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </main>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 DISKA - Wholesale Deals Platform</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
