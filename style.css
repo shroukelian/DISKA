@@ -942,3 +942,78 @@ footer {
     display: none;
 }
 .menu-overlay.active { display: block; }
+/* =========================================
+   Merchant Dashboard Styles
+   ========================================= */
+.merchant-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+.merchant-form-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.upload-box {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    background: #fafafa;
+}
+.upload-box:hover { border-color: var(--accent); background: #fffbe6; }
+.upload-label { cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 10px; color: #666; }
+.upload-label i { font-size: 2rem; color: var(--primary); }
+
+.merchant-info {
+    background: #e0f2fe;
+    padding: 25px;
+    border-radius: 15px;
+    height: fit-content;
+}
+.merchant-info h3 { color: #0284c7; margin-bottom: 15px; }
+.merchant-info ul { padding-right: 20px; list-style: disc; }
+.merchant-info li { margin-bottom: 10px; color: #334155; }
+
+@media (max-width: 768px) {
+    .merchant-grid { grid-template-columns: 1fr; }
+}
+/* --- زر لوحة التاجر --- */
+.merchant-link {
+    background-color: rgba(250, 204, 21, 0.1); /* خلفية صفراء خفيفة */
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--accent); /* حدود صفراء */
+    transition: 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.merchant-link:hover {
+    background-color: var(--accent); /* يملأ أصفر عند الوقوف عليه */
+    color: var(--primary) !important; /* النص يبقى كحلي */
+}
+
+.merchant-link i {
+    color: var(--accent); /* الأيقونة صفراء */
+}
+
+.merchant-link:hover i {
+    color: var(--primary); /* الأيقونة تبقى كحلي */
+}
+
+/* إخفاء التفاصيل في الموبايل عشان الزحمة */
+@media (max-width: 768px) {
+    .merchant-link .info {
+        display: none;
+    }
+    .merchant-link {
+        padding: 5px; /* تصغير الحجم */
+    }
+}

@@ -203,3 +203,132 @@ document.addEventListener('DOMContentLoaded', () => {
     if(overlay) overlay.addEventListener('click', closeMenu);
 
 });
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- 1. منطق صفحة التاجر (رفع المنتج) ---
+    const productForm = document.getElementById('addProductForm');
+    const imageInput = document.getElementById('productImage');
+    const imagePreview = document.getElementById('imagePreview');
+
+    // عرض الصورة قبل الرفع
+    if (imageInput) {
+        imageInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+
+    // حفظ المنتج عند الضغط على "نشر"
+    if (productForm) {
+        productForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const file = imageInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                // تجميع بيانات المنتج
+                const newProduct = {
+                    id: Date.now(),
+                    name: document.getElementById('productName').value,
+                    price: document.getElementById('productPrice').value,
+                    oldPrice: document.getElementById('oldPrice').value || '',
+                    desc: document.getElementById('productDesc').value,
+                    category: document.getElementById('productCat').value,
+                    image: e.target.result // الصورة ككود Base64
+                };
+
+                // الحفظ في LocalStorage
+                let products = JSON.parse(localStorage.getItem('DISKA_MERCHANT_PRODUCTS')) || [];
+                products.push(newProduct);
+                localStorage.setItem('DISKA_MERCHANT_PRODUCTS', JSON.stringify(products));
+
+                alert('تم نشر المنتج بنجاح! سيظهر الآن للمشترين.');
+                window.location.href = 'index.html'; // الذهاب للرئيسية
+            };
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                alert('يرجى اختيار صورة للمنتج');
+            }
+        });
+    }
+
+
+    // --- 2. منطق الصفحة الرئيسية (عرض المنتجات المضافة) ---
+    const productsGrid = document.querySelector('.products-grid');
+    
+    // تأكد إننا في صفحة فيها عرض منتجات
+    if (productsGrid) {
+        let storedProducts = JSON.parse(localStorage.getItem('DISKA_MERCHANT_PRODUCTS')) || [];
+
+        // عرض المنتجات الجديدة في الأول
+        storedProducts.reverse().forEach(product => {
+            // حساب نسبة الخصم لو وجد
+            let discountBadge = '';
+            if (product.oldPrice && product.oldPrice > product.price) {
+                let discount = Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100);
+                discountBadge = `<div class="badges"><span class="discount-badge">خصم ${discount}%</span></div>`;
+            }
+
+            const productHTML = `
+                <div class="product-card merchant-product">
+                    ${discountBadge}
+                    <div class="product-img">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="product-info">
+                        <h4>${product.name}</h4>
+                        <p style="font-size:0.8rem; color:#666; height:30px; overflow:hidden;">${product.desc}</p>
+                        <div class="pricing">
+                            <span class="current-price">${product.price} ج.م</span>
+                            ${product.oldPrice ? `<span class="old-price">${product.oldPrice} ج.م</span>` : ''}
+                        </div>
+                        <div class="add-to-cart">
+                            <button class="add-btn">أضف للسلة <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // إضافة المنتج في بداية الشبكة
+            productsGrid.insertAdjacentHTML('afterbegin', productHTML);
+        });
+    }
+
+    // ... (باقي كود السلة والعداد القديم يظل كما هو بالأسفل) ...
+    // ... (تأكد من نسخ باقي كود السلة من الردود السابقة هنا) ...
+    
+    // --- كود السلة القديم (مختصر للتذكير) ---
+    let cart = JSON.parse(localStorage.getItem('DISKA_CART')) || [];
+    const updateCartCount = () => {
+        document.querySelectorAll('.badge').forEach(b => b.innerText = cart.length);
+    };
+    updateCartCount();
+
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('add-btn')) {
+            const card = e.target.closest('.product-card');
+            const title = card.querySelector('h4').innerText;
+            const price = parseFloat(card.querySelector('.current-price').innerText);
+            const img = card.querySelector('img').src;
+            
+            cart.push({ title, price, image: img, qty: 1 });
+            localStorage.setItem('DISKA_CART', JSON.stringify(cart));
+            updateCartCount();
+            
+            const btn = e.target;
+            btn.innerHTML = 'تم';
+            btn.style.background = 'green';
+            setTimeout(() => { btn.innerHTML = 'أضف للسلة'; btn.style.background = ''; }, 1000);
+        }
+    });
+});

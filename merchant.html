@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التاجر | إضافة منتج</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+    <!-- Header بسيط للتاجر -->
+    <header class="main-header">
+        <div class="container header-container">
+         <a href="index.html" class="logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+                <!-- <span>Wholesale Deals Platform</span> -->
+            </a>
+            <div class="header-actions">
+                <a href="index.html" class="action-item" style="color: #fff; font-size: 0.9rem;">
+                    <i class="fas fa-home"></i> العودة للمتجر
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="merchant-grid">
+                
+                <!-- فورم إضافة المنتج -->
+                <div class="merchant-form-box">
+                    <h2 style="margin-bottom: 20px; color: var(--primary);">إضافة بضاعة جديدة</h2>
+                    
+                    <form id="addProductForm">
+                        
+                        <!-- رفع الصورة -->
+                        <div class="form-group upload-box">
+                            <label for="productImage" class="upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>اضغط لرفع صورة المنتج</span>
+                                <img id="imagePreview" src="" style="display: none; max-height: 100px; margin-top: 10px;">
+                            </label>
+                            <input type="file" id="productImage" accept="image/*" required style="display: none;">
+                        </div>
+
+                        <!-- بيانات المنتج -->
+                        <div class="form-group">
+                            <label>اسم المنتج</label>
+                            <input type="text" id="productName" placeholder="مثال: كرتونة شيبسي عائلي" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>سعر البيع (للجمهور)</label>
+                                <input type="number" id="productPrice" placeholder="0.00" required>
+                            </div>
+                            <div class="form-group">
+                                <label>السعر قبل الخصم (اختياري)</label>
+                                <input type="number" id="oldPrice" placeholder="عشان يظهر نسبة الخصم">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>وصف المنتج (Description)</label>
+                            <textarea id="productDesc" rows="4" placeholder="اكتب تفاصيل المنتج، تاريخ الصلاحية، بلد المنشأ..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>التصنيف</label>
+                            <select id="productCat">
+                                <option value="مشروبات">مشروبات</option>
+                                <option value="سناكس">سناكس</option>
+                                <option value="منظفات">منظفات</option>
+                                <option value="أخرى">أخرى</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn primary w-100">نشر المنتج في السوق</button>
+                    </form>
+                </div>
+
+                <!-- تعليمات للتاجر -->
+                <div class="merchant-info">
+                    <h3><i class="fas fa-lightbulb"></i> نصائح للبيع</h3>
+                    <ul>
+                        <li>ارفع صور واضحة للمنتج بخلفية بيضاء إن أمكن.</li>
+                        <li>اكتب وصف دقيق يشمل الكمية داخل الكرتونة.</li>
+                        <li>السعر المنافس يضمن لك بيع أسرع.</li>
+                        <li>تأكد من مراجعة المخزون قبل النشر.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
