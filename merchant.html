@@ -34,51 +34,67 @@
                     <h2 style="margin-bottom: 20px; color: var(--primary);">إضافة بضاعة جديدة</h2>
                     
                     <form id="addProductForm">
-                        
-                        <!-- رفع الصورة -->
-                        <div class="form-group upload-box">
-                            <label for="productImage" class="upload-label">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <span>اضغط لرفع صورة المنتج</span>
-                                <img id="imagePreview" src="" style="display: none; max-height: 100px; margin-top: 10px;">
-                            </label>
-                            <input type="file" id="productImage" accept="image/*" required style="display: none;">
-                        </div>
+    
+    <!-- رفع الصورة -->
+    <div class="form-group upload-box">
+        <label for="productImage" class="upload-label">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <span>اضغط لرفع صورة المنتج</span>
+            <img id="imagePreview" src="" style="display: none; max-height: 100px; margin-top: 10px;">
+        </label>
+        <input type="file" id="productImage" accept="image/*" required style="display: none;">
+    </div>
 
-                        <!-- بيانات المنتج -->
-                        <div class="form-group">
-                            <label>اسم المنتج</label>
-                            <input type="text" id="productName" placeholder="مثال: كرتونة شيبسي عائلي" required>
-                        </div>
+    <!-- اسم المنتج -->
+    <div class="form-group">
+        <label>اسم المنتج</label>
+        <input type="text" id="productName" placeholder="مثال: كرتونة شيبسي عائلي" required>
+    </div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>سعر البيع (للجمهور)</label>
-                                <input type="number" id="productPrice" placeholder="0.00" required>
-                            </div>
-                            <div class="form-group">
-                                <label>السعر قبل الخصم (اختياري)</label>
-                                <input type="number" id="oldPrice" placeholder="عشان يظهر نسبة الخصم">
-                            </div>
-                        </div>
+    <!-- السعر (السعر القديم أصبح إجباري) -->
+    <div class="form-row">
+        <div class="form-group">
+            <label>السعر الحالى (بعد الخصم)</label>
+            <input type="number" id="productPrice" placeholder="0.00" required>
+        </div>
+        <div class="form-group">
+            <label>السعر الأصلي (قبل الخصم) <span style="color:red">*</span></label>
+            <!-- أضفنا required هنا -->
+            <input type="number" id="oldPrice" placeholder="ضروري لحساب نسبة الخصم" required>
+        </div>
+    </div>
 
-                        <div class="form-group">
-                            <label>وصف المنتج (Description)</label>
-                            <textarea id="productDesc" rows="4" placeholder="اكتب تفاصيل المنتج، تاريخ الصلاحية، بلد المنشأ..."></textarea>
-                        </div>
+    <!-- تفاصيل البالته والمخزون (جديد) -->
+    <div class="form-row">
+        <div class="form-group">
+            <label>عدد العبوات داخل الكرتونة/البالته</label>
+            <input type="number" id="unitsPerCarton" placeholder="مثال: 12 عبوة" required>
+        </div>
+        <div class="form-group">
+            <label>الكمية المتاحة (المخزون)</label>
+            <input type="number" id="stockQty" placeholder="مثال: 100 كرتونة" required>
+        </div>
+    </div>
 
-                        <div class="form-group">
-                            <label>التصنيف</label>
-                            <select id="productCat">
-                                <option value="مشروبات">مشروبات</option>
-                                <option value="سناكس">سناكس</option>
-                                <option value="منظفات">منظفات</option>
-                                <option value="أخرى">أخرى</option>
-                            </select>
-                        </div>
+    <!-- الوصف -->
+    <div class="form-group">
+        <label>وصف المنتج</label>
+        <textarea id="productDesc" rows="4" placeholder="اكتب تفاصيل المنتج..." required></textarea>
+    </div>
 
-                        <button type="submit" class="btn primary w-100">نشر المنتج في السوق</button>
-                    </form>
+    <!-- التصنيف -->
+    <div class="form-group">
+        <label>التصنيف</label>
+        <select id="productCat">
+            <option value="مشروبات">مشروبات</option>
+            <option value="سناكس">سناكس</option>
+            <option value="منظفات">منظفات</option>
+            <option value="أخرى">أخرى</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn primary w-100">نشر المنتج (Flash Sale)</button>
+</form>
                 </div>
 
                 <!-- تعليمات للتاجر -->

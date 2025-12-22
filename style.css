@@ -1017,3 +1017,163 @@ footer {
         padding: 5px; /* تصغير الحجم */
     }
 }
+/* =========================================
+   تحديثات صفحة الدفع (Checkout Updates)
+   ========================================= */
+
+/* 1. تكبير اللوجو في صفحة الدفع */
+.checkout-logo img {
+    height: 70px !important; /* تكبير */
+    width: auto;
+    max-width: 250px;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    color: var(--primary);
+    font-weight: 800;
+}
+
+/* 2. تصميم ملخص الطلب الجديد (شكل الفاتورة) */
+.order-summary-box.new-design {
+    background: #fff;
+    padding: 0; /* هنشيل البادنج العام */
+    border: 2px solid #eee;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.order-summary-box h3 {
+    background: var(--bg-light);
+    padding: 20px;
+    margin: 0;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+.checkout-items {
+    padding: 20px;
+    max-height: 250px;
+    overflow-y: auto; /* سكرول لو المنتجات كتير */
+}
+
+.c-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f5f5f5;
+    padding-bottom: 10px;
+}
+.c-item img { width: 50px; height: 50px; object-fit: contain; border-radius: 5px; border: 1px solid #eee; }
+.c-item div { flex: 1; }
+.c-item h4 { font-size: 0.9rem; margin: 0; color: var(--text-dark); }
+.c-item small { color: #888; font-size: 0.8rem; }
+.c-item span { font-weight: bold; color: var(--primary); }
+
+.cost-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.total-row {
+    background: #fdfdfd;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--primary);
+    border-top: 2px dashed #ddd;
+}
+
+.confirm-btn {
+    margin: 0 20px 20px;
+    width: calc(100% - 40px);
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+/* 3. تنسيق اختيار طريقة الدفع */
+.payment-card {
+    border: 2px solid #eee;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 10px;
+}
+.pay-icon {
+    width: 40px; height: 40px;
+    background: #f0f9ff;
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+}
+.payment-card.selected {
+    border-color: var(--accent);
+    background-color: #fffff0;
+}
+/* =========================================
+   Flash Sale & New Product Info Styles
+   ========================================= */
+
+/* بادج الفلاش سيل */
+.flash-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px; /* يظهر في الشمال عشان ميتعارضش مع بادج الخصم */
+    background: linear-gradient(45deg, #ff0000, #ff5722);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    animation: flashPulse 2s infinite;
+}
+
+/* حركة نبض بسيطة للبادج */
+@keyframes flashPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* معلومات العبوات والمخزون */
+.product-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 5px 8px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.stock-info {
+    color: var(--success);
+    font-weight: bold;
+}
+
+.stock-info.low {
+    color: var(--danger);
+}

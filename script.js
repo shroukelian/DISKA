@@ -225,85 +225,107 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // حفظ المنتج عند الضغط على "نشر"
-    if (productForm) {
-        productForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+// --- 1. منطق صفحة التاجر (رفع المنتج) ---
+if (productForm) {
+    productForm.addEventListener('submit', function(e) {
+        e.preventDefault();
 
-            const file = imageInput.files[0];
-            const reader = new FileReader();
+        const file = imageInput.files[0];
+        const reader = new FileReader();
 
-            reader.onload = function(e) {
-                // تجميع بيانات المنتج
-                const newProduct = {
-                    id: Date.now(),
-                    name: document.getElementById('productName').value,
-                    price: document.getElementById('productPrice').value,
-                    oldPrice: document.getElementById('oldPrice').value || '',
-                    desc: document.getElementById('productDesc').value,
-                    category: document.getElementById('productCat').value,
-                    image: e.target.result // الصورة ككود Base64
-                };
-
-                // الحفظ في LocalStorage
-                let products = JSON.parse(localStorage.getItem('DISKA_MERCHANT_PRODUCTS')) || [];
-                products.push(newProduct);
-                localStorage.setItem('DISKA_MERCHANT_PRODUCTS', JSON.stringify(products));
-
-                alert('تم نشر المنتج بنجاح! سيظهر الآن للمشترين.');
-                window.location.href = 'index.html'; // الذهاب للرئيسية
+        reader.onload = function(e) {
+            // تجميع البيانات الجديدة
+            const newProduct = {
+                id: Date.now(),
+                name: document.getElementById('productName').value,
+                price: parseFloat(document.getElementById('productPrice').value),
+                oldPrice: parseFloat(document.getElementById('oldPrice').value), // إجباري الآن
+                units: document.getElementById('unitsPerCarton').value, // عدد العبوات
+                stock: parseInt(document.getElementById('stockQty').value), // المخزون
+                desc: document.getElementById('productDesc').value,
+                category: document.getElementById('productCat').value,
+                image: e.target.result
             };
 
-            if (file) {
-                reader.readAsDataURL(file);
-            } else {
-                alert('يرجى اختيار صورة للمنتج');
-            }
-        });
-    }
+            // الحفظ
+            let products = JSON.parse(localStorage.getItem('DISKA_MERCHANT_PRODUCTS')) || [];
+            products.push(newProduct);
+            localStorage.setItem('DISKA_MERCHANT_PRODUCTS', JSON.stringify(products));
+
+            alert('تم إضافة عرض الـ Flash Sale بنجاح!');
+            window.location.href = 'index.html';
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            alert('يرجى اختيار صورة للمنتج');
+        }
+    });
+}
 
 
-    // --- 2. منطق الصفحة الرئيسية (عرض المنتجات المضافة) ---
-    const productsGrid = document.querySelector('.products-grid');
-    
-    // تأكد إننا في صفحة فيها عرض منتجات
-    if (productsGrid) {
-        let storedProducts = JSON.parse(localStorage.getItem('DISKA_MERCHANT_PRODUCTS')) || [];
+// --- 2. منطق الصفحة الرئيسية (عرض المنتجات بالبادج الجديد) ---
+const productsGrid = document.querySelector('.products-grid');
 
-        // عرض المنتجات الجديدة في الأول
-        storedProducts.reverse().forEach(product => {
-            // حساب نسبة الخصم لو وجد
-            let discountBadge = '';
-            if (product.oldPrice && product.oldPrice > product.price) {
-                let discount = Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100);
-                discountBadge = `<div class="badges"><span class="discount-badge">خصم ${discount}%</span></div>`;
-            }
+if (productsGrid) {
+    let storedProducts = JSON.parse(localStorage.getItem('DISKA_MERCHANT_PRODUCTS')) || [];
 
-            const productHTML = `
-                <div class="product-card merchant-product">
-                    ${discountBadge}
-                    <div class="product-img">
-                        <img src="${product.image}" alt="${product.name}">
-                    </div>
-                    <div class="product-info">
-                        <h4>${product.name}</h4>
-                        <p style="font-size:0.8rem; color:#666; height:30px; overflow:hidden;">${product.desc}</p>
-                        <div class="pricing">
-                            <span class="current-price">${product.price} ج.م</span>
-                            ${product.oldPrice ? `<span class="old-price">${product.oldPrice} ج.م</span>` : ''}
-                        </div>
-                        <div class="add-to-cart">
-                            <button class="add-btn">أضف للسلة <i class="fas fa-cart-plus"></i></button>
-                        </div>
-                    </div>
+    storedProducts.reverse().forEach(product => {
+        
+        // حساب نسبة الخصم
+        let discountPercent = 0;
+        if (product.oldPrice > product.price) {
+            discountPercent = Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100);
+        }
+
+        // إنشاء بادج الـ Flash Sale
+        let flashBadge = '';
+        if (discountPercent > 0) {
+            flashBadge = `
+                <div class="flash-badge">
+                    <i class="fas fa-star"></i> 
+                    Flash Sale ${discountPercent}%
                 </div>
             `;
-            
-            // إضافة المنتج في بداية الشبكة
-            productsGrid.insertAdjacentHTML('afterbegin', productHTML);
-        });
-    }
+        }
 
+        // تحديد حالة المخزون (لو قليل يظهر بالأحمر)
+        let stockClass = product.stock < 10 ? 'low' : '';
+        let stockText = product.stock < 10 ? `باقي ${product.stock} فقط!` : `متاح ${product.stock}`;
+
+        const productHTML = `
+            <div class="product-card merchant-product">
+                ${flashBadge} <!-- هنا يظهر البادج الجديد -->
+                
+                <div class="product-img">
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                
+                <div class="product-info">
+                    <h4>${product.name}</h4>
+                    
+                    <!-- عرض عدد العبوات والمخزون -->
+                    <div class="product-meta">
+                        <span><i class="fas fa-box-open"></i> ${product.units} عبوة/كرتونة</span>
+                        <span class="stock-info ${stockClass}">${stockText}</span>
+                    </div>
+
+                    <div class="pricing">
+                        <span class="current-price">${product.price} ج.م</span>
+                        <span class="old-price">${product.oldPrice} ج.م</span>
+                    </div>
+                    
+                    <div class="add-to-cart">
+                        <button class="add-btn">أضف للسلة <i class="fas fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        productsGrid.insertAdjacentHTML('afterbegin', productHTML);
+    });
+}
     // ... (باقي كود السلة والعداد القديم يظل كما هو بالأسفل) ...
     // ... (تأكد من نسخ باقي كود السلة من الردود السابقة هنا) ...
     

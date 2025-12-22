@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,23 +8,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <header class="main-header">
+     <header class="main-header">
         <div class="container header-container">
 
             <!-- Logo (Correct Structure) -->
-        <a href="index.html" class="logo">
+          <a href="index.html" class="logo">
                 <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
                 <!-- <span>Wholesale Deals Platform</span> -->
             </a>
 
-            <!-- Search Bar -->
-            <div class="search-box">
-                <input type="text" placeholder="ابحث عن منتج، مورد، أو علامة تجارية...">
-                <button><i class="fas fa-search"></i></button>
-            </div>
+   
 
             <!-- User Actions -->
             <div class="header-actions">
@@ -64,89 +58,101 @@
     </div>
     <!-- Overlay (الخلفية الغامقة لما القائمة تفتح) -->
     <div class="menu-overlay"></div>
+
     <section class="checkout-section">
         <div class="container">
-            <h2>إتمام الطلب</h2>
+            <h2 class="page-title">بيانات الشحن والدفع</h2>
             <div class="checkout-grid">
-
+                
                 <!-- نموذج البيانات -->
                 <div class="checkout-form">
-                    <h3>عنوان التوصيل</h3>
-                    <form>
+                    <h3><i class="fas fa-map-marker-alt"></i> عنوان التوصيل</h3>
+                    <form id="checkoutForm">
                         <div class="form-group">
                             <label>اسم المحل / التاجر</label>
-                            <input type="text" placeholder="مثال: سوبر ماركت الأمانة">
+                            <input type="text" placeholder="مثال: سوبر ماركت الأمانة" required>
                         </div>
                         <div class="form-group">
                             <label>رقم الموبايل</label>
-                            <input type="tel" placeholder="01xxxxxxxxx">
+                            <input type="tel" placeholder="01xxxxxxxxx" required>
                         </div>
-                        <div class="form-group">
-                            <label>العنوان بالتفصيل</label>
-                            <input type="text" placeholder="الشارع، رقم العمارة، علامة مميزة">
-                        </div>
+                        
                         <div class="form-row">
                             <div class="form-group">
                                 <label>المحافظة</label>
-                                <select>
-                                    <option>القاهرة</option>
-                                    <option>الجيزة</option>
-                                    <option>الإسكندرية</option>
+                                <!-- أضفنا ID عشان نملاه بالجافاسكريبت -->
+                                <select id="govSelect" onchange="updateRegions()">
+                                    <option value="" disabled selected>اختر المحافظة</option>
+                                    <!-- المحافظات هتنزل هنا أوتوماتيك -->
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>المنطقة</label>
-                                <select>
-                                    <option>مدينة نصر</option>
-                                    <option>مصر الجديدة</option>
-                                    <option>التجمع</option>
+                                <label>المنطقة / الحي</label>
+                                <select id="citySelect" disabled>
+                                    <option value="" disabled selected>اختر المنطقة</option>
                                 </select>
                             </div>
                         </div>
 
-                        <h3>طريقة الدفع</h3>
+                        <div class="form-group">
+                            <label>العنوان بالتفصيل</label>
+                            <input type="text" placeholder="اسم الشارع، رقم العمارة، علامة مميزة" required>
+                        </div>
+
+                        <h3><i class="fas fa-wallet"></i> طريقة الدفع</h3>
                         <div class="payment-options">
                             <label class="payment-card selected">
                                 <input type="radio" name="payment" checked>
-                                <i class="fas fa-money-bill-wave"></i>
+                                <div class="pay-icon"><i class="fas fa-money-bill-wave"></i></div>
                                 <span>دفع عند الاستلام (كاش)</span>
                             </label>
                             <label class="payment-card">
                                 <input type="radio" name="payment">
-                                <i class="fas fa-wallet"></i>
+                                <div class="pay-icon"><i class="fas fa-wallet"></i></div>
                                 <span>محفظة DISKA</span>
                             </label>
                         </div>
                     </form>
                 </div>
 
-                <!-- ملخص الطلب -->
-                <div class="order-summary-box">
-                    <h3>ملخص الطلب</h3>
-                    <div class="summary-items">
-                        <div class="s-item">
-                            <span>بيبسي 2.5 لتر (x5)</span>
+                <!-- ملخص الطلب (التصميم الجديد) -->
+                <div class="order-summary-box new-design">
+                    <h3>ملخص الفاتورة</h3>
+                    
+                    <!-- المنتجات هتيجي هنا من JS -->
+                    <div class="checkout-items" id="checkoutItemsList">
+                        <!-- مثال (سيتم مسحه وتعبئته تلقائياً) -->
+                        <!-- <div class="c-item">
+                            <img src="images/pepsi.webp">
+                            <div>
+                                <h4>بيبسي 2.5 لتر</h4>
+                                <small>الكمية: 5</small>
+                            </div>
                             <span>959.95 ج.م</span>
-                        </div>
-                        <div class="s-item">
-                            <span>شاي العروسة (x1)</span>
-                            <span>206.25 ج.م</span>
-                        </div>
+                        </div> -->
                     </div>
+
                     <div class="summary-divider"></div>
-                    <div class="summary-row">
-                        <span>المجموع</span>
-                        <span>1166.20 ج.م</span>
+                    
+                    <div class="cost-row">
+                        <span>المجموع الفرعي</span>
+                        <span id="subTotal">0.00 ج.م</span>
                     </div>
-                    <div class="summary-row">
-                        <span>التوصيل</span>
-                        <span class="free">مجاني</span>
+                    <div class="cost-row">
+                        <span>مصاريف الشحن</span>
+                        <span id="shippingCost" style="color: var(--danger);">-- اختر المحافظة --</span>
                     </div>
-                    <div class="summary-row total">
-                        <span>الإجمالي</span>
-                        <span>1166.20 ج.م</span>
+                    
+                    <div class="summary-divider"></div>
+
+                    <div class="total-row">
+                        <span>الإجمالي الكلي</span>
+                        <span id="finalTotal">0.00 ج.م</span>
                     </div>
-                    <button class="btn primary w-100" onclick="alert('تم استلام طلبك بنجاح!')">تأكيد الطلب</button>
+                    
+                    <button class="btn primary w-100 confirm-btn" onclick="alert('تم تأكيد الطلب بنجاح! سيتم التواصل معك.')">
+                        تأكيد الطلب الآن
+                    </button>
                 </div>
 
             </div>
@@ -157,6 +163,7 @@
         <p>&copy; 2025 DISKA - Wholesale Deals Platform</p>
     </footer>
 
+    <!-- سكربت خاص للصفحة دي عشان المحافظات -->
+    <script src="checkout.js"></script>
 </body>
-
 </html>
