@@ -459,5 +459,29 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+// =========================================
+    // 6. تشغيل القائمة الجانبية (Mobile Menu Fix)
+    // =========================================
+    const openMenuBtn = document.querySelector('.mobile-menu-btn');
+    const closeMenuBtn = document.querySelector('.close-menu');
+    const sidebar = document.querySelector('.mobile-sidebar');
+    const overlay = document.querySelector('.menu-overlay');
 
+    // فتح القائمة
+    if (openMenuBtn) {
+        openMenuBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // منع أي سلوك افتراضي
+            sidebar.classList.add('active');
+            overlay.classList.add('active');
+        });
+    }
+
+    // إغلاق القائمة (عند الضغط على X أو الخلفية)
+    const closeMenu = () => {
+        if (sidebar) sidebar.classList.remove('active');
+        if (overlay) overlay.classList.remove('active');
+    };
+
+    if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
+    if (overlay) overlay.addEventListener('click', closeMenu);
 });
