@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المفضلة | DISKA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header (نفس الهيدر) -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+                <!-- <span>Wholesale Deals Platform</span> -->
+            </a>
+            <div class="header-actions">
+                <a href="wishlist.html" class="action-item"><i class="fas fa-heart"
+                        style="color: var(--accent);"></i></a>
+                <a href="cart.html" class="action-item cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <h2 style="margin-bottom: 30px;">قائمة المفضلة ❤️</h2>
+
+            <div class="products-grid-wishlist" id="wishlistContainer">
+                <!-- المنتجات هتنزل هنا بالجافاسكريبت -->
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // كود خاص بصفحة المفضلة فقط
+        document.addEventListener('DOMContentLoaded', () => {
+            const wishlistGrid = document.getElementById('wishlistGrid');
+            const wishlist = JSON.parse(localStorage.getItem('DISKA_WISHLIST')) || [];
+            const allProducts = JSON.parse(localStorage.getItem('DISKA_MERCHANT_PRODUCTS')) || [];
+
+            if (wishlistGrid) {
+                if (wishlist.length === 0) {
+                    wishlistGrid.innerHTML = '<p>لم تقم بإضافة منتجات للمفضلة بعد.</p>';
+                } else {
+                    // الفكرة: بنلف على الـ ID اللي في المفضلة ونجيب تفاصيل المنتج من المنتجات الأصلية
+                    wishlist.forEach(favItem => {
+                        const product = allProducts.find(p => p.id == favItem.id);
+                        if (product) {
+                            // رسم الكارت (نسخة مختصرة)
+                            const html = `
+                                <div class="product-card">
+                                    <div class="product-img"><img src="${product.image}"></div>
+                                    <div class="product-info">
+                                        <h4>${product.name}</h4>
+                                        <div class="pricing"><span class="current-price">${product.price} ج.م</span></div>
+                                        <button class="btn primary w-100" onclick="removeFromWishlist(${product.id})">إزالة ❌</button>
+                                    </div>
+                                </div>
+                            `;
+                            wishlistGrid.innerHTML += html;
+                        }
+                    });
+                }
+            }
+        });
+
+        function removeFromWishlist(id) {
+            let wishlist = JSON.parse(localStorage.getItem('DISKA_WISHLIST')) || [];
+            wishlist = wishlist.filter(w => w.id != id);
+            localStorage.setItem('DISKA_WISHLIST', JSON.stringify(wishlist));
+            location.reload(); // تحديث الصفحة
+        }
+    </script>
+</body>
+
+</html>

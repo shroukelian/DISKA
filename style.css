@@ -1177,3 +1177,234 @@ footer {
 .stock-info.low {
     color: var(--danger);
 }
+/* =========================================
+   تنسيق عداد الكمية داخل كارت المنتج
+   ========================================= */
+.card-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.qty-control-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 40px;
+    background: #f9f9f9;
+}
+
+.qty-control-card button {
+    width: 30px;
+    height: 100%;
+    border: none;
+    background: #eee;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--primary);
+    transition: 0.2s;
+}
+
+.qty-control-card button:hover {
+    background: #ddd;
+}
+
+.qty-control-card input {
+    width: 40px;
+    height: 100%;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    background: transparent;
+    color: var(--text-dark);
+}
+
+/* تعديل زر الإضافة ليأخذ باقي المساحة */
+.add-btn {
+    flex: 1; /* ياخد باقي المساحة */
+    height: 40px;
+    border-radius: 8px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.add-btn:hover {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+.add-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+/* =========================================
+   تحديثات الطلبات الجديدة
+   ========================================= */
+
+/* 1. التواريخ والوصف في الكارت (طلب 6 و 7) */
+.product-dates {
+    font-size: 0.7rem;
+    color: #666;
+    background: #f8f9fa;
+    padding: 5px;
+    border-radius: 4px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-desc-preview {
+    font-size: 0.8rem;
+    color: #555;
+    margin: 8px 0;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 2. أيقونة المفضلة (طلب 9) */
+.fav-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px; /* عكس البادج */
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #ccc;
+    z-index: 5;
+    transition: 0.3s;
+}
+.fav-btn.active {
+    color: var(--danger);
+    border-color: var(--danger);
+}
+
+/* 3. الكتابة اليدوية (طلب 2) */
+/* بنشيل الاسهم بتاعت المتصفح من حقل الرقم */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/* 4. بادج الكمية في السلة (طلب 4) */
+.in-cart-badge {
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-right: 5px;
+    display: none; /* مخفي لو مش في السلة */
+}
+.in-cart-badge.show { display: inline-block; }
+
+/* 5. زر التنبيه (طلب 10) */
+.notify-btn {
+    width: 100%;
+    background: #ff9800;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* قائمة منتجات التاجر */
+.merchant-item {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #eee;
+}
+.merchant-item button {
+    background: #ffebee;
+    color: var(--danger);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* --- إصلاح التداخل في الكارت --- */
+
+.product-card {
+    position: relative; /* ضروري عشان العناصر المطلقة تتموضع جواه */
+}
+
+/* 1. بادج الخصم (يمين) */
+.flash-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* خليناه يمين */
+    left: auto;  /* لغينا اليسار */
+    background: linear-gradient(45deg, #ff0000, #ff5722);
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    z-index: 2;
+    animation: flashPulse 2s infinite;
+}
+
+/* 2. زر المفضلة (يسار) */
+.fav-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px; /* خليناه يسار */
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #ccc;
+    z-index: 5;
+    transition: 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.fav-btn.active {
+    color: #ef4444; /* لون أحمر لما يتاس عليه */
+    border-color: #ef4444;
+}
+/* تنسيق شبكة المفضلة (نفس تنسيق المنتجات العادية) */
+.products-grid-wishlist {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    padding-bottom: 50px;
+}

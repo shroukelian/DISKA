@@ -96,3 +96,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+// دالة إتمام الطلب (تحديث المخزون)
+    const confirmBtn = document.querySelector('.confirm-btn');
+    
+    if(confirmBtn) {
+        confirmBtn.addEventListener('click', () => {
+            // 1. جلب المنتجات المخزنة عند التاجر
+            let merchantProducts = JSON.parse(localStorage.getItem('DISKA_MERCHANT_PRODUCTS')) || [];
+            let cart = JSON.parse(localStorage.getItem('DISKA_CART')) || [];
+
+            // 2. خصم الكميات
+            let stockUpdated = false;
+
+            cart.forEach(cartItem => {
+                // دور على المنتج في قائمة التاجر باستخدام الـ ID أو الاسم
+                let productIndex = merchantProducts.findIndex(p => p.id == cartItem.id || p.name === cartItem.title);
+                
+                if (productIndex > -1) {
+                    // خصم الكمية
+                    merchantProducts[productIndex].stock -= cartItem.qty;
+                    // التأكد إنها متنزلش عن صفر
+                    if (merchantProducts[productIndex].stock < 0) merchantProducts[productIndex].stock = 0;
+                    
+                    stockUpdated = true;
+                }
+            });
+
+            // 3. حفظ المخزون الجديد لو حصل تعديل
+            if (stockUpdated) {
+                localStorage.setItem('DISKA_MERCHANT_PRODUCTS', JSON.stringify(merchantProducts));
+            }
+
+            // 4. تفريغ السلة وإنهاء الطلب
+            localStorage.removeItem('DISKA_CART');
+            alert('تم تأكيد طلبك بنجاح! وتم خصم الكمية من المخزون.');
+            window.location.href = 'index.html';
+        });
+    }
