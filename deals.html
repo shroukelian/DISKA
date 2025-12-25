@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفقات الجملة | DISKA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* تنسيقات خاصة بالصفقات */
+        .deal-card { border: 2px solid var(--accent); position: relative; overflow: hidden; }
+        .deal-badge { position: absolute; top: 0; left: 0; background: var(--accent); color: var(--primary); padding: 5px 15px; font-weight: bold; border-bottom-right-radius: 10px; }
+        .progress-container { background: #eee; height: 10px; border-radius: 5px; margin: 15px 0; overflow: hidden; }
+        .progress-bar { height: 100%; background: linear-gradient(90deg, #ff9800, #facc15); width: 0%; transition: 1s; }
+        .timer-box { display: flex; gap: 10px; justify-content: center; margin: 15px 0; background: #f8fafc; padding: 10px; border-radius: 8px; }
+        .time-unit { text-align: center; }
+        .time-unit strong { display: block; font-size: 1.2rem; color: var(--danger); }
+        .time-unit span { font-size: 0.7rem; color: #666; }
+    </style>
+</head>
+<body>
+
+    <!-- Header (نفس الهيدر) -->
+    <header class="main-header">
+        <div class="container header-container">
+             <a href="index.html" class="logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+                <!-- <span>Wholesale Deals Platform</span> -->
+            </a>
+            <div class="header-actions">
+                <a href="#" class="action-item" onclick="openDealRequestModal()"><i class="fas fa-plus-circle"></i> عرض صفقة (للتاجر)</a>
+                <div class="action-item mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+      <div class="mobile-sidebar">
+        <div class="sidebar-header">
+            <h3>القائمة</h3>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="profile.html"><i class="fas fa-user-circle"></i> حسابي / طلباتي</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
+
+            <!-- الصفحات الجديدة -->
+            <li><a href="deals.html" style="color: var(--danger);"><i class="fas fa-fire"></i> الصفقات (Deals)</a></li>
+            <li><a href="requests.html"><i class="fas fa-bullhorn"></i> طلبات خاصة</a></li>
+            <li><a href="merchant.html"><i class="fas fa-store"></i> لوحة التاجر</a></li>
+
+            <!-- الصفحات الثابتة -->
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
+            <li><a href="faq.html"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
+            <li><a href="contact.html"><i class="fas fa-headset"></i> اتصل بنا</a></li>
+            <li><a href="policies.html"><i class="fas fa-headset"></i> السياسات والشحن</a></li>
+        </ul>
+    </div>
+    <!-- Overlay (الخلفية الغامقة لما القائمة تفتح) -->
+    <div class="menu-overlay"></div>
+
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="page-title" style="padding-top: 20px;">🔥 صفقات الكميات الكبيرة</h2>
+            <p style="text-align: center; margin-bottom: 30px;">اشتري مع غيرك وحققوا التارجت عشان السعر ينزل!</p>
+
+            <div class="products-grid" id="dealsGrid">
+                
+                <!-- صفقة 1 (محاكاة) -->
+                <div class="product-card deal-card">
+                    <div class="deal-badge">صفقة نشطة</div>
+                    <div class="product-img"><img src="images/pepsi.webp"></div>
+                    <div class="product-info">
+                        <h4>بالتة بيبسي (100 كرتونة)</h4>
+                        <div class="pricing">
+                            <span class="current-price">180.00 ج.م</span>
+                            <span class="old-price">191.99 ج.م</span>
+                        </div>
+                        
+                        <!-- العداد -->
+                        <div class="timer-box">
+                            <div class="time-unit"><strong class="days">02</strong><span>يوم</span></div>:
+                            <div class="time-unit"><strong class="hours">14</strong><span>ساعة</span></div>:
+                            <div class="time-unit"><strong class="mins">30</strong><span>دقيقة</span></div>
+                        </div>
+
+                        <!-- شريط التقدم -->
+                        <div style="font-size: 0.8rem; display: flex; justify-content: space-between;">
+                            <span>تم حجز: 750</span>
+                            <span>الهدف: 1000</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 75%;"></div>
+                        </div>
+
+                        <button class="btn primary w-100">احجز كميتك الآن</button>
+                    </div>
+                </div>
+
+                <!-- صفقة 2 -->
+                <div class="product-card deal-card">
+                    <div class="deal-badge">باقي قليل</div>
+                    <div class="product-img"><img src="images/زيت.webp"></div>
+                    <div class="product-info">
+                        <h4>زيت كريستال (500 كرتونة)</h4>
+                        <div class="pricing">
+                            <span class="current-price">420.00 ج.م</span>
+                            <span class="old-price">450.00 ج.م</span>
+                        </div>
+                        
+                        <div class="timer-box">
+                            <div class="time-unit"><strong class="days">00</strong><span>يوم</span></div>:
+                            <div class="time-unit"><strong class="hours">05</strong><span>ساعة</span></div>:
+                            <div class="time-unit"><strong class="mins">12</strong><span>دقيقة</span></div>
+                        </div>
+
+                        <div style="font-size: 0.8rem; display: flex; justify-content: space-between;">
+                            <span>تم حجز: 450</span>
+                            <span>الهدف: 500</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 90%;"></div>
+                        </div>
+
+                        <button class="btn primary w-100">احجز كميتك الآن</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal عرض صفقة (للتاجر) -->
+    <div id="dealModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:2000; align-items:center; justify-content:center;">
+        <div style="background:#fff; padding:30px; border-radius:10px; width:90%; max-width:500px; position:relative;">
+            <span onclick="document.getElementById('dealModal').style.display='none'" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:1.5rem;">&times;</span>
+            <h3>طلب عرض صفقة (للأدمن)</h3>
+            <form id="dealForm">
+                <input type="text" placeholder="اسم المنتج" class="form-control" style="width:100%; padding:10px; margin-bottom:10px;" required>
+                <input type="number" placeholder="الكمية المستهدفة (مثلاً 5000)" class="form-control" style="width:100%; padding:10px; margin-bottom:10px;" required>
+                <input type="number" placeholder="السعر قبل الخصم" class="form-control" style="width:100%; padding:10px; margin-bottom:10px;" required>
+                <input type="number" placeholder="السعر المقترح (بعد الخصم)" class="form-control" style="width:100%; padding:10px; margin-bottom:10px;" required>
+                <button class="btn primary w-100">إرسال للإدارة للمراجعة</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-sidebar">
+        <!-- (نفس كود القائمة اللي عندك) -->
+        <ul class="sidebar-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="deals.html">الصفقات 🔥</a></li>
+            <li><a href="requests.html">طلبات خاصة 📢</a></li>
+        </ul>
+        <button class="close-menu" style="position:absolute; top:20px; left:20px;">X</button>
+    </div>
+    <div class="menu-overlay"></div>
+
+      <!-- Footer -->
+  <footer>
+    <div class="container">
+        
+        <!-- استخدمنا كلاس footer-grid بدلاً من الستايل المباشر -->
+        <div class="footer-grid">
+            
+            <!-- القسم الأول: اللوجو والوصف -->
+            <div>
+                <a href="index.html" class="logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+                <!-- <span>Wholesale Deals Platform</span> -->
+            </a>
+                <p style="margin-top: 15px; color: #cbd5e1;">منصتك الأولى لتجارة الجملة في مصر. نربطك بأفضل الموردين بأقل الأسعار.</p>
+            </div>
+
+            <!-- القسم الثاني: روابط هامة -->
+            <div>
+                <h4>روابط هامة</h4>
+                <ul>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="merchant.html">بيع معنا (للتجار)</a></li>
+                    <li><a href="requests.html">طلبات خاصة</a></li>
+                    <li><a href="contact.html">تواصل معنا</a></li>
+                </ul>
+            </div>
+
+            <!-- القسم الثالث: المساعدة -->
+            <div>
+                <h4>المساعدة والسياسات</h4>
+                <ul>
+                    <li><a href="policies.html#shipping">الشحن والتوصيل</a></li>
+                    <li><a href="policies.html#return">سياسة الإرجاع</a></li>
+                    <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                    <li><a href="profile.html">حسابي</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="copyrights">
+            <p>&copy; 2025 DISKA - جميع الحقوق محفوظة</p>
+        </div>
+    </div>
+</footer>
+    <script src="script.js"></script>
+    <script>
+        function openDealRequestModal() {
+            document.getElementById('dealModal').style.display = 'flex';
+        }
+        
+        // محاكاة إرسال طلب الصفقة
+        document.getElementById('dealForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('تم إرسال طلب الصفقة للإدارة! سيتم مراجعته والرد عليك.');
+            document.getElementById('dealModal').style.display = 'none';
+        });
+
+        // تشغيل زر القائمة
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const sidebar = document.querySelector('.mobile-sidebar');
+        const overlay = document.querySelector('.menu-overlay');
+        const closeBtn = document.querySelector('.close-menu');
+        if(menuBtn) menuBtn.onclick = () => { sidebar.classList.add('active'); overlay.classList.add('active'); };
+        if(closeBtn) closeBtn.onclick = () => { sidebar.classList.remove('active'); overlay.classList.remove('active'); };
+    </script>
+</body>
+</html>

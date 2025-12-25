@@ -33,12 +33,12 @@
             <!-- User Actions -->
             <div class="header-actions">
                 <a href="merchant.html" class="action-item merchant-link">
-        <i class="fas fa-store"></i>
-        <div class="info">
-            <span>حساب تاجر</span>
-            <strong>إضافة منتجات</strong>
-        </div>
-    </a>
+                    <i class="fas fa-store"></i>
+                    <div class="info">
+                        <span>حساب تاجر</span>
+                        <strong>إضافة منتجات</strong>
+                    </div>
+                </a>
                 <div class="action-item">
                     <a href="login.html" class="action-item" style="text-decoration: none; color: inherit;">
                         <i class="fas fa-wallet"></i>
@@ -53,9 +53,17 @@
                     <span class="badge">2</span>
                 </a>
                 <!-- زر المفضلة -->
-<a href="wishlist.html" class="action-item" style="text-decoration: none; color: inherit; margin-left: 10px;">
-    <i class="fas fa-heart"></i>
-</a>
+                <a href="wishlist.html" class="action-item"
+                    style="text-decoration: none; color: inherit; margin-left: 10px;">
+                    <i class="fas fa-heart"></i>
+                </a>
+                <!-- زر الإشعارات -->
+                <a href="notifications.html" class="action-item"
+                    style="text-decoration: none; color: inherit; position: relative;">
+                    <i class="fas fa-bell"></i>
+                    <!-- النقطة الحمراء لو في إشعار جديد -->
+                    <span class="badge notif-badge" style="background:red; display:none;"></span>
+                </a>
                 <!-- Mobile Menu Button (Hidden on Desktop) -->
                 <div class="action-item mobile-menu-btn">
                     <i class="fas fa-bars"></i>
@@ -70,10 +78,19 @@
         </div>
         <ul class="sidebar-links">
             <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
-            <li><a href="login.html"><i class="fas fa-wallet"></i> المحفظة / دخول</a></li>
+            <li><a href="profile.html"><i class="fas fa-user-circle"></i> حسابي / طلباتي</a></li>
             <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
-            <li><a href="offers.html"><i class="fas fa-tags"></i> العروض</a></li>
-            <li><a href="#"><i class="fas fa-headset"></i> اتصل بنا</a></li>
+
+            <!-- الصفحات الجديدة -->
+            <li><a href="deals.html" style="color: var(--danger);"><i class="fas fa-fire"></i> الصفقات (Deals)</a></li>
+            <li><a href="requests.html"><i class="fas fa-bullhorn"></i> طلبات خاصة</a></li>
+            <li><a href="merchant.html"><i class="fas fa-store"></i> لوحة التاجر</a></li>
+
+            <!-- الصفحات الثابتة -->
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
+            <li><a href="faq.html"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
+            <li><a href="contact.html"><i class="fas fa-headset"></i> اتصل بنا</a></li>
+            <li><a href="policies.html"><i class="fas fa-headset"></i> السياسات والشحن</a></li>
         </ul>
     </div>
     <!-- Overlay (الخلفية الغامقة لما القائمة تفتح) -->
@@ -87,7 +104,7 @@
                     <span class="tag">عروض متتفوتش 🔥</span>
                     <h2>خصومات حصرية على المشروبات</h2>
                     <p>أرخص أسعار الجملة، اطلب الآن واستلم فوراً</p>
-                    <a href="#products" class="btn primary">تصفح العروض</a>
+                    <a href="offers.html" class="btn primary">تصفح العروض</a>
                 </div>
                 <div class="banner-image">
                     <!-- ضع صورة معبرة هنا -->
@@ -258,10 +275,55 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 DISKA - Wholesale Deals Platform</p>
-        <p>Design and programming by<a href="https://www.facebook.com/profile.php?id=100090592885243&mibextid=ZbWKwL" target="_blank"><strong style="color:#FACC15 ;">GMTWEB</strong> </a> </p>
-    </footer>
+  <footer>
+    <div class="container">
+        
+        <!-- استخدمنا كلاس footer-grid بدلاً من الستايل المباشر -->
+        <div class="footer-grid">
+            
+            <!-- القسم الأول: اللوجو والوصف -->
+            <div>
+                <a href="index.html" class="logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+                <!-- <span>Wholesale Deals Platform</span> -->
+            </a>
+                <p style="margin-top: 15px; color: #cbd5e1;">منصتك الأولى لتجارة الجملة في مصر. نربطك بأفضل الموردين بأقل الأسعار.</p>
+            </div>
+
+            <!-- القسم الثاني: روابط هامة -->
+            <div>
+                <h4>روابط هامة</h4>
+                <ul>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="merchant.html">بيع معنا (للتجار)</a></li>
+                    <li><a href="requests.html">طلبات خاصة</a></li>
+                    <li><a href="contact.html">تواصل معنا</a></li>
+                </ul>
+            </div>
+
+            <!-- القسم الثالث: المساعدة -->
+            <div>
+                <h4>المساعدة والسياسات</h4>
+                <ul>
+                    <li><a href="policies.html#shipping">الشحن والتوصيل</a></li>
+                    <li><a href="policies.html#return">سياسة الإرجاع</a></li>
+                    <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                    <li><a href="profile.html">حسابي</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="copyrights">
+            <p>&copy; 2025 DISKA - جميع الحقوق محفوظة</p>
+        </div>
+    </div>
+</footer>
+    <!-- زر الواتساب العائم -->
+    <a href="https://wa.me/201000000000" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+        <span>تواصل معنا</span>
+    </a>
 
     <script src="script.js"></script>
 </body>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا | DISKA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* تنسيقات خاصة بصفحة اتصل بنا */
+        .contact-page-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            /* العمود الأيسر (الفورم) أكبر */
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        /* كارت المعلومات */
+        .contact-info-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            height: fit-content;
+        }
+
+        .c-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .c-item .icon {
+            width: 50px;
+            height: 50px;
+            background: #f0f9ff;
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .c-item h4 {
+            margin: 0 0 5px;
+            color: var(--text-dark);
+        }
+
+        .c-item p {
+            margin: 0;
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .c-item a {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* خريطة جوجل */
+        .map-container {
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            border: 1px solid var(--border);
+        }
+
+        /* كارت الفورم */
+        .contact-form-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.02);
+        }
+
+        .contact-form-card h2 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .contact-form-card p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* تجاوب للموبايل */
+        @media (max-width: 768px) {
+            .contact-page-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-card {
+                order: -1;
+            }
+
+            .header-actions a.action-item {
+                display: none !important;
+            }
+
+            /* تأكيد ظهور زر القائمة (التلات شرطات) */
+            .mobile-menu-btn {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+                <!-- <span>Wholesale Deals Platform</span> -->
+            </a>
+
+            <div class="header-actions">
+                <a href="index.html" class="action-item"><i class="fas fa-home"></i></a>
+                <div class="action-item mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar">
+        <div class="sidebar-header">
+            <h3>القائمة</h3>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="profile.html"><i class="fas fa-user-circle"></i> حسابي / طلباتي</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
+
+            <!-- الصفحات الجديدة -->
+            <li><a href="deals.html" style="color: var(--danger);"><i class="fas fa-fire"></i> الصفقات (Deals)</a></li>
+            <li><a href="requests.html"><i class="fas fa-bullhorn"></i> طلبات خاصة</a></li>
+            <li><a href="merchant.html"><i class="fas fa-store"></i> لوحة التاجر</a></li>
+
+            <!-- الصفحات الثابتة -->
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
+            <li><a href="faq.html"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
+            <li><a href="contact.html"><i class="fas fa-headset"></i> اتصل بنا</a></li>
+            <li><a href="policies.html"><i class="fas fa-headset"></i> السياسات والشحن</a></li>
+        </ul>
+    </div>
+    <div class="menu-overlay"></div>
+
+    <!-- Contact Content -->
+    <section class="section-padding">
+        <div class="container">
+
+            <div class="breadcrumb">
+                <a href="index.html">الرئيسية</a> / <span>تواصل معنا</span>
+            </div>
+
+            <div class="contact-page-wrapper">
+
+                <!-- الجانب الأيمن: معلومات الاتصال -->
+                <div class="contact-info-card">
+                    <div class="c-item">
+                        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>المقر الرئيسي</h4>
+                            <p>123 شارع التسعين، التجمع الخامس، القاهرة، مصر.</p>
+                        </div>
+                    </div>
+
+                    <div class="c-item">
+                        <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <h4>أرقام الهاتف</h4>
+                            <p>المبيعات: <a href="tel:01000000000">01000000000</a></p>
+                            <p>الدعم الفني: <a href="tel:01100000000">01100000000</a></p>
+                        </div>
+                    </div>
+
+                    <div class="c-item">
+                        <div class="icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>البريد الإلكتروني</h4>
+                            <p><a href="mailto:support@diska.com">support@diska.com</a></p>
+                            <p><a href="mailto:sales@diska.com">sales@diska.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="c-item">
+                        <div class="icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h4>مواعيد العمل</h4>
+                            <p>من السبت إلى الخميس<br>من الساعة 9:00 صباحاً حتى 6:00 مساءً</p>
+                        </div>
+                    </div>
+
+                    <!-- الخريطة -->
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.665363714578!2d31.343167!3d30.046534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDAyJzQ3LjUiTiAzMcKwMjAnMzUuNCJF!5e0!3m2!1sar!2seg!4v1635000000000!5m2!1sar!2seg"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- الجانب الأيسر: نموذج المراسلة -->
+                <div class="contact-form-card">
+                    <h2>هل لديك استفسار؟</h2>
+                    <p>املأ النموذج التالي وسيتم الرد عليك في أقرب وقت ممكن.</p>
+
+                    <form
+                        onsubmit="event.preventDefault(); alert('تم إرسال رسالتك بنجاح! سيتم التواصل معك قريباً.'); location.reload();">
+                        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label>الاسم بالكامل</label>
+                                <input type="text" placeholder="أدخل اسمك" required>
+                            </div>
+                            <div class="form-group">
+                                <label>رقم الموبايل</label>
+                                <input type="tel" placeholder="01xxxxxxxxx" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>البريد الإلكتروني</label>
+                            <input type="email" placeholder="email@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label>نوع الاستفسار</label>
+                            <select style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px;">
+                                <option>شكوى بخصوص طلب</option>
+                                <option>استفسار عن منتج</option>
+                                <option>طلب تسجيل تاجر</option>
+                                <option>اقتراح</option>
+                                <option>أخرى</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>الرسالة</label>
+                            <textarea rows="5" placeholder="اكتب تفاصيل رسالتك هنا..." required
+                                style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px;"></textarea>
+                        </div>
+
+                        <button class="btn primary w-100">إرسال الرسالة</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+
+            <!-- استخدمنا كلاس footer-grid بدلاً من الستايل المباشر -->
+            <div class="footer-grid">
+
+                <!-- القسم الأول: اللوجو والوصف -->
+                <div>
+                    <a href="index.html" class="logo">
+                        <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png"
+                            alt="DISKA Logo">
+                        <!-- <span>Wholesale Deals Platform</span> -->
+                    </a>
+                    <p style="margin-top: 15px; color: #cbd5e1;">منصتك الأولى لتجارة الجملة في مصر. نربطك بأفضل الموردين
+                        بأقل الأسعار.</p>
+                </div>
+
+                <!-- القسم الثاني: روابط هامة -->
+                <div>
+                    <h4>روابط هامة</h4>
+                    <ul>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="merchant.html">بيع معنا (للتجار)</a></li>
+                        <li><a href="requests.html">طلبات خاصة</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+
+                <!-- القسم الثالث: المساعدة -->
+                <div>
+                    <h4>المساعدة والسياسات</h4>
+                    <ul>
+                        <li><a href="policies.html#shipping">الشحن والتوصيل</a></li>
+                        <li><a href="policies.html#return">سياسة الإرجاع</a></li>
+                        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                        <li><a href="profile.html">حسابي</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="copyrights">
+                <p>&copy; 2025 DISKA - جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

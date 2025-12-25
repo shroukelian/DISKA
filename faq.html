@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأسئلة الشائعة | DISKA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .faq-item { background: #fff; margin-bottom: 15px; border-radius: 8px; overflow: hidden; border: 1px solid #eee; }
+        .faq-question { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: bold; color: var(--primary); }
+        .faq-question:hover { background: #f9f9f9; }
+        .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: 0.3s ease; color: #666; line-height: 1.6; }
+        .faq-item.active .faq-answer { padding: 20px; max-height: 200px; border-top: 1px solid #eee; }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        @media (max-width: 768px) {
+    
+    /* ... (أي أكواد قديمة للموبايل هنا سيبها زي ما هي) ... */
+
+    /* إخفاء زر العودة للرئيسية (أيقونة البيت) في الموبايل */
+    .header-actions a.action-item {
+        display: none !important;
+    }
+
+    /* تأكيد ظهور زر القائمة (التلات شرطات) */
+    .mobile-menu-btn {
+        display: block !important;
+    }
+}
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+                <!-- <span>Wholesale Deals Platform</span> -->
+            </a>
+
+            <div class="header-actions">
+                <a href="index.html" class="action-item"><i class="fas fa-home"></i></a>
+                <div class="action-item mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar">
+        <div class="sidebar-header">
+            <h3>القائمة</h3>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="profile.html"><i class="fas fa-user-circle"></i> حسابي / طلباتي</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
+
+            <!-- الصفحات الجديدة -->
+            <li><a href="deals.html" style="color: var(--danger);"><i class="fas fa-fire"></i> الصفقات (Deals)</a></li>
+            <li><a href="requests.html"><i class="fas fa-bullhorn"></i> طلبات خاصة</a></li>
+            <li><a href="merchant.html"><i class="fas fa-store"></i> لوحة التاجر</a></li>
+
+            <!-- الصفحات الثابتة -->
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
+            <li><a href="faq.html"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
+            <li><a href="contact.html"><i class="fas fa-headset"></i> اتصل بنا</a></li>
+            <li><a href="policies.html"><i class="fas fa-headset"></i> السياسات والشحن</a></li>
+        </ul>
+    </div>
+    <div class="menu-overlay"></div>
+
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="page-title" style="padding-top: 20px;">الأسئلة الشائعة</h2>
+
+            <div class="faq-list">
+                <!-- سؤال 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        كيف يمكنني التسجيل كتاجر؟
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        يمكنك الضغط على زر "حساب تاجر" في الصفحة الرئيسية، ورفع المستندات المطلوبة (السجل التجاري والبطاقة الضريبية) وسيتم تفعيل حسابك خلال 24 ساعة.
+                    </div>
+                </div>
+
+                <!-- سؤال 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        ما هو الحد الأدنى للطلب؟
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        يختلف الحد الأدنى حسب المورد، ولكن بشكل عام الحد الأدنى لطلبات الجملة هو 1000 جنيه مصري.
+                    </div>
+                </div>
+
+                <!-- سؤال 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        هل يوجد دفع عند الاستلام؟
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        نعم، نوفر خدمة الدفع عند الاستلام (كاش) لجميع المحافظات، بالإضافة للدفع الإلكتروني والمحافظ.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- Footer -->
+    <footer>
+        <div class="container">
+
+            <!-- استخدمنا كلاس footer-grid بدلاً من الستايل المباشر -->
+            <div class="footer-grid">
+
+                <!-- القسم الأول: اللوجو والوصف -->
+                <div>
+                    <a href="index.html" class="logo">
+                        <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png"
+                            alt="DISKA Logo">
+                        <!-- <span>Wholesale Deals Platform</span> -->
+                    </a>
+                    <p style="margin-top: 15px; color: #cbd5e1;">منصتك الأولى لتجارة الجملة في مصر. نربطك بأفضل الموردين
+                        بأقل الأسعار.</p>
+                </div>
+
+                <!-- القسم الثاني: روابط هامة -->
+                <div>
+                    <h4>روابط هامة</h4>
+                    <ul>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="merchant.html">بيع معنا (للتجار)</a></li>
+                        <li><a href="requests.html">طلبات خاصة</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+
+                <!-- القسم الثالث: المساعدة -->
+                <div>
+                    <h4>المساعدة والسياسات</h4>
+                    <ul>
+                        <li><a href="policies.html#shipping">الشحن والتوصيل</a></li>
+                        <li><a href="policies.html#return">سياسة الإرجاع</a></li>
+                        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                        <li><a href="profile.html">حسابي</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="copyrights">
+                <p>&copy; 2025 DISKA - جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // كود بسيط لفتح وغلق الأسئلة
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

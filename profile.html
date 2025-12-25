@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حسابي | DISKA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @media (max-width: 768px) {
+
+            .header-actions a.action-item {
+                display: none !important;
+            }
+
+            /* تأكيد ظهور زر القائمة (التلات شرطات) */
+            .mobile-menu-btn {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+                <!-- <span>Wholesale Deals Platform</span> -->
+            </a>
+
+            <div class="header-actions">
+                <a href="index.html" class="action-item"><i class="fas fa-home"></i></a>
+                <div class="action-item mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar">
+        <div class="sidebar-header">
+            <h3>القائمة</h3>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="profile.html"><i class="fas fa-user-circle"></i> حسابي / طلباتي</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
+
+            <!-- الصفحات الجديدة -->
+            <li><a href="deals.html" style="color: var(--danger);"><i class="fas fa-fire"></i> الصفقات (Deals)</a></li>
+            <li><a href="requests.html"><i class="fas fa-bullhorn"></i> طلبات خاصة</a></li>
+            <li><a href="merchant.html"><i class="fas fa-store"></i> لوحة التاجر</a></li>
+
+            <!-- الصفحات الثابتة -->
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
+            <li><a href="faq.html"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
+            <li><a href="contact-en.html"><i class="fas fa-headset"></i> اتصل بنا</a></li>
+            <li><a href="policies.html"><i class="fas fa-headset"></i> السياسات والشحن</a></li>
+        </ul>
+    </div>
+    <div class="menu-overlay"></div>
+
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="profile-grid" style="display:grid; grid-template-columns: 1fr 3fr; gap:30px;">
+                
+                <!-- Sidebar -->
+                <div class="profile-sidebar" style="background:#fff; padding:20px; border-radius:10px;">
+                    <div style="text-align:center; margin-bottom:20px;">
+                        <div style="width:80px; height:80px; background:#eee; border-radius:50%; margin:0 auto 10px; display:flex; align-items:center; justify-content:center; font-size:2rem; color:#aaa;"><i class="fas fa-user"></i></div>
+                        <h4>التاجر المميز</h4>
+                        <span style="color:#666;">تاجر جملة</span>
+                    </div>
+                    <ul style="list-style:none; padding:0;">
+                        <li style="padding:10px; border-bottom:1px solid #eee;"><a href="#" style="color:var(--primary); font-weight:bold;">📦 طلباتي</a></li>
+                        <li style="padding:10px; border-bottom:1px solid #eee;"><a href="wishlist.html">❤️ المفضلة</a></li>
+                        <li style="padding:10px; border-bottom:1px solid #eee;"><a href="#">📍 العناوين</a></li>
+                        <li style="padding:10px;"><a href="#" style="color:red;">تسجيل خروج</a></li>
+                    </ul>
+                </div>
+
+                <!-- Orders Content -->
+                <div class="profile-content">
+                    <h2 style="margin-bottom:20px;">سجل الطلبات</h2>
+                    
+                    <div id="ordersList">
+                        <!-- الطلبات هتنزل هنا -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // كود بسيط لعرض الطلبات (محاكاة)
+        // المفروض في الباك إند لما العميل يعمل Checkout بنحفظ الطلب هنا
+        // بما إننا Frontend بس، هنعرض رسالة افتراضية أو نقرأ من LocalStorage لو كنا حفظنا الطلبات
+        
+        const ordersList = document.getElementById('ordersList');
+        ordersList.innerHTML = `
+            <div style="background:#fff; padding:20px; border-radius:10px; margin-bottom:15px; border:1px solid #eee;">
+                <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                    <strong>طلب #10254</strong>
+                    <span style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:4px;">تم التسليم</span>
+                </div>
+                <p style="color:#666;">التاريخ: 20/12/2025</p>
+                <p>الإجمالي: <strong>5,400 ج.م</strong></p>
+                <button class="btn primary small" style="margin-top:10px;">إعادة الطلب</button>
+            </div>
+            <div style="background:#fff; padding:20px; border-radius:10px; margin-bottom:15px; border:1px solid #eee;">
+                <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                    <strong>طلب #10255</strong>
+                    <span style="background:#fff7ed; color:#9a3412; padding:2px 8px; border-radius:4px;">جاري التجهيز</span>
+                </div>
+                <p style="color:#666;">التاريخ: 22/12/2025</p>
+                <p>الإجمالي: <strong>1,200 ج.م</strong></p>
+                <div style="margin-top:10px; height:5px; background:#eee; border-radius:5px; overflow:hidden;">
+                    <div style="width:40%; height:100%; background:var(--primary);"></div>
+                </div>
+                <small style="color:var(--primary);">تم استلام الطلب -> جاري التجهيز</small>
+            </div>
+        `;
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

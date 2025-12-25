@@ -41,7 +41,8 @@
                             <label for="productImage" class="upload-label">
                                 <i class="fas fa-cloud-upload-alt"></i>
                                 <span>اضغط لرفع صورة المنتج</span>
-                                <img id="imagePreview" src="" style="display: none; max-height: 100px; margin-top: 10px;">
+                                <img id="imagePreview" src=""
+                                    style="display: none; max-height: 100px; margin-top: 10px;">
                             </label>
                             <input type="file" id="productImage" accept="image/*" style="display: none;">
                         </div>
@@ -91,7 +92,8 @@
                         <!-- الوصف -->
                         <div class="form-group">
                             <label>وصف المنتج</label>
-                            <textarea id="productDesc" rows="4" placeholder="تفاصيل المنتج، بلد المنشأ، ملاحظات..." required></textarea>
+                            <textarea id="productDesc" rows="4" placeholder="تفاصيل المنتج، بلد المنشأ، ملاحظات..."
+                                required></textarea>
                         </div>
 
                         <!-- التصنيف -->
@@ -105,15 +107,25 @@
                             </select>
                         </div>
 
-                        <button type="submit" class="btn primary w-100">نشر المنتج</button>
+                        <!-- في آخر الفورم -->
+                        <input type="hidden" id="editIndex"> <!-- حقل مخفي لتخزين رقم المنتج عند التعديل -->
+                        <button type="submit" id="submitBtn" class="btn primary w-100">نشر المنتج</button>
+                        <button type="button" id="cancelEditBtn" class="btn primary w-100"
+                            style="display: none; margin-top: 10px; background: #e0f2fe;
+    color: #0284c7;
+    border: none;
+    padding: 5px;
+    border-radius: 4px;">إلغاء
+                            التعديل</button>
                     </form>
                 </div>
 
                 <!-- 2. القائمة الجانبية (نصائح + قائمة منتجاتي) -->
                 <div class="merchant-sidebar">
-                    
+
                     <!-- قائمة منتجات التاجر (للحذف) -->
-                    <div class="my-products-list" style="background: #fff; padding: 20px; border-radius: 15px; border: 1px solid #eee; margin-bottom: 20px;">
+                    <div class="my-products-list"
+                        style="background: #fff; padding: 20px; border-radius: 15px; border: 1px solid #eee; margin-bottom: 20px;">
                         <h3 style="color: var(--primary); margin-bottom: 15px;">منتجاتي المعروضة</h3>
                         <div id="merchantProductsList">
                             <!-- سيتم ملء المنتجات هنا تلقائياً بواسطة JS -->
