@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- Header -->
     <header class="main-header">
         <div class="container header-container">
-          <a href="index.html" class="logo">
+            <a href="index.html" class="logo">
                 <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
                 <!-- <span>Wholesale Deals Platform</span> -->
             </a>
@@ -60,14 +62,15 @@
     <!-- Offers Content -->
     <section class="category-section">
         <div class="container">
-            
+
             <!-- Breadcrumb -->
             <div class="breadcrumb">
                 <a href="index.html">الرئيسية</a> / <span style="color: var(--danger);">عروض وخصومات</span>
             </div>
 
             <!-- Banner بسيط للعروض -->
-            <div class="banner-card" style="margin-bottom: 30px; height: 200px; background: linear-gradient(45deg, #ef4444, #b91c1c);">
+            <div class="banner-card"
+                style="margin-bottom: 30px; height: 200px; background: linear-gradient(45deg, #ef4444, #b91c1c);">
                 <div class="banner-content">
                     <h2 style="font-size: 2rem;">تخفيضات نهاية العام 🔥</h2>
                     <p>خصومات تصل إلى 20% على المشروبات</p>
@@ -79,7 +82,7 @@
             </div>
 
             <div class="category-layout">
-                
+
                 <!-- Sidebar (فلاتر العروض) -->
                 <aside class="sidebar">
                     <div class="filter-group">
@@ -98,50 +101,135 @@
                     </div>
 
                     <div class="products-grid">
-                        
-                        <!-- Offer 1 -->
-                        <div class="product-card">
-                            <div class="badges"><span class="discount-badge">خصم 10%</span></div>
+
+                        <!-- Offer 1: بيبسي -->
+                        <div class="product-card merchant-product" data-id="offer_pepsi" data-stock="200">
+                            <button class="fav-btn"><i class="fas fa-heart"></i></button>
+                            <div class="flash-badge"><i class="fas fa-star"></i> خصم 10%</div>
+
                             <a href="product.html">
                                 <div class="product-img"><img src="images/pepsi.webp" alt="Pepsi"></div>
                             </a>
+
                             <div class="product-info">
-                                <h4>بيبسي 2.5 لتر (كرتونة)</h4>
+                                <div class="in-cart-indicator"></div>
+
+                                <a href="product.html" style="text-decoration:none; color:inherit;">
+                                    <h4>بيبسي 2.5 لتر (كرتونة)</h4>
+                                </a>
+
+                                <p class="product-desc-short">عرض خاص لفترة محدودة</p>
+                                <div class="product-meta"><span>6 / كرتونة</span><span class="stock-info">متاح:
+                                        200</span></div>
+
                                 <div class="pricing">
                                     <span class="current-price">191.99 ج.م</span>
                                     <span class="old-price">215.00 ج.م</span>
                                 </div>
-                                <div class="add-to-cart"><button class="add-btn">أضف للسلة</button></div>
+
+                                <!-- أزرار التحكم -->
+                                <div class="card-actions" style="display:flex; gap:10px; margin-top:10px;">
+                                    <div class="qty-control-card"
+                                        style="display:flex; border:1px solid #ddd; border-radius:5px;">
+                                        <button class="card-minus"
+                                            style="border:none; background:#eee; width:30px; cursor:pointer;">-</button>
+                                        <input type="number" class="manual-qty" value="1" min="1" max="200"
+                                            style="width:50px; text-align:center; border:none; font-weight:bold;">
+                                        <button class="card-plus"
+                                            style="border:none; background:#eee; width:30px; cursor:pointer;">+</button>
+                                    </div>
+                                    <button class="add-btn"
+                                        style="flex:1; border:none; background:var(--primary); color:#fff; border-radius:5px; cursor:pointer;">أضف
+                                        <i class="fas fa-cart-plus"></i></button>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Offer 2 -->
-                        <div class="product-card">
-                            <div class="badges"><span class="discount-badge">وفر 50 ج.م</span></div>
+                        <!-- Offer 2: حليب بخيره -->
+                        <div class="product-card merchant-product" data-id="offer_milk" data-stock="150">
+                            <button class="fav-btn"><i class="fas fa-heart"></i></button>
+                            <div class="flash-badge" style="background: linear-gradient(45deg, #2ecc71, #27ae60);"><i
+                                    class="fas fa-tag"></i> وفر 50 ج.م</div>
+
                             <a href="product.html">
                                 <div class="product-img"><img src="images/حليب.webp" alt="Milk"></div>
                             </a>
+
                             <div class="product-info">
-                                <h4>حليب بخيره كامل الدسم</h4>
+                                <div class="in-cart-indicator"></div>
+
+                                <a href="product.html" style="text-decoration:none; color:inherit;">
+                                    <h4>حليب بخيره كامل الدسم - 500 مل</h4>
+                                </a>
+
+                                <p class="product-desc-short">سعر خاص للكميات</p>
+                                <div class="product-meta"><span>24 / كرتونة</span><span class="stock-info">متاح:
+                                        150</span></div>
+
                                 <div class="pricing">
                                     <span class="current-price">482.75 ج.م</span>
                                     <span class="old-price">532.00 ج.م</span>
                                 </div>
-                                <div class="add-to-cart"><button class="add-btn">أضف للسلة</button></div>
+
+                                <!-- أزرار التحكم -->
+                                <div class="card-actions" style="display:flex; gap:10px; margin-top:10px;">
+                                    <div class="qty-control-card"
+                                        style="display:flex; border:1px solid #ddd; border-radius:5px;">
+                                        <button class="card-minus"
+                                            style="border:none; background:#eee; width:30px; cursor:pointer;">-</button>
+                                        <input type="number" class="manual-qty" value="1" min="1" max="150"
+                                            style="width:50px; text-align:center; border:none; font-weight:bold;">
+                                        <button class="card-plus"
+                                            style="border:none; background:#eee; width:30px; cursor:pointer;">+</button>
+                                    </div>
+                                    <button class="add-btn"
+                                        style="flex:1; border:none; background:var(--primary); color:#fff; border-radius:5px; cursor:pointer;">أضف
+                                        <i class="fas fa-cart-plus"></i></button>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Offer 3 -->
-                        <div class="product-card">
-                            <div class="badges"><span class="discount-badge">عرض خاص</span></div>
-                            <div class="product-img"><img src="images/زيت.webp" alt="Oil"></div>
+                        <!-- Offer 3: زيت كريستال -->
+                        <div class="product-card merchant-product" data-id="offer_oil" data-stock="50">
+                            <button class="fav-btn"><i class="fas fa-heart"></i></button>
+                            <div class="flash-badge" style="background: var(--accent); color: #000;"><i
+                                    class="fas fa-fire"></i> عرض خاص</div>
+
+                            <a href="product.html">
+                                <div class="product-img"><img src="images/زيت.webp" alt="Oil"></div>
+                            </a>
+
                             <div class="product-info">
-                                <h4>زيت كريستال (كرتونة)</h4>
+                                <div class="in-cart-indicator"></div>
+
+                                <a href="product.html" style="text-decoration:none; color:inherit;">
+                                    <h4>زيت كريستال عباد الشمس - 800 مل</h4>
+                                </a>
+
+                                <p class="product-desc-short">خصم إضافي على البالتة</p>
+                                <div class="product-meta"><span>12 / كرتونة</span><span class="stock-info">متاح:
+                                        50</span></div>
+
                                 <div class="pricing">
                                     <span class="current-price">450.00 ج.م</span>
                                     <span class="old-price">480.00 ج.م</span>
                                 </div>
-                                <div class="add-to-cart"><button class="add-btn">أضف للسلة</button></div>
+
+                                <!-- أزرار التحكم -->
+                                <div class="card-actions" style="display:flex; gap:10px; margin-top:10px;">
+                                    <div class="qty-control-card"
+                                        style="display:flex; border:1px solid #ddd; border-radius:5px;">
+                                        <button class="card-minus"
+                                            style="border:none; background:#eee; width:30px; cursor:pointer;">-</button>
+                                        <input type="number" class="manual-qty" value="1" min="1" max="50"
+                                            style="width:50px; text-align:center; border:none; font-weight:bold;">
+                                        <button class="card-plus"
+                                            style="border:none; background:#eee; width:30px; cursor:pointer;">+</button>
+                                    </div>
+                                    <button class="add-btn"
+                                        style="flex:1; border:none; background:var(--primary); color:#fff; border-radius:5px; cursor:pointer;">أضف
+                                        <i class="fas fa-cart-plus"></i></button>
+                                </div>
                             </div>
                         </div>
 
@@ -152,50 +240,53 @@
         </div>
     </section>
 
-     <footer>
-    <div class="container">
-        
-        <!-- استخدمنا كلاس footer-grid بدلاً من الستايل المباشر -->
-        <div class="footer-grid">
-            
-            <!-- القسم الأول: اللوجو والوصف -->
-            <div>
-                <a href="index.html" class="logo">
-                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
-                <!-- <span>Wholesale Deals Platform</span> -->
-            </a>
-                <p style="margin-top: 15px; color: #cbd5e1;">منصتك الأولى لتجارة الجملة في مصر. نربطك بأفضل الموردين بأقل الأسعار.</p>
+    <footer>
+        <div class="container">
+
+            <!-- استخدمنا كلاس footer-grid بدلاً من الستايل المباشر -->
+            <div class="footer-grid">
+
+                <!-- القسم الأول: اللوجو والوصف -->
+                <div>
+                    <a href="index.html" class="logo">
+                        <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png"
+                            alt="DISKA Logo">
+                        <!-- <span>Wholesale Deals Platform</span> -->
+                    </a>
+                    <p style="margin-top: 15px; color: #cbd5e1;">منصتك الأولى لتجارة الجملة في مصر. نربطك بأفضل الموردين
+                        بأقل الأسعار.</p>
+                </div>
+
+                <!-- القسم الثاني: روابط هامة -->
+                <div>
+                    <h4>روابط هامة</h4>
+                    <ul>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="merchant.html">بيع معنا (للتجار)</a></li>
+                        <li><a href="requests.html">طلبات خاصة</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+
+                <!-- القسم الثالث: المساعدة -->
+                <div>
+                    <h4>المساعدة والسياسات</h4>
+                    <ul>
+                        <li><a href="policies.html#shipping">الشحن والتوصيل</a></li>
+                        <li><a href="policies.html#return">سياسة الإرجاع</a></li>
+                        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                        <li><a href="profile.html">حسابي</a></li>
+                    </ul>
+                </div>
+
             </div>
 
-            <!-- القسم الثاني: روابط هامة -->
-            <div>
-                <h4>روابط هامة</h4>
-                <ul>
-                    <li><a href="about.html">من نحن</a></li>
-                    <li><a href="merchant.html">بيع معنا (للتجار)</a></li>
-                    <li><a href="requests.html">طلبات خاصة</a></li>
-                    <li><a href="contact.html">تواصل معنا</a></li>
-                </ul>
+            <div class="copyrights">
+                <p>&copy; 2025 DISKA - جميع الحقوق محفوظة</p>
             </div>
-
-            <!-- القسم الثالث: المساعدة -->
-            <div>
-                <h4>المساعدة والسياسات</h4>
-                <ul>
-                    <li><a href="policies.html#shipping">الشحن والتوصيل</a></li>
-                    <li><a href="policies.html#return">سياسة الإرجاع</a></li>
-                    <li><a href="faq.html">الأسئلة الشائعة</a></li>
-                    <li><a href="profile.html">حسابي</a></li>
-                </ul>
-            </div>
-
         </div>
-
-        <div class="copyrights">
-            <p>&copy; 2025 DISKA - جميع الحقوق محفوظة</p>
-        </div>
-    </div>
-</footer>
+    </footer>
     <script src="script.js"></script>
 </body>
+
 </html>

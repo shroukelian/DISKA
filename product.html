@@ -12,96 +12,93 @@
 
 <body>
 
-    <!-- نفس الهيدر بتاع الصفحة الرئيسية -->
+    <!-- Header -->
     <header class="main-header">
         <div class="container header-container">
-
-            <!-- Logo (Correct Structure) -->
-          <a href="index.html" class="logo">
+            <a href="index.html" class="logo">
                 <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
-                <!-- <span>Wholesale Deals Platform</span> -->
             </a>
-
-            <!-- Search Bar -->
             <div class="search-box">
-                <input type="text" placeholder="ابحث عن منتج، مورد، أو علامة تجارية...">
+                <input type="text" placeholder="ابحث عن منتج...">
                 <button><i class="fas fa-search"></i></button>
             </div>
-
-            <!-- User Actions -->
             <div class="header-actions">
-                <div class="action-item">
-                    <a href="login.html" class="action-item" style="text-decoration: none; color: inherit;">
-                        <i class="fas fa-wallet"></i>
-                        <div class="info">
-                            <span>المحفظة</span>
-                            <strong>تسجيل دخول</strong>
-                        </div>
-                    </a>
-                </div>
+                <!-- زر المفضلة -->
+                <a href="wishlist.html" class="action-item"
+                    style="text-decoration: none; color: inherit; margin-left: 10px;">
+                    <i class="fas fa-heart"></i>
+                </a>
+
+                <!-- زر السلة -->
                 <a href="cart.html" class="action-item cart-icon" style="text-decoration: none; color: inherit;">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="badge">2</span>
+                    <span class="badge">0</span>
                 </a>
-                <!-- Mobile Menu Button (Hidden on Desktop) -->
+
+                <!-- زر القائمة -->
                 <div class="action-item mobile-menu-btn">
                     <i class="fas fa-bars"></i>
                 </div>
             </div>
         </div>
     </header>
-   <div class="mobile-sidebar">
+
+    <!-- Mobile Side Menu -->
+    <div class="mobile-sidebar">
         <div class="sidebar-header">
             <h3>القائمة</h3>
             <button class="close-menu"><i class="fas fa-times"></i></button>
         </div>
         <ul class="sidebar-links">
             <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
-            <li><a href="profile.html"><i class="fas fa-user-circle"></i> حسابي / طلباتي</a></li>
             <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
-
-            <!-- الصفحات الجديدة -->
-            <li><a href="deals.html" style="color: var(--danger);"><i class="fas fa-fire"></i> الصفقات (Deals)</a></li>
-            <li><a href="requests.html"><i class="fas fa-bullhorn"></i> طلبات خاصة</a></li>
-            <li><a href="merchant.html"><i class="fas fa-store"></i> لوحة التاجر</a></li>
-
-            <!-- الصفحات الثابتة -->
-            <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
-            <li><a href="faq.html"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
-            <li><a href="contact.html"><i class="fas fa-headset"></i> اتصل بنا</a></li>
-            <li><a href="policies.html"><i class="fas fa-headset"></i> السياسات والشحن</a></li>
+            <li><a href="offers.html"><i class="fas fa-tags"></i> العروض</a></li>
+            <li><a href="merchant.html"><i class="fas fa-store"></i> حساب تاجر</a></li>
         </ul>
     </div>
     <div class="menu-overlay"></div>
-    <!-- Overlay (الخلفية الغامقة لما القائمة تفتح) -->
-    <div class="menu-overlay"></div>
 
-    <!-- Product Details -->
+    <!-- Product Details Section -->
     <section class="product-details-section">
         <div class="container">
             <!-- Breadcrumb -->
             <div class="breadcrumb">
-                <a href="index.html">الرئيسية</a> / <a href="#">مشروبات</a> / <span>بيبسي 2.5 لتر</span>
+                <a href="index.html">الرئيسية</a> / <a href="category.html">مشروبات</a> / <span>بيبسي 2.5 لتر</span>
             </div>
 
             <div class="details-grid">
-                <!-- Product Image -->
+
+                <!-- Product Image (Left Side) -->
                 <div class="details-img">
                     <img src="images/pepsi.webp" alt="Pepsi">
                 </div>
 
-                <!-- Product Info -->
-                <div class="details-info">
-                    <span class="brand-tag">بيبسي</span>
-                    <h1>بيبسي مشروب غازي - 2.5 لتر (كرتونة)</h1>
-                    <p class="sku">كود المنتج: #54822 | الوحدة: كرتونة (6 زجاجات)</p>
+                <!-- Product Info (Right Side) -->
+                <!-- هام: أضفنا كلاس product-card وبيانات المنتج هنا عشان الـ JS يشوفها -->
+                <div class="details-info product-card merchant-product" data-id="product_detail_1" data-stock="500">
 
-                    <div class="main-price">
-                        <strong>191.99 ج.م</strong>
-                        <span class="old">201.00 ج.م</span>
+                    <span class="brand-tag">بيبسي</span>
+
+                    <!-- زر المفضلة -->
+                    <button class="fav-btn"
+                        style="position: relative; float: left; top: 0; left: 0; border: 1px solid #ddd;"><i
+                            class="fas fa-heart"></i></button>
+
+                    <h1>بيبسي مشروب غازي - 2.5 لتر (كرتونة)</h1>
+
+                    <div class="product-meta" style="margin: 10px 0;">
+                        <span><i class="fas fa-box-open"></i> 6 زجاجات / كرتونة</span>
+                        <span class="stock-info">متاح: 500 كرتونة</span>
                     </div>
 
-                    <!-- جدول أسعار الجملة -->
+                    <p class="sku">كود المنتج: #54822</p>
+
+                    <div class="main-price">
+                        <strong class="current-price">191.99 ج.م</strong>
+                        <span class="old-price old">201.00 ج.م</span>
+                    </div>
+
+                    <!-- Wholesale Table -->
                     <div class="wholesale-table">
                         <h4>أسعار الجملة (الشرائح)</h4>
                         <table>
@@ -128,69 +125,48 @@
                         </table>
                     </div>
 
-                    <!-- Add to Cart Actions -->
-                    <div class="details-actions">
-                        <div class="qty-control">
-                            <button class="minus">-</button>
-                            <input type="number" value="1">
-                            <button class="plus">+</button>
+                    <!-- Add to Cart Actions (الكود المعدل) -->
+                    <div class="card-actions details-actions" style="display:flex; gap:15px; margin-top:20px;">
+
+                        <!-- العداد -->
+                        <div class="qty-control-card"
+                            style="display:flex; border:1px solid #ddd; border-radius:5px; height:50px;">
+                            <button class="card-minus" style="width:40px; font-size:1.2rem;">-</button>
+                            <!-- حقل الكتابة اليدوية -->
+                            <input type="number" class="manual-qty" value="1" min="1" max="500"
+                                style="width:60px; font-size:1.2rem; text-align:center; border:none; font-weight:bold;">
+                            <button class="card-plus" style="width:40px; font-size:1.2rem;">+</button>
                         </div>
-                        <button class="btn primary add-big-btn">إضافة للسلة <i class="fas fa-cart-plus"></i></button>
+
+                        <!-- زر الإضافة -->
+                        <!-- زر الإضافة بتصميم واضح -->
+                        <button class="add-btn"
+                            style="flex:1; height:50px; font-size:1.2rem; justify-content:center; border-radius: 8px; cursor: pointer; background-color: #FACC15; border: none; font-weight: bold; display: flex; align-items: center; gap: 10px;">
+                            إضافة للسلة <i class="fas fa-cart-plus"></i>
+                        </button>
                     </div>
 
-                    <div class="meta-info">
+                    <div class="meta-info" style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
                         <p><i class="fas fa-truck"></i> توصيل خلال 24 ساعة</p>
                         <p><i class="fas fa-undo"></i> استرجاع مجاني في حالة التلف</p>
                     </div>
+
                 </div>
             </div>
         </div>
     </section>
 
- <footer>
-    <div class="container">
-        
-        <!-- استخدمنا كلاس footer-grid بدلاً من الستايل المباشر -->
-        <div class="footer-grid">
-            
-            <!-- القسم الأول: اللوجو والوصف -->
-            <div>
-                <a href="index.html" class="logo">
-                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
-                <!-- <span>Wholesale Deals Platform</span> -->
-            </a>
-                <p style="margin-top: 15px; color: #cbd5e1;">منصتك الأولى لتجارة الجملة في مصر. نربطك بأفضل الموردين بأقل الأسعار.</p>
-            </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 DISKA - Wholesale Deals Platform</p>
+    </footer>
 
-            <!-- القسم الثاني: روابط هامة -->
-            <div>
-                <h4>روابط هامة</h4>
-                <ul>
-                    <li><a href="about.html">من نحن</a></li>
-                    <li><a href="merchant.html">بيع معنا (للتجار)</a></li>
-                    <li><a href="requests.html">طلبات خاصة</a></li>
-                    <li><a href="contact.html">تواصل معنا</a></li>
-                </ul>
-            </div>
-
-            <!-- القسم الثالث: المساعدة -->
-            <div>
-                <h4>المساعدة والسياسات</h4>
-                <ul>
-                    <li><a href="policies.html#shipping">الشحن والتوصيل</a></li>
-                    <li><a href="policies.html#return">سياسة الإرجاع</a></li>
-                    <li><a href="faq.html">الأسئلة الشائعة</a></li>
-                    <li><a href="profile.html">حسابي</a></li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="copyrights">
-            <p>&copy; 2025 DISKA - جميع الحقوق محفوظة</p>
-        </div>
+    <!-- Floating Buttons -->
+    <div class="floating-actions">
+        <a href="https://wa.me/201000000000" target="_blank" class="float-btn whatsapp" title="تواصل واتساب">
+            <i class="fab fa-whatsapp"></i>
+        </a>
     </div>
-</footer>
 
     <script src="script.js"></script>
 </body>

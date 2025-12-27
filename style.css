@@ -2130,3 +2130,110 @@ body {
     50% { transform: scale(1.1); box-shadow: 0 0 15px var(--success); }
     100% { transform: scale(1); }
 }
+/* =========================================
+   تحديثات (Validation & Notification)
+   ========================================= */
+
+/* 1. تنسيق الخطأ في الكمية */
+input.error-input {
+    border: 2px solid #ef4444 !important;
+    background-color: #fef2f2 !important;
+    color: #ef4444 !important;
+}
+
+/* تعطيل زر إتمام الشراء */
+.btn.disabled-btn {
+    background-color: #ccc !important;
+    cursor: not-allowed !important;
+    pointer-events: none; /* يمنع الضغط */
+}
+
+/* 2. تصميم إشعار الموبايل (Fake Push Notification) */
+.push-notification {
+    position: fixed;
+    top: -100px; /* مخفي فوق */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: top 0.5s ease-in-out;
+    border: 1px solid #eee;
+}
+
+.push-notification.show {
+    top: 20px; /* يظهر */
+}
+
+.push-icon {
+    width: 40px;
+    height: 40px;
+    background: #f0f9ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.push-content h4 {
+    font-size: 0.9rem;
+    margin: 0 0 2px;
+    color: #333;
+}
+
+.push-content p {
+    font-size: 0.8rem;
+    margin: 0;
+    color: #666;
+}
+
+.push-close {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 1.2rem;
+    color: #999;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* =========================================
+   تنسيق زر الحذف في السلة
+   ========================================= */
+
+.cart-remove {
+    background-color: #fee2e2; /* خلفية حمراء فاتحة */
+    color: #dc2626;            /* لون الأيقونة أحمر */
+    border: 1px solid #fecaca;
+    
+    width: 40px;               /* عرض ثابت */
+    height: 40px;              /* طول ثابت */
+    border-radius: 8px;        /* حواف دائرية */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    margin-right: 15px; /* مسافة بينه وبين السعر */
+}
+
+/* تأثير عند الوقوف عليه */
+.cart-remove:hover {
+    background-color: #dc2626; /* الخلفية تحمر */
+    color: #fff;               /* الأيقونة تبيض */
+    transform: scale(1.1);     /* تكبير بسيط */
+    box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+}

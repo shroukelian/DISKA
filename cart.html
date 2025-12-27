@@ -17,7 +17,7 @@
         <div class="container header-container">
 
             <!-- Logo (Correct Structure) -->
-         <a href="index.html" class="logo">
+            <a href="index.html" class="logo">
                 <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
                 <!-- <span>Wholesale Deals Platform</span> -->
             </a>
@@ -51,7 +51,7 @@
         </div>
     </header>
 
-   <div class="mobile-sidebar">
+    <div class="mobile-sidebar">
         <div class="sidebar-header">
             <h3>القائمة</h3>
             <button class="close-menu"><i class="fas fa-times"></i></button>
@@ -97,7 +97,7 @@
                                 <button class="plus">+</button>
                             </div>
                             <span class="total-item-price">959.95 ج.م</span>
-                            <button class="remove-btn"><i class="fas fa-trash"></i></button>
+                            <button class="cart-remove"><i class="fas fa-trash"></i></button>
                         </div>
                     </div>
 
@@ -136,59 +136,62 @@
                         <span>1329.46 ج.م</span>
                     </div>
                     <!-- حولناه لرابط a عشان ينقلنا للصفحة -->
-                    <a href="checkout.html" class="btn primary w-100"
-                        style="text-align: center; text-decoration: none;">إتمام الشراء</a> <a href="index.html"
-                        class="continue-shopping">متابعة التسوق</a>
+                    <!-- أضفنا كلاس checkout-btn -->
+                    <a href="checkout.html" class="btn primary w-100 checkout-btn"
+                        style="text-align: center; text-decoration: none;">إتمام الشراء</a>
+                    <a href="index.html" class="continue-shopping">متابعة التسوق</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-     <footer>
-    <div class="container">
-        
-        <!-- استخدمنا كلاس footer-grid بدلاً من الستايل المباشر -->
-        <div class="footer-grid">
-            
-            <!-- القسم الأول: اللوجو والوصف -->
-            <div>
-                <a href="index.html" class="logo">
-                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
-                <!-- <span>Wholesale Deals Platform</span> -->
-            </a>
-                <p style="margin-top: 15px; color: #cbd5e1;">منصتك الأولى لتجارة الجملة في مصر. نربطك بأفضل الموردين بأقل الأسعار.</p>
+    <footer>
+        <div class="container">
+
+            <!-- استخدمنا كلاس footer-grid بدلاً من الستايل المباشر -->
+            <div class="footer-grid">
+
+                <!-- القسم الأول: اللوجو والوصف -->
+                <div>
+                    <a href="index.html" class="logo">
+                        <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png"
+                            alt="DISKA Logo">
+                        <!-- <span>Wholesale Deals Platform</span> -->
+                    </a>
+                    <p style="margin-top: 15px; color: #cbd5e1;">منصتك الأولى لتجارة الجملة في مصر. نربطك بأفضل الموردين
+                        بأقل الأسعار.</p>
+                </div>
+
+                <!-- القسم الثاني: روابط هامة -->
+                <div>
+                    <h4>روابط هامة</h4>
+                    <ul>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="merchant.html">بيع معنا (للتجار)</a></li>
+                        <li><a href="requests.html">طلبات خاصة</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+
+                <!-- القسم الثالث: المساعدة -->
+                <div>
+                    <h4>المساعدة والسياسات</h4>
+                    <ul>
+                        <li><a href="policies.html#shipping">الشحن والتوصيل</a></li>
+                        <li><a href="policies.html#return">سياسة الإرجاع</a></li>
+                        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                        <li><a href="profile.html">حسابي</a></li>
+                    </ul>
+                </div>
+
             </div>
 
-            <!-- القسم الثاني: روابط هامة -->
-            <div>
-                <h4>روابط هامة</h4>
-                <ul>
-                    <li><a href="about.html">من نحن</a></li>
-                    <li><a href="merchant.html">بيع معنا (للتجار)</a></li>
-                    <li><a href="requests.html">طلبات خاصة</a></li>
-                    <li><a href="contact.html">تواصل معنا</a></li>
-                </ul>
+            <div class="copyrights">
+                <p>&copy; 2025 DISKA - جميع الحقوق محفوظة</p>
             </div>
-
-            <!-- القسم الثالث: المساعدة -->
-            <div>
-                <h4>المساعدة والسياسات</h4>
-                <ul>
-                    <li><a href="policies.html#shipping">الشحن والتوصيل</a></li>
-                    <li><a href="policies.html#return">سياسة الإرجاع</a></li>
-                    <li><a href="faq.html">الأسئلة الشائعة</a></li>
-                    <li><a href="profile.html">حسابي</a></li>
-                </ul>
-            </div>
-
         </div>
-
-        <div class="copyrights">
-            <p>&copy; 2025 DISKA - جميع الحقوق محفوظة</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <script src="script.js"></script>
 </body>
