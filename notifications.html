@@ -7,23 +7,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+     <style>
+        @media (max-width: 768px) {
+
+            .header-actions a.action-item {
+                display: none !important;
+            }
+
+            /* تأكيد ظهور زر القائمة (التلات شرطات) */
+            .mobile-menu-btn {
+                display: block !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <!-- Header -->
-    <header class="main-header">
+     <header class="main-header">
         <div class="container header-container">
             <a href="index.html" class="logo">
-                <div class="logo-icon">%</div>
-                <div class="logo-text"><h1>DISKA</h1><span>Wholesale Deals Platform</span></div>
+                <img src="images/logo.png" alt="DISKA Logo">
+                <!-- <span>Wholesale Deals Platform</span> -->
             </a>
+
             <div class="header-actions">
                 <a href="index.html" class="action-item"><i class="fas fa-home"></i></a>
+                <div class="action-item mobile-menu-btn"><i class="fas fa-bars"></i></div>
             </div>
         </div>
     </header>
 
-    <section class="section-padding">
+    <section class="section-padding" style="padding-top: 50px;">
         <div class="container">
             <div class="notif-header">
                 <h2>الإشعارات والتنبيهات 🔔</h2>

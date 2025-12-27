@@ -37,54 +37,56 @@ ul { list-style: none; }
 
 .bg-light { background-color: var(--bg-light); }
 
-/* Header */
+/* =========================================
+   تنسيق الهيدر الأبيض (للوجو الجديد)
+   ========================================= */
+
 .main-header {
-    background-color: var(--primary);
-    color: #fff;
-    padding: 15px 0;
+    background-color: #ffffff; /* خلفية بيضاء */
+    color: var(--primary);     /* النصوص والأيقونات كحلي */
+    padding: 10px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* ظل خفيف جداً */
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 }
 
+/* تنسيق اللوجو */
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: #fff;
+    text-decoration: none;
+    flex-shrink: 0;
 }
 
-.logo-icon {
-    background-color: var(--accent);
-    color: #fff;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: bold;
+.logo img {
+    height: 60px; /* ارتفاع مناسب للديسكتوب */
+    width: auto;
+    object-fit: contain;
 }
 
-.logo-text h1 { font-size: 1.5rem; line-height: 1; }
-.logo-text span { font-size: 0.7rem; color: #ccc; letter-spacing: 1px; }
-
+/* شريط البحث (لون خلفية مختلف عشان يبان) */
 .search-box {
     flex: 1;
     display: flex;
-    background: #fff;
+    background: #f8fafc; /* رمادي فاتح جداً */
+    border: 1px solid #e2e8f0;
     border-radius: 8px;
     overflow: hidden;
-    max-width: 600px;
+    max-width: 550px;
+    transition: 0.3s;
+}
+
+.search-box:focus-within {
+    border-color: var(--accent); /* حدود صفراء عند الكتابة */
+    background: #fff;
 }
 
 .search-box input {
@@ -93,6 +95,8 @@ ul { list-style: none; }
     padding: 10px 15px;
     outline: none;
     font-family: inherit;
+    background: transparent;
+    color: var(--text-dark);
 }
 
 .search-box button {
@@ -104,34 +108,94 @@ ul { list-style: none; }
     font-size: 1.1rem;
 }
 
+/* الأيقونات والإجراءات */
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 .action-item {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     cursor: pointer;
+    color: var(--primary) !important; /* لون كحلي إجباري */
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-.action-item i { font-size: 1.3rem; color: var(--accent); }
-.action-item .info { display: flex; flex-direction: column; font-size: 0.8rem; }
-.cart-icon { position: relative; }
-.badge {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background: var(--danger);
-    color: #fff;
-    font-size: 0.7rem;
-    width: 18px; height: 18px;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
+.action-item i {
+    font-size: 1.4rem;
 }
 
+.action-item:hover {
+    color: var(--accent) !important; /* يتحول أصفر عند اللمس */
+}
+
+/* النصوص الصغيرة (محفظة، تسجيل دخول) */
+.action-item .info {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+    line-height: 1.2;
+}
+.action-item .info span { color: #64748b; font-size: 0.75rem; }
+.action-item .info strong { color: var(--primary); }
+
+/* زر التاجر المميز */
+.merchant-link {
+    background-color: #fffbeb; /* خلفية صفراء فاتحة جداً */
+    padding: 5px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+}
+
+/* زر القائمة للموبايل */
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+/* --- تعديلات الموبايل --- */
+@media (max-width: 768px) {
+    
+    /* 1. زيادة المسافة بين اللوجو وباقي الأيقونات */
+    .header-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 10px; /* هوامش جانبية صغيرة */
+        gap: 15px; /* (مهم) زيادة الفراغ بين العناصر */
+    }
+
+    /* 2. ضبط اللوجو ليكون في أقصى اليمين ومفصول عن اللي جنبه */
+    .logo {
+        order: 1;
+        flex: 0 0 auto; /* يمنع اللوجو إنه يكبر وياخد مكان غيره */
+        margin-left: 80px; /* (مهم) يزق الأيقونة اللي جنبه (التاجر) مسافة 10 بكسل */
+        max-width: 120px; /* نحدد عرض أقصى عشان مياكلش الشاشة */
+    }
+
+    .logo img {
+        height: 40px; /* ارتفاع مناسب للموبايل */
+        width: auto;
+        object-fit: contain;
+    }
+
+    /* 3. تظبيط الأيقونات عشان متتزحمش */
+    .header-actions {
+        order: 2;
+        gap: 8px; /* تقليل المسافة بين الأيقونات الصغيرة وبعضها عشان يسيبوا مكان للوجو */
+    }
+    
+    /* تصغير زر التاجر في الموبايل */
+    .merchant-link {
+        padding: 5px; /* تقليل الحشو */
+    }
+}
 /* Hero Section */
 .hero-section {
     padding: 30px 0;
@@ -329,7 +393,7 @@ footer {
     .header-container { flex-direction: column; align-items: flex-start; gap: 15px; }
     .search-box { width: 100%; order: 3; }
     .logo { width: 100%; justify-content: space-between; }
-    .header-actions { position: absolute; top: 20px; left: 20px; }
+    .header-actions { position: absolute; top: 20px; left: 20px;}
     .mobile-menu-btn { display: block; }
     .banner-card { flex-direction: column; text-align: center; }
     .banner-image { margin-top: 20px; }
@@ -376,146 +440,7 @@ footer {
         flex: 1; /* ياخد مساحة عشان يزق الأزرار لليمين واليسار */
     }
 }
-/* --- Header Layout --- */
-.main-header {
-    background-color: var(--primary);
-    color: #fff;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
 
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-/* --- Logo Styles --- */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    flex-shrink: 0; /* يمنع انكماش اللوجو */
-}
-
-.logo-icon {
-    background-color: var(--accent);
-    color: var(--primary);
-    width: 45px;
-    height: 45px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    font-weight: 900;
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.logo-text h1 {
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: #fff;
-    margin: 0;
-    line-height: 1;
-    letter-spacing: 1px;
-}
-
-.logo-text span {
-    font-size: 0.75rem;
-    color: #cbd5e1;
-    font-weight: 400;
-}
-
-/* --- Search Box --- */
-.search-box {
-    flex: 1; /* يأخذ المساحة المتبقية */
-    display: flex;
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    max-width: 500px; /* لا يتوسع بشكل زائد */
-}
-
-/* --- Mobile Menu Button --- */
-.mobile-menu-btn {
-    display: none; /* مخفي في الديسكتوب */
-}
-
-/* --- تعديلات الموبايل (الهيدر واللوجو) --- */
-@media (max-width: 768px) {
-    
-    .header-container {
-        display: flex;
-        flex-wrap: wrap; /* عشان البحث ينزل سطر جديد */
-        justify-content: space-between; /* يوزع اللوجو يمين والزرار شمال */
-        align-items: center;
-        padding: 10px 15px;
-    }
-
-    /* 1. ضبط اللوجو (يمين) */
-    .logo {
-        order: 1; /* الترتيب الأول */
-        display: flex;
-        align-items: center;
-        gap: 8px; /* مسافة صريحة بين الأيقونة والاسم */
-        flex: 0 0 auto; /* يخلي اللوجو ياخد مساحته بس وميمطش */
-        max-width: 60%; /* عشان مايغطيش على الزراير */
-    }
-
-    .logo-icon {
-        width: 35px;
-        height: 35px;
-        font-size: 1.2rem;
-        flex-shrink: 0; /* يمنع انكماش الأيقونة */
-    }
-
-    .logo-text h1 {
-        font-size: 1.4rem;
-        margin-bottom: 0; /* إلغاء أي مسافات زيادة */
-    }
-
-    .logo-text span {
-        font-size: 0.65rem;
-        display: block;
-        white-space: nowrap; /* يمنع نزول النص لسطر تاني */
-    }
-
-    /* 2. ضبط الأزرار (يسار) */
-    .header-actions {
-        order: 2; /* الترتيب الثاني */
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .mobile-menu-btn {
-        display: block; /* إظهار زر القائمة */
-        font-size: 1.4rem;
-        color: #fff;
-    }
-
-    .action-item .info {
-        display: none; /* إخفاء كلمة المحفظة لتوفير مساحة */
-    }
-
-    /* 3. ضبط شريط البحث (تحت) */
-    .search-box {
-        order: 3; /* ينزل السطر اللي بعده */
-        width: 100%;
-        margin-top: 15px; /* مسافة من فوق */
-    }
-}
 /* =========================================
    صفحة تفاصيل المنتج (Product Page)
    ========================================= */
@@ -882,16 +807,22 @@ footer {
    Mobile Sidebar Styles
    ========================================= */
 .mobile-sidebar {
-    position: fixed;
+   position: fixed;
     top: 0;
-    right: -300px; /* مخفية في اليمين */
+    right: -300px;
     width: 280px;
-    height: 100vh;
+    height: 100vh; /* طول الشاشة بالكامل */
     background: #fff;
-    z-index: 2000;
+    z-index: 99999;
     transition: 0.4s ease;
     box-shadow: -5px 0 15px rgba(0,0,0,0.1);
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    /* --- التعديل هنا (عشان السكرول يشتغل) --- */
+    overflow-y: auto; /* يسمح بالسكرول الراسي */
+    padding-bottom: 50px; /* مسافة تحت عشان آخر عنصر يبان */
 }
 
 .mobile-sidebar.active {
@@ -2236,4 +2167,49 @@ input.error-input {
     color: #fff;               /* الأيقونة تبيض */
     transform: scale(1.1);     /* تكبير بسيط */
     box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+}
+/* =========================================
+   تفعيل زر القائمة (3 شرطات) في الديسكتوب
+   ========================================= */
+
+/* إظهار الزر دائماً */
+.mobile-menu-btn {
+    display: flex !important; /* إجبار الظهور */
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1); /* خلفية شفافة خفيفة */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #fff; /* لون الأيقونة */
+}
+
+.mobile-menu-btn:hover {
+    background-color: var(--accent); /* يصفر لما تقف عليه */
+    color: var(--primary);
+}
+
+.mobile-menu-btn i {
+    font-size: 1.4rem;
+}
+
+/* تنسيق القائمة الجانبية لتكون شيك على الديسكتوب */
+.mobile-sidebar {
+    width: 300px; /* عرض مناسب */
+    box-shadow: -5px 0 30px rgba(0,0,0,0.2); /* ظل قوي */
+}
+
+/* ترتيب العناصر داخل القائمة */
+.sidebar-links li a {
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.sidebar-links li a:hover {
+    background-color: #f8fafc;
+    color: var(--primary);
+    transform: translateX(-5px); /* حركة خفيفة */
 }
