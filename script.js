@@ -563,4 +563,31 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll();
+
+    // =========================================
+    // 10. الوضع الليلي (Dark Mode Logic)
+    // =========================================
+    const themeBtn = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // استرجاع الوضع المحفوظ
+    if (localStorage.getItem('DISKA_THEME') === 'dark') {
+        body.classList.add('dark-mode');
+        if(themeBtn) themeBtn.innerHTML = '<i class="fas fa-sun" style="color:#FACC15"></i>';
+    }
+
+    // عند الضغط على الزر
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('DISKA_THEME', 'dark');
+                themeBtn.innerHTML = '<i class="fas fa-sun" style="color:#FACC15"></i>';
+            } else {
+                localStorage.setItem('DISKA_THEME', 'light');
+                themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+    }
 });

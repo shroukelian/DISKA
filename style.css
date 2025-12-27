@@ -9,6 +9,97 @@
     --success: #22c55e;
 }
 
+/* =========================================
+   DARK MODE STYLES (الوضع الليلي)
+   ========================================= */
+
+body.dark-mode {
+    background-color: #111827; /* خلفية سوداء */
+    color: #f3f4f6; /* نص أبيض */
+}
+
+/* تعديل الهيدر في الوضع الليلي */
+body.dark-mode .main-header {
+    background-color: #1f2937; /* رمادي غامق */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .search-box {
+    background-color: #374151; /* خلفية البحث */
+    border-color: #4b5563;
+}
+body.dark-mode .search-box input {
+    color: #fff;
+}
+
+body.dark-mode .action-item {
+    color: #e5e7eb !important; /* أيقونات فاتحة */
+}
+body.dark-mode .action-item:hover {
+    color: var(--accent) !important;
+}
+
+/* تعديل الكروت والخلفيات البيضاء */
+body.dark-mode .bg-light,
+body.dark-mode .section-padding.bg-light {
+    background-color: #0f172a; /* خلفية الأقسام */
+}
+
+body.dark-mode .product-card,
+body.dark-mode .cat-item,
+body.dark-mode .merchant-form-box, 
+body.dark-mode .contact-info-card,
+body.dark-mode .contact-form-card,
+body.dark-mode .sidebar,
+body.dark-mode .order-summary-box,
+body.dark-mode .checkout-form {
+    background-color: #1f2937; /* كروت غامقة */
+    border-color: #374151;
+    color: #fff;
+}
+
+body.dark-mode .product-info h4,
+body.dark-mode .cat-item span {
+    color: #e5e7eb;
+}
+
+/* تعديل القائمة الجانبية للموبايل */
+body.dark-mode .mobile-sidebar {
+    background-color: #1f2937;
+    color: #fff;
+}
+body.dark-mode .sidebar-links a {
+    color: #e5e7eb;
+}
+body.dark-mode .sidebar-links a:hover {
+    background-color: #374151;
+}
+
+/* تعديل المدخلات (Inputs) */
+body.dark-mode input, 
+body.dark-mode select, 
+body.dark-mode textarea {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: #fff;
+}
+
+body.dark-mode .product-meta {
+    background-color: #374151;
+    color: #ccc;
+}
+
+body.dark-mode .qty-control-card {
+    border-color: #4b5563;
+    background-color: #374151;
+}
+body.dark-mode .qty-control-card button {
+    background-color: #4b5563;
+    color: #fff;
+}
+body.dark-mode .qty-control-card input {
+    color: #fff;
+}
 /* Reset */
 * {
     margin: 0;
@@ -66,11 +157,7 @@ ul { list-style: none; }
     flex-shrink: 0;
 }
 
-.logo img {
-    height: 60px; /* ارتفاع مناسب للديسكتوب */
-    width: auto;
-    object-fit: contain;
-}
+
 
 /* شريط البحث (لون خلفية مختلف عشان يبان) */
 .search-box {
@@ -175,15 +262,11 @@ ul { list-style: none; }
     .logo {
         order: 1;
         flex: 0 0 auto; /* يمنع اللوجو إنه يكبر وياخد مكان غيره */
-        margin-left: 80px; /* (مهم) يزق الأيقونة اللي جنبه (التاجر) مسافة 10 بكسل */
+        margin-left: 100px; /* (مهم) يزق الأيقونة اللي جنبه (التاجر) مسافة 10 بكسل */
         max-width: 120px; /* نحدد عرض أقصى عشان مياكلش الشاشة */
     }
 
-    .logo img {
-        height: 40px; /* ارتفاع مناسب للموبايل */
-        width: auto;
-        object-fit: contain;
-    }
+
 
     /* 3. تظبيط الأيقونات عشان متتزحمش */
     .header-actions {
@@ -412,17 +495,11 @@ footer {
         color: #fff; /* لون أبيض عشان يبان على الخلفية الكحلي */
     }
 }
-.logo img {
-    height: 50px; /* ارتفاع مناسب للهيدر */
-    width: auto;  /* العرض يتظبط تلقائي */
-    object-fit: contain;
-}
+
 
 /* في الموبايل نصغر اللوجو شوية عشان المساحة */
 @media (max-width: 768px) {
-    .logo img {
-        height: 40px;
-    }
+ 
 }
 @media (max-width: 768px) {
     .header-container {
@@ -623,18 +700,8 @@ footer {
     .checkout-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; gap: 0; }
 }
-.logo img {
-    height: 50px; /* ارتفاع مناسب للهيدر */
-    width: auto;  /* العرض يتظبط تلقائي */
-    object-fit: contain;
-}
 
-/* في الموبايل نصغر اللوجو شوية عشان المساحة */
-@media (max-width: 768px) {
-    .logo img {
-        height: 40px;
-    }
-}
+
 /* =========================================
    صفحة التصنيف (Category Page)
    ========================================= */
@@ -712,12 +779,34 @@ footer {
     font-family: inherit;
     outline: none;
 }
+
+
+
 .logo img {
-    height: 70px; /* تكبير الارتفاع (كان 50px) */
-    width: auto;  /* العرض يتظبط تلقائي حسب الارتفاع */
-    object-fit: contain; /* عشان الصورة تظهر كاملة بدون قص */
-    max-width: 200px; /* تحديد أقصى عرض عشان مياخدش مساحة البحث */
+    height: 90px; /* كبرنا الارتفاع (كان 50 أو 70) */
+    width: auto;  /* العرض يتظبط تلقائي */
+    object-fit: contain;
+    max-width: 280px; /* أقصى عرض عشان مياخدش مكان البحث */
+    transition: transform 0.3s ease; /* تأثير ناعم */
 }
+
+/* حركة بسيطة لما الماوس يجي عليه */
+.logo:hover img {
+    transform: scale(1.05); 
+}
+
+/* --- تنسيق اللوجو في الموبايل --- */
+@media (max-width: 768px) {
+    .logo img {
+        height: 55px; /* حجم مناسب للموبايل (أكبر من الأول بس مش ضخم) */
+        max-width: 180px;
+        
+    }
+}
+
+
+
+
 /* Responsive */
 @media (max-width: 768px) {
     .category-layout {
@@ -758,10 +847,7 @@ footer {
         max-width: 60%; 
     }
 
-    .logo img {
-        height: 45px; /* تصغير بسيط ليتناسب مع الموبايل */
-        max-width: 140px;
-    }
+
 
     /* 3. ضبط الأزرار (القائمة والسلة) */
     .header-actions {
@@ -1705,12 +1791,7 @@ footer ul li a:hover {
         text-align: center;
         margin-bottom: 15px;
     }
-    
-    /* 5. تأكيد حجم اللوجو في كل الصفحات */
-    .logo img {
-        height: 50px !important;
-        max-width: 160px !important;
-    }
+
 }
 /* =========================================
    تأثيرات الهوفر لقائمة البروفايل (Desktop)
