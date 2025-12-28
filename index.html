@@ -78,33 +78,42 @@
             </div>
         </div>
     </header>
-    <div class="mobile-sidebar">
-        <div class="sidebar-header">
-            <h3>القائمة الرئيسية</h3>
-            <button class="close-menu"><i class="fas fa-times"></i></button>
-        </div>
-
-        <ul class="sidebar-links">
-            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
-            <li><a href="profile.html"><i class="fas fa-user-circle"></i> حسابي</a></li>
-            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
-            <li><a href="orders.html" style="color: var(--primary); font-weight: bold;"><i class="fas fa-box-open"></i>
-                    طلباتي </a></li>
-
-
-            <li><a href="merchant.html"><i class="fas fa-store"></i> لوحة التاجر (بيع معنا)</a></li>
-            <li><a href="deals.html"><i class="fas fa-fire" style="color:red;"></i> الصفقات والعروض</a></li>
-            <li><a href="requests.html"><i class="fas fa-bullhorn"></i> طلبات خاصة</a></li>
-
-            <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
-            <li style="color: #888; font-size: 0.9rem; padding-right: 10px; margin-bottom: 10px;">معلومات ودعم</li>
-
-            <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
-            <li><a href="policies.html"><i class="fas fa-shield-alt"></i> السياسات والشحن</a></li>
-            <li><a href="faq.html"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
-            <li><a href="contact-en.html"><i class="fas fa-headset"></i> اتصل بنا</a></li>
-        </ul>
+   <div class="mobile-sidebar">
+    <div class="sidebar-header">
+        <h3>القائمة الرئيسية</h3>
+        <button class="close-menu"><i class="fas fa-times"></i></button>
     </div>
+    
+    <ul class="sidebar-links">
+        <!-- 1. الحساب والمحفظة (اللي خفيناها من فوق) -->
+        <li><a href="login.html"><i class="fas fa-wallet"></i> المحفظة / تسجيل دخول</a></li>
+        
+        <!-- 2. الإشعارات (اللي خفيناها من فوق) -->
+        <li>
+            <a href="notifications.html" style="display: flex; justify-content: space-between; align-items: center;">
+                <span><i class="fas fa-bell"></i> الإشعارات</span>
+                <!-- ممكن نضيف بادج هنا لو فيه اشعارات -->
+                <span class="badge" style="position:static; background:red; padding:2px 6px; border-radius:10px; font-size:0.7rem;">جديد</span>
+            </a>
+        </li>
+
+        <!-- 3. لوحة التاجر (اللي خفيناها من فوق) -->
+        <li><a href="merchant.html"><i class="fas fa-store"></i> حساب تاجر (بيع معنا)</a></li>
+
+        <hr style="border:0; border-top:1px solid #eee; margin:10px 0;">
+
+        <!-- باقي الروابط الأساسية -->
+        <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+        <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
+        <li><a href="wishlist.html"><i class="fas fa-heart"></i> المفضلة</a></li>
+        <li><a href="deals.html"><i class="fas fa-fire" style="color:red;"></i> العروض والصفقات</a></li>
+        <li><a href="requests.html"><i class="fas fa-bullhorn"></i> طلبات خاصة</a></li>
+        
+        <!-- روابط الفوتر -->
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
+        <li><a href="contact-en.html"><i class="fas fa-headset"></i> اتصل بنا</a></li>
+    </ul>
+</div>
     <div class="menu-overlay"></div>
 
     <!-- Hero Banner (Slider) -->
@@ -113,12 +122,12 @@
             <div class="banner-card">
                 <div class="banner-content">
                     <span class="tag">عروض متتفوتش 🔥</span>
-                    <h2>خصومات حصرية على المشروبات</h2>
+                    <h2>خصومات حصرية على جميع المنتجات</h2>
                     <p>أرخص أسعار الجملة، اطلب الآن واستلم فوراً</p>
                     <a href="offers.html" class="btn primary">تصفح العروض</a>
                 </div>
                 <div class="banner-image">
-                    <img src="images/مشروبات.webp" alt="Offers">
+                    <img src="images/hero.webp" alt="Offers">
                 </div>
             </div>
         </div>

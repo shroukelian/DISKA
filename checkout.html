@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +9,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-     <header class="main-header">
+    <header class="main-header">
         <div class="container header-container">
 
             <!-- Logo  -->
-          <a href="index.html" class="logo">
+            <a href="index.html" class="logo">
                 <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
                 <!-- <span>Wholesale Deals Platform</span> -->
             </a>
 
-   
+
 
             <!-- User Actions -->
             <div class="header-actions">
@@ -45,15 +47,29 @@
     </header>
     <div class="mobile-sidebar">
         <div class="sidebar-header">
-            <h3>القائمة</h3>
+            <h3>القائمة الرئيسية</h3>
             <button class="close-menu"><i class="fas fa-times"></i></button>
         </div>
+
         <ul class="sidebar-links">
             <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
-            <li><a href="login.html"><i class="fas fa-wallet"></i> المحفظة / دخول</a></li>
+            <li><a href="profile.html"><i class="fas fa-user-circle"></i> حسابي</a></li>
             <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
-            <li><a href="offers.html"><i class="fas fa-tags"></i> العروض</a></li>
-            <li><a href="#"><i class="fas fa-headset"></i> اتصل بنا</a></li>
+            <li><a href="orders.html" style="color: var(--primary); font-weight: bold;"><i class="fas fa-box-open"></i>
+                    طلباتي </a></li>
+
+
+            <li><a href="merchant.html"><i class="fas fa-store"></i> لوحة التاجر (بيع معنا)</a></li>
+            <li><a href="deals.html"><i class="fas fa-fire" style="color:red;"></i> الصفقات والعروض</a></li>
+            <li><a href="requests.html"><i class="fas fa-bullhorn"></i> طلبات خاصة</a></li>
+
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
+            <li style="color: #888; font-size: 0.9rem; padding-right: 10px; margin-bottom: 10px;">معلومات ودعم</li>
+
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
+            <li><a href="policies.html"><i class="fas fa-shield-alt"></i> السياسات والشحن</a></li>
+            <li><a href="faq.html"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
+            <li><a href="contact-en.html"><i class="fas fa-headset"></i> اتصل بنا</a></li>
         </ul>
     </div>
     <div class="menu-overlay"></div>
@@ -62,7 +78,7 @@
         <div class="container">
             <h2 class="page-title">بيانات الشحن والدفع</h2>
             <div class="checkout-grid">
-                
+
                 <div class="checkout-form">
                     <h3><i class="fas fa-map-marker-alt"></i> عنوان التوصيل</h3>
                     <form id="checkoutForm">
@@ -74,7 +90,7 @@
                             <label>رقم الموبايل</label>
                             <input type="tel" placeholder="01xxxxxxxxx" required>
                         </div>
-                        
+
                         <div class="form-row">
                             <div class="form-group">
                                 <label>المحافظة</label>
@@ -113,7 +129,7 @@
 
                 <div class="order-summary-box new-design">
                     <h3>ملخص الفاتورة</h3>
-                    
+
                     <div class="checkout-items" id="checkoutItemsList">
                         <!-- مثال (سيتم مسحه وتعبئته تلقائياً) -->
                         <!-- <div class="c-item">
@@ -127,7 +143,7 @@
                     </div>
 
                     <div class="summary-divider"></div>
-                    
+
                     <div class="cost-row">
                         <span>المجموع الفرعي</span>
                         <span id="subTotal">0.00 ج.م</span>
@@ -136,15 +152,15 @@
                         <span>مصاريف الشحن</span>
                         <span id="shippingCost" style="color: var(--danger);">-- اختر المحافظة --</span>
                     </div>
-                    
+
                     <div class="summary-divider"></div>
 
                     <div class="total-row">
                         <span>الإجمالي الكلي</span>
                         <span id="finalTotal">0.00 ج.م</span>
                     </div>
-                    
-                    <button class="btn primary w-100 confirm-btn" onclick="alert('تم تأكيد الطلب بنجاح! سيتم التواصل معك.')">
+
+                    <button type="submit" form="checkoutForm" class="btn primary w-100 confirm-btn">
                         تأكيد الطلب الآن
                     </button>
                 </div>
@@ -153,50 +169,53 @@
         </div>
     </section>
 
-     <footer>
-    <div class="container">
-        
-        <div class="footer-grid">
-            
-            <div>
-                <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="DISKA Logo">
-                <!-- <span>Wholesale Deals Platform</span> -->
-            </a>
-                <p style="margin-top: 15px; color: #cbd5e1;">منصتك الأولى لتجارة الجملة في مصر. نربطك بأفضل الموردين بأقل الأسعار.</p>
+    <footer>
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.png" alt="DISKA Logo">
+                        <!-- <span>Wholesale Deals Platform</span> -->
+                    </a>
+                    <p style="margin-top: 15px; color: #cbd5e1;">منصتك الأولى لتجارة الجملة في مصر. نربطك بأفضل الموردين
+                        بأقل الأسعار.</p>
+                </div>
+
+                <div>
+                    <h4>روابط هامة</h4>
+                    <ul>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="merchant.html">بيع معنا (للتجار)</a></li>
+                        <li><a href="requests.html">طلبات خاصة</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>المساعدة والسياسات</h4>
+                    <ul>
+                        <li><a href="policies.html#shipping">الشحن والتوصيل</a></li>
+                        <li><a href="policies.html#return">سياسة الإرجاع</a></li>
+                        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                        <li><a href="profile.html">حسابي</a></li>
+                    </ul>
+                </div>
+
             </div>
 
-            <div>
-                <h4>روابط هامة</h4>
-                <ul>
-                    <li><a href="about.html">من نحن</a></li>
-                    <li><a href="merchant.html">بيع معنا (للتجار)</a></li>
-                    <li><a href="requests.html">طلبات خاصة</a></li>
-                    <li><a href="contact.html">تواصل معنا</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4>المساعدة والسياسات</h4>
-                <ul>
-                    <li><a href="policies.html#shipping">الشحن والتوصيل</a></li>
-                    <li><a href="policies.html#return">سياسة الإرجاع</a></li>
-                    <li><a href="faq.html">الأسئلة الشائعة</a></li>
-                    <li><a href="profile.html">حسابي</a></li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="copyrights">
-            <p>&copy; 2025 DISKA - جميع الحقوق محفوظة</p>
-              <p>Design and programming by<a
+            <div class="copyrights">
+                <p>&copy; 2025 DISKA - جميع الحقوق محفوظة</p>
+                <p>Design and programming by<a
                         href="https://www.facebook.com/profile.php?id=100090592885243&mibextid=ZbWKwL"
                         target="_blank"><strong style="color: #FACC15;">GMTWEB</strong> </a> </p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
     <script src="checkout.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

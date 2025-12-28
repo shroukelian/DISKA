@@ -37,13 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalDisplay = document.getElementById('finalTotal');
     const subTotalDisplay = document.getElementById('subTotal');
     const itemsList = document.getElementById('checkoutItemsList');
+    const checkoutForm = document.getElementById('checkoutForm'); // الفورم نفسه
 
     // 1. ملء قائمة المحافظات
-    for (let gov in egyptData) {
-        let option = document.createElement('option');
-        option.value = gov;
-        option.innerText = gov;
-        govSelect.appendChild(option);
+    if (govSelect) {
+        for (let gov in egyptData) {
+            let option = document.createElement('option');
+            option.value = gov;
+            option.innerText = gov;
+            govSelect.appendChild(option);
+        }
     }
 
     // 2. تحديث المناطق وحساب الشحن عند تغيير المحافظة
@@ -75,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // عرض الشحن وتحديث الإجمالي
-        shippingDisplay.innerText = shippingFees + " ج.م";
+        if(shippingDisplay) shippingDisplay.innerText = shippingFees + " ج.م";
         updateTotal(shippingFees);
     };
 
@@ -83,71 +86,90 @@ document.addEventListener('DOMContentLoaded', () => {
     let cart = JSON.parse(localStorage.getItem('DISKA_CART')) || [];
     let subTotal = 0;
 
-    itemsList.innerHTML = '';
-    
-    if(cart.length === 0) {
-        itemsList.innerHTML = '<p style="text-align:center">السلة فارغة</p>';
-    } else {
-        cart.forEach(item => {
-            let itemTotal = item.price * item.qty;
-            subTotal += itemTotal;
+    if (itemsList) {
+        itemsList.innerHTML = '';
+        
+        if(cart.length === 0) {
+            itemsList.innerHTML = '<p style="text-align:center">السلة فارغة</p>';
+        } else {
+            cart.forEach(item => {
+                let itemTotal = item.price * item.qty;
+                subTotal += itemTotal;
 
-            itemsList.innerHTML += `
-                <div class="c-item">
-                    <img src="${item.image}">
-                    <div>
-                        <h4>${item.title}</h4>
-                        <small>العدد: ${item.qty}</small>
+                itemsList.innerHTML += `
+                    <div class="c-item">
+                        <img src="${item.image}">
+                        <div>
+                            <h4>${item.title}</h4>
+                            <small>العدد: ${item.qty}</small>
+                        </div>
+                        <span>${itemTotal.toFixed(2)} ج.م</span>
                     </div>
-                    <span>${itemTotal.toFixed(2)} ج.م</span>
-                </div>
-            `;
-        });
+                `;
+            });
+        }
     }
 
-    subTotalDisplay.innerText = subTotal.toFixed(2) + " ج.م";
+    if(subTotalDisplay) subTotalDisplay.innerText = subTotal.toFixed(2) + " ج.م";
 
     // دالة تحديث الإجمالي النهائي
     function updateTotal(shipping) {
         let final = subTotal + shipping;
-        totalDisplay.innerText = final.toFixed(2) + " ج.م";
+        if(totalDisplay) totalDisplay.innerText = final.toFixed(2) + " ج.م";
     }
 
-});
-// دالة إتمام الطلب (تحديث المخزون)
-    const confirmBtn = document.querySelector('.confirm-btn');
-    
-    if(confirmBtn) {
-        confirmBtn.addEventListener('click', () => {
-            // 1. جلب المنتجات المخزنة عند التاجر
-            let merchantProducts = JSON.parse(localStorage.getItem('DISKA_MERCHANT_PRODUCTS')) || [];
-            let cart = JSON.parse(localStorage.getItem('DISKA_CART')) || [];
 
-            // 2. خصم الكميات
+    // =========================================================
+    // 4. إتمام الطلب (التحقق + خصم المخزون + إنهاء الطلب)
+    // =========================================================
+    if (checkoutForm) {
+        checkoutForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // منع إعادة تحميل الصفحة
+
+            // أ. التحقق من البيانات (المحافظة والمنطقة)
+            // باقي الحقول بيتحقق منها الـ required في الـ HTML
+            if (govSelect.value === "" || citySelect.value === "") {
+                alert('يرجى اختيار المحافظة والمنطقة لحساب الشحن.');
+                return;
+            }
+
+            if (cart.length === 0) {
+                alert('السلة فارغة! لا يمكن إتمام الطلب.');
+                return;
+            }
+
+            // ب. خصم الكميات من مخزون التاجر
+            let merchantProducts = JSON.parse(localStorage.getItem('DISKA_MERCHANT_PRODUCTS')) || [];
             let stockUpdated = false;
 
             cart.forEach(cartItem => {
-                // دور على المنتج في قائمة التاجر باستخدام الـ ID أو الاسم
-                let productIndex = merchantProducts.findIndex(p => p.id == cartItem.id || p.name === cartItem.title);
+                // البحث عن المنتج في قائمة التاجر باستخدام الـ ID
+                let productIndex = merchantProducts.findIndex(p => p.id == cartItem.id);
                 
                 if (productIndex > -1) {
                     // خصم الكمية
-                    merchantProducts[productIndex].stock -= cartItem.qty;
+                    let newStock = merchantProducts[productIndex].stock - cartItem.qty;
                     // التأكد إنها متنزلش عن صفر
-                    if (merchantProducts[productIndex].stock < 0) merchantProducts[productIndex].stock = 0;
-                    
+                    merchantProducts[productIndex].stock = newStock < 0 ? 0 : newStock;
                     stockUpdated = true;
                 }
             });
 
-            // 3. حفظ المخزون الجديد لو حصل تعديل
+            // ج. حفظ المخزون الجديد
             if (stockUpdated) {
                 localStorage.setItem('DISKA_MERCHANT_PRODUCTS', JSON.stringify(merchantProducts));
             }
 
-            // 4. تفريغ السلة وإنهاء الطلب
-            localStorage.removeItem('DISKA_CART');
+            // د. حفظ الطلب في سجل الطلبات (اختياري للعرض في البروفايل)
+            // let orders = JSON.parse(localStorage.getItem('DISKA_ORDERS')) || [];
+            // orders.push({ id: Date.now(), total: document.getElementById('finalTotal').innerText, date: new Date().toLocaleDateString() });
+            // localStorage.setItem('DISKA_ORDERS', JSON.stringify(orders));
+
+            // هـ. إنهاء العملية
+            localStorage.removeItem('DISKA_CART'); // تفريغ السلة
             alert('تم تأكيد طلبك بنجاح! وتم خصم الكمية من المخزون.');
-            window.location.href = 'index.html';
+            window.location.href = 'index.html'; // العودة للرئيسية
         });
     }
+
+});
