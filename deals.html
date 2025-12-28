@@ -23,7 +23,7 @@
     <header class="main-header">
         <div class="container header-container">
              <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="DISKA Logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
                 <!-- <span>Wholesale Deals Platform</span> -->
             </a>
             <div class="header-actions">
@@ -121,19 +121,29 @@
         </div>
     </section>
 
-    <div id="dealModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:2000; align-items:center; justify-content:center;">
-        <div style="background:#fff; padding:30px; border-radius:10px; width:90%; max-width:500px; position:relative;">
-            <span onclick="document.getElementById('dealModal').style.display='none'" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:1.5rem;">&times;</span>
-            <h3>طلب عرض صفقة (للأدمن)</h3>
-            <form id="dealForm">
-                <input type="text" placeholder="اسم المنتج" class="form-control" style="width:100%; padding:10px; margin-bottom:10px;" required>
-                <input type="number" placeholder="الكمية المستهدفة (مثلاً 5000)" class="form-control" style="width:100%; padding:10px; margin-bottom:10px;" required>
-                <input type="number" placeholder="السعر قبل الخصم" class="form-control" style="width:100%; padding:10px; margin-bottom:10px;" required>
-                <input type="number" placeholder="السعر المقترح (بعد الخصم)" class="form-control" style="width:100%; padding:10px; margin-bottom:10px;" required>
-                <button class="btn primary w-100">إرسال للإدارة للمراجعة</button>
-            </form>
-        </div>
+    <!-- Modal عرض صفقة (للتاجر) - بعد التعديل -->
+<div id="dealModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:2000; align-items:center; justify-content:center;">
+    <div style="background:#fff; padding:30px; border-radius:10px; width:90%; max-width:500px; position:relative;">
+        <span onclick="document.getElementById('dealModal').style.display='none'" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:1.5rem;">&times;</span>
+        
+        <h3 style="text-align: center; margin-bottom: 20px; color: var(--primary);">طلب عرض صفقة (للأدمن)</h3>
+        
+        <form id="dealForm">
+            <input type="text" placeholder="اسم المنتج" class="form-control" style="width:100%; padding:10px; margin-bottom:10px; border: 1px solid #ccc; border-radius: 5px;" required>
+            
+            <input type="number" placeholder="الكمية المستهدفة (مثلاً 5000)" class="form-control" style="width:100%; padding:10px; margin-bottom:10px; border: 1px solid #ccc; border-radius: 5px;" required>
+            
+            <input type="number" placeholder="السعر قبل الخصم" class="form-control" style="width:100%; padding:10px; margin-bottom:10px; border: 1px solid #ccc; border-radius: 5px;" required>
+            
+            <input type="number" placeholder="السعر المقترح (بعد الخصم)" class="form-control" style="width:100%; padding:10px; margin-bottom:10px; border: 1px solid #ccc; border-radius: 5px;" required>
+
+            <!-- الحقل الجديد: المكان -->
+            <input type="text" id="dealLocation" placeholder="المكان (المحافظة / المدينة)" class="form-control" style="width:100%; padding:10px; margin-bottom:10px; border: 1px solid #ccc; border-radius: 5px;" required>
+
+            <button class="btn primary w-100" style="padding: 10px; font-weight: bold;">إرسال للإدارة للمراجعة</button>
+        </form>
     </div>
+</div>
 
     <!-- Mobile Menu -->
     <div class="mobile-sidebar">

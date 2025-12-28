@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +9,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="bg-light">
 
     <header class="main-header">
         <div class="container header-container">
-              <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="DISKA Logo">
+            <a href="index.html" class="logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
                 <!-- <span>Wholesale Deals Platform</span> -->
             </a>
             <div class="header-actions">
-                <button class="btn primary small" onclick="openRequestModal()"><i class="fas fa-plus"></i> أضف طلب شراء</button>
-                                <div class="action-item mobile-menu-btn"><i class="fas fa-bars"></i></div>
+                <button class="btn primary small" onclick="openRequestModal()"><i class="fas fa-plus"></i> أضف طلب
+                    شراء</button>
+                <div class="action-item mobile-menu-btn"><i class="fas fa-bars"></i></div>
 
             </div>
         </div>
@@ -49,14 +52,17 @@
     <section class="section-padding">
         <div class="container">
             <h2 class="page-title" style="padding-top: 20px;">طلبات الشراء النشطة</h2>
-            
+
             <div class="requests-list" id="requestsContainer">
-                <div class="request-card" style="background:#fff; padding:20px; border-radius:10px; margin-bottom:15px; border-right:5px solid var(--accent); box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+                <div class="request-card"
+                    style="background:#fff; padding:20px; border-radius:10px; margin-bottom:15px; border-right:5px solid var(--accent); box-shadow:0 2px 10px rgba(0,0,0,0.05);">
                     <div style="display:flex; justify-content:space-between; align-items:start;">
                         <div>
                             <h3 style="color:var(--primary); margin-bottom:5px;">مطلوب 1000 كرتونة زيت</h3>
                             <p style="color:#666; font-size:0.9rem;">أبحث عن زيت عباد الشمس، توصيل للمخزن في أكتوبر.</p>
-                            <span style="background:#e0f2fe; padding:2px 8px; border-radius:4px; font-size:0.8rem; color:#0284c7;">الميزانية: 450,000 ج.م</span>
+                            <span
+                                style="background:#e0f2fe; padding:2px 8px; border-radius:4px; font-size:0.8rem; color:#0284c7;">الميزانية:
+                                450,000 ج.م</span>
                         </div>
                         <div style="text-align:center;">
                             <span style="font-size:1.5rem; font-weight:bold; color:var(--primary);">3</span>
@@ -64,61 +70,73 @@
                         </div>
                     </div>
                     <hr style="margin:15px 0; border:0; border-top:1px solid #eee;">
-                    <button class="btn primary w-100" onclick="alert('خاصية تقديم العروض متاحة للتجار فقط')">قدم عرض (للتاجر)</button>
+                    <button class="btn primary w-100" onclick="alert('خاصية تقديم العروض متاحة للتجار فقط')">قدم عرض
+                        (للتاجر)</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Modal إضافة طلب (محدث) -->
-    <div id="reqModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:2000; align-items:center; justify-content:center;">
-        <div style="background:#fff; padding:30px; border-radius:15px; width:90%; max-width:600px; position:relative; max-height: 90vh; overflow-y: auto;">
-            <span onclick="document.getElementById('reqModal').style.display='none'" style="position:absolute; top:15px; right:20px; cursor:pointer; font-size:1.5rem; color:#999;">&times;</span>
-            
+    <div id="reqModal"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:2000; align-items:center; justify-content:center;">
+        <div
+            style="background:#fff; padding:30px; border-radius:15px; width:90%; max-width:600px; position:relative; max-height: 90vh; overflow-y: auto;">
+            <span onclick="document.getElementById('reqModal').style.display='none'"
+                style="position:absolute; top:15px; right:20px; cursor:pointer; font-size:1.5rem; color:#999;">&times;</span>
+
             <h3 style="color: var(--primary); margin-bottom: 20px; text-align: center;">إضافة طلب شراء جديد</h3>
-            
+
             <form id="requestForm">
-                
+
                 <!-- عنوان الطلب -->
                 <div class="form-group" style="margin-bottom: 15px;">
                     <label style="display:block; margin-bottom:5px; font-weight:bold;">عنوان الطلب</label>
-                    <input type="text" id="reqTitle" placeholder="مثال: مطلوب سكر 1 طن" class="form-control" style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px;" required>
+                    <input type="text" id="reqTitle" placeholder="مثال: مطلوب سكر 1 طن" class="form-control"
+                        style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px;" required>
                 </div>
 
                 <!-- التفاصيل -->
                 <div class="form-group" style="margin-bottom: 15px;">
                     <label style="display:block; margin-bottom:5px; font-weight:bold;">تفاصيل المنتج</label>
-                    <textarea id="reqDesc" placeholder="اكتب المواصفات، الماركة، الكمية المطلوبة..." rows="3" style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px;" required></textarea>
+                    <textarea id="reqDesc" placeholder="اكتب المواصفات، الماركة، الكمية المطلوبة..." rows="3"
+                        style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px;" required></textarea>
                 </div>
 
                 <!-- تواريخ الصلاحية المطلوبة -->
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
                     <div class="form-group">
                         <label style="display:block; margin-bottom:5px; font-size:0.9rem;">تاريخ الإنتاج المفضل</label>
-                        <input type="date" id="reqProdDate" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
+                        <input type="date" id="reqProdDate"
+                            style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
                     </div>
                     <div class="form-group">
                         <label style="display:block; margin-bottom:5px; font-size:0.9rem;">تاريخ الانتهاء المفضل</label>
-                        <input type="date" id="reqExpDate" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
+                        <input type="date" id="reqExpDate"
+                            style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
                     </div>
                 </div>
 
                 <!-- الموقع وتاريخ التوصيل -->
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
                     <div class="form-group">
-                        <label style="display:block; margin-bottom:5px; font-size:0.9rem;">مكان التوصيل (المحافظة/المنطقة)</label>
-                        <input type="text" id="reqLocation" placeholder="مثال: مخازن أكتوبر" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;" required>
+                        <label style="display:block; margin-bottom:5px; font-size:0.9rem;">مكان التوصيل
+                            (المحافظة/المنطقة)</label>
+                        <input type="text" id="reqLocation" placeholder="مثال: مخازن أكتوبر"
+                            style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;" required>
                     </div>
                     <div class="form-group">
                         <label style="display:block; margin-bottom:5px; font-size:0.9rem;">أقصى موعد للاستلام</label>
-                        <input type="date" id="reqDeadline" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
+                        <input type="date" id="reqDeadline"
+                            style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
                     </div>
                 </div>
 
                 <!-- الميزانية -->
                 <div class="form-group" style="margin-bottom: 20px;">
                     <label style="display:block; margin-bottom:5px; font-weight:bold;">الميزانية المقترحة (ج.م)</label>
-                    <input type="number" id="reqBudget" placeholder="0.00" class="form-control" style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px;" required>
+                    <input type="number" id="reqBudget" placeholder="0.00" class="form-control"
+                        style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px;" required>
                 </div>
 
                 <button class="btn primary w-100" style="padding: 12px; font-size: 1.1rem;">نشر الطلب</button>
@@ -127,54 +145,56 @@
     </div>
 
     <footer>
-    <div class="container">
-        
-        <div class="footer-grid">
-            
-            <div>
-                <a href="index.html" class="logo">
-                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
-                <!-- <span>Wholesale Deals Platform</span> -->
-            </a>
-                <p style="margin-top: 15px; color: #cbd5e1;">منصتك الأولى لتجارة الجملة في مصر. نربطك بأفضل الموردين بأقل الأسعار.</p>
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+                    <a href="index.html" class="logo">
+                        <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png"
+                            alt="DISKA Logo">
+                        <!-- <span>Wholesale Deals Platform</span> -->
+                    </a>
+                    <p style="margin-top: 15px; color: #cbd5e1;">منصتك الأولى لتجارة الجملة في مصر. نربطك بأفضل الموردين
+                        بأقل الأسعار.</p>
+                </div>
+
+                <div>
+                    <h4>روابط هامة</h4>
+                    <ul>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="merchant.html">بيع معنا (للتجار)</a></li>
+                        <li><a href="requests.html">طلبات خاصة</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>المساعدة والسياسات</h4>
+                    <ul>
+                        <li><a href="policies.html#shipping">الشحن والتوصيل</a></li>
+                        <li><a href="policies.html#return">سياسة الإرجاع</a></li>
+                        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                        <li><a href="profile.html">حسابي</a></li>
+                    </ul>
+                </div>
+
             </div>
 
-            <div>
-                <h4>روابط هامة</h4>
-                <ul>
-                    <li><a href="about.html">من نحن</a></li>
-                    <li><a href="merchant.html">بيع معنا (للتجار)</a></li>
-                    <li><a href="requests.html">طلبات خاصة</a></li>
-                    <li><a href="contact.html">تواصل معنا</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4>المساعدة والسياسات</h4>
-                <ul>
-                    <li><a href="policies.html#shipping">الشحن والتوصيل</a></li>
-                    <li><a href="policies.html#return">سياسة الإرجاع</a></li>
-                    <li><a href="faq.html">الأسئلة الشائعة</a></li>
-                    <li><a href="profile.html">حسابي</a></li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="copyrights">
-            <p>&copy; 2025 DISKA - جميع الحقوق محفوظة</p>
-                             <p>Design and programming by<a
+            <div class="copyrights">
+                <p>&copy; 2025 DISKA - جميع الحقوق محفوظة</p>
+                <p>Design and programming by<a
                         href="https://www.facebook.com/profile.php?id=100090592885243&mibextid=ZbWKwL"
                         target="_blank"><strong style="color: #FACC15;">GMTWEB</strong> </a> </p>
+            </div>
         </div>
-    </div>
-</footer>
-<script src="script.js"></script>
+    </footer>
+    <script src="script.js"></script>
     <script>
         // التعامل مع طلبات الشراء
         const reqForm = document.getElementById('requestForm');
         const reqContainer = document.getElementById('requestsContainer');
-        
+
         // استرجاع الطلبات القديمة أو استخدام مصفوفة فارغة
         let requests = JSON.parse(localStorage.getItem('DISKA_REQUESTS')) || [];
 
@@ -216,7 +236,7 @@
                         <button class="btn secondary" onclick="alert('خاصية تقديم العروض متاحة للتجار المسجلين فقط')" style="width: 70%;">قدم عرض (للتاجر)</button>
                     </div>
                 </div>`;
-                
+
                 reqContainer.insertAdjacentHTML('beforeend', html);
             });
         }
@@ -224,7 +244,7 @@
         // عند إضافة طلب جديد
         reqForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             const newReq = {
                 id: Date.now(),
                 title: document.getElementById('reqTitle').value,
@@ -240,7 +260,7 @@
 
             requests.push(newReq);
             localStorage.setItem('DISKA_REQUESTS', JSON.stringify(requests));
-            
+
             alert('تم نشر طلبك بنجاح! سيقوم التجار بالرد عليك.');
             document.getElementById('reqModal').style.display = 'none';
             reqForm.reset();
@@ -249,9 +269,9 @@
 
         // دوال فتح وغلق المودال
         function openRequestModal() { document.getElementById('reqModal').style.display = 'flex'; }
-        
+
         // إغلاق المودال عند الضغط في الخارج
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             const modal = document.getElementById('reqModal');
             if (event.target == modal) {
                 modal.style.display = "none";
@@ -263,4 +283,5 @@
     </script>
 
 </body>
+
 </html>

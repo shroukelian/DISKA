@@ -133,13 +133,13 @@ ul { list-style: none; }
    ========================================= */
 
 .main-header {
-    background-color: #ffffff; /* خلفية بيضاء */
-    color: var(--primary);     /* النصوص والأيقونات كحلي */
+    background-color: var(--primary); /* خلفية بيضاء */
+    color: var(--accent);     /* النصوص والأيقونات كحلي */
     padding: 10px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* ظل خفيف جداً */
+    /* box-shadow: 0 4px 20px rgba(0,0,0,0.05);  */
 }
 
 .header-container {
@@ -207,7 +207,7 @@ ul { list-style: none; }
     align-items: center;
     gap: 8px;
     cursor: pointer;
-    color: var(--primary) !important; /* لون كحلي إجباري */
+    color: var(--accent) ;/* لون كحلي إجباري */
     text-decoration: none;
     transition: 0.3s;
 }
@@ -217,7 +217,7 @@ ul { list-style: none; }
 }
 
 .action-item:hover {
-    color: var(--accent) !important; /* يتحول أصفر عند اللمس */
+    color: var(--bg-light) ; /* يتحول أصفر عند اللمس */
 }
 
 /* النصوص الصغيرة (محفظة، تسجيل دخول) */
@@ -232,7 +232,7 @@ ul { list-style: none; }
 
 /* زر التاجر المميز */
 .merchant-link {
-    background-color: #fffbeb; /* خلفية صفراء فاتحة جداً */
+    background-color: #fffbeb; 
     padding: 5px 12px;
     border-radius: 8px;
     border: 1px solid var(--accent);
@@ -242,7 +242,7 @@ ul { list-style: none; }
 .mobile-menu-btn {
     display: none;
     font-size: 1.5rem;
-    color: var(--primary);
+    color: var(--accent);
 }
 
 /* --- تعديلات الموبايل --- */
@@ -278,6 +278,38 @@ ul { list-style: none; }
     .merchant-link {
         padding: 5px; /* تقليل الحشو */
     }
+}
+/* =========================================
+   تعديلات الهيدر النهائية (ديسكتوب وموبايل)
+   ========================================= */
+
+/* 1. إخفاء زر التاجر والمحفظة في كل الشاشات */
+.header-actions .merchant-link, 
+.header-actions .wallet-btn {
+    display: none !important;
+}
+
+/* 2. إظهار أسماء الأيقونات في الديسكتوب */
+.icon-label {
+    display: block; /* كان مخفي */
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+/* 3. تنسيق الأيقونات لتكون عمودية (أيقونة فوق واسم تحت) */
+.header-actions .action-item, 
+.mobile-menu-btn {
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px; /* مسافة بين الأيقونات */
+}
+
+/* 4. تكبير منطقة البحث عشان تملأ الفراغ */
+.search-box {
+    max-width: 700px; /* نكبره شوية عشان ياخد راحته */
 }
 /* Hero Section */
 .hero-section {
@@ -376,10 +408,30 @@ ul { list-style: none; }
     border-color: var(--accent);
 }
 
-.badges {
-    position: absolute;
-    top: 10px; right: 10px;
-    display: flex; flex-direction: column; gap: 5px;
+.badge {
+    position: absolute; /* عشان يطير فوق العنصر */
+    top: -15px;          /* يرفع لفوق عن الأيقونة */
+    right: 15px;         /* ييجي يمين شوية (ناحية كتف الأيقونة) */
+    
+    width: 18px;
+    height: 18px;
+    
+    background-color: #ef4444; /* لون أحمر */
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 50%;
+    
+    display: flex;       /* عشان الرقم ييجي في نص الدايرة */
+    align-items: center;
+    justify-content: center;
+    
+    z-index: 10;
+    padding: 0;
+    border: 1px solid var(--primary); /* حدود كحلي عشان يفصل عن الخلفية */
+}
+.action-item {
+    position: relative; /* ضروري عشان البادج يتحرك جوه حدود الأيقونة */
 }
 .discount-badge { background: var(--danger); color: #fff; font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; }
 .special-badge { background: var(--accent); color: var(--primary); font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; font-weight: bold; }
@@ -492,7 +544,7 @@ footer {
         display: block;
         font-size: 1.5rem;
         cursor: pointer;
-        color: #fff; /* لون أبيض عشان يبان على الخلفية الكحلي */
+        color: #fff; 
     }
 }
 
@@ -2450,4 +2502,68 @@ input.error-input {
     .action-item i {
         font-size: 1.3rem;
     }
+}
+/* =========================================
+   تنسيق السلوجان في البانر
+   ========================================= */
+
+.brand-slogan {
+    font-size: 3rem; /* حجم كبير */
+    font-weight: 900; /* سميك جداً */
+    color: #fff;
+    margin: 15px 0;
+    line-height: 1.2;
+}
+
+.slogan-desc {
+    font-size: 1.2rem;
+    color: #e2e8f0; /* لون أبيض مائل للرمادي ليكون مريح للعين */
+    margin-bottom: 25px;
+    max-width: 500px; /* عشان السطر ميكونش طويل أوي */
+}
+
+/* تنسيق للموبايل عشان الكلام ميبقاش ضخم */
+@media (max-width: 768px) {
+    .brand-slogan {
+        font-size: 2rem; /* تصغير الخط في الموبايل */
+    }
+    
+    .slogan-desc {
+        font-size: 1rem;
+    }
+}
+/* =========================================
+   ENGLISH (LTR) SUPPORT
+   ========================================= */
+
+/* تغيير الخط والاتجاه في النسخة الإنجليزية */
+html[dir="ltr"] body {
+    font-family: 'Roboto', sans-serif; /* خط إنجليزي */
+    direction: ltr;
+    text-align: left;
+}
+
+/* عكس اتجاهات العناصر في الإنجليزي */
+html[dir="ltr"] .header-actions { margin-left: auto; margin-right: 0; }
+html[dir="ltr"] .logo { margin-right: auto; margin-left: 0; }
+html[dir="ltr"] .search-box button { border-radius: 0 8px 8px 0; }
+html[dir="ltr"] .product-meta { flex-direction: row-reverse; } /* عكس ترتيب الميتا */
+
+/* تعديل بادج الخصم ليكون يسار */
+html[dir="ltr"] .flash-badge {
+    right: auto;
+    left: 10px;
+}
+
+/* تعديل زر المفضلة ليكون يمين */
+html[dir="ltr"] .fav-btn {
+    left: auto;
+    right: 10px;
+}
+
+/* تعديل زر الواتساب */
+html[dir="ltr"] .whatsapp-float {
+    right: auto;
+    left: 25px;
+    flex-direction: row-reverse;
 }

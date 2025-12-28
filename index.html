@@ -18,7 +18,7 @@
 
             <!-- Logo -->
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="DISKA Logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
             </a>
 
             <!-- Search Bar -->
@@ -29,109 +29,106 @@
 
             <!-- User Actions -->
             <div class="header-actions">
-
-                <!-- زر الوضع الليلي (القمر) -->
-                <!-- <div class="action-item" id="themeToggle" title="الوضع الليلي">
+      <!-- زر الوضع الليلي (القمر) -->
+                <!-- <div class="action-item" id="themeToggle" style="cursor: pointer;" title="الوضع الليلي">
                     <i class="fas fa-moon"></i>
                 </div> -->
 
-                <a href="merchant.html" class="action-item merchant-link">
-                    <i class="fas fa-store"></i>
-                    <div class="info">
-                        <span>حساب تاجر</span>
-                        <strong>إضافة منتجات</strong>
-                    </div>
-                </a>
-
-                <!-- المحفظة -->
-                <a href="login.html" class="action-item" style="text-decoration: none; color: inherit;">
-                    <i class="fas fa-wallet"></i>
-                    <div class="info">
-                        <span>المحفظة</span>
-                        <strong>تسجيل دخول</strong>
-                    </div>
-                </a>
-
-                <!-- السلة -->
-                <a href="cart.html" class="action-item cart-icon" style="text-decoration: none; color: inherit;">
+                <!-- زر السلة -->
+                <a href="cart.html" class="action-item cart-icon" style="text-decoration: none;">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="badge">0</span>
+                    <!-- <span class="icon-label">السلة</span> -->
                 </a>
 
-                <!-- المفضلة -->
-                <a href="wishlist.html" class="action-item" style="text-decoration: none; margin-right: 5px;">
+                <!-- زر المفضلة -->
+                <a href="wishlist.html" class="action-item" style="text-decoration: none;">
                     <i class="fas fa-heart"></i>
+                    <span class="icon-label">المفضلة</span>
                 </a>
-
-                <!-- الإشعارات -->
+                <!-- زر الإشعارات -->
                 <a href="notifications.html" class="action-item notif-icon-container"
-                    style="text-decoration: none; position: relative; margin-right: 5px;">
+                    style="text-decoration: none; position: relative;">
                     <i class="fas fa-bell"></i>
                     <span class="badge notif-badge" style="background:red; display:none;">0</span>
+                    <span class="icon-label">إشعارات</span>
                 </a>
-
-                <!-- زر القائمة للموبايل -->
+                <!-- زر القائمة -->
                 <div class="action-item mobile-menu-btn">
                     <i class="fas fa-bars"></i>
+                    <!-- <span class="icon-label">القائمة</span> -->
                 </div>
 
             </div>
         </div>
     </header>
-   <div class="mobile-sidebar">
-    <div class="sidebar-header">
-        <h3>القائمة الرئيسية</h3>
-        <button class="close-menu"><i class="fas fa-times"></i></button>
+    <div class="mobile-sidebar">
+        <div class="sidebar-header">
+            <h3>القائمة الرئيسية</h3>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+
+        <ul class="sidebar-links">
+            <li><a href="login.html"><i class="fas fa-wallet"></i> المحفظة / تسجيل دخول</a></li>
+            <li><a href="profile.html"><i class="fas fa-user-circle"></i> حسابي </a></li>
+
+            <li>
+                <a href="notifications.html"
+                    style="display: flex; justify-content: space-between; align-items: center;">
+                    <span><i class="fas fa-bell"></i> الإشعارات</span>
+                    <!-- ممكن نضيف بادج هنا لو فيه اشعارات -->
+                    <span class="badge"
+                        style="position:static; background:red; padding:2px 6px; border-radius:10px; font-size:0.7rem;">جديد</span>
+                </a>
+            </li>
+
+            <!-- 3. لوحة التاجر (اللي خفيناها من فوق) -->
+            <li><a href="merchant.html"><i class="fas fa-store"></i> حساب تاجر (بيع معنا)</a></li>
+
+            <hr style="border:0; border-top:1px solid #eee; margin:10px 0;">
+
+            <!-- باقي الروابط الأساسية -->
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="orders.html"><i class="fas fa-box"></i> طلباتي</a></li> <!-- رابط الصفحة دي -->
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
+            <li><a href="wishlist.html"><i class="fas fa-heart"></i> المفضلة</a></li>
+            <li><a href="deals.html"><i class="fas fa-fire" style="color:red;"></i> العروض والصفقات</a></li>
+            <li><a href="requests.html"><i class="fas fa-bullhorn"></i> طلبات خاصة</a></li>
+
+            <!-- روابط الفوتر -->
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
+            <li><a href="contac.html"><i class="fas fa-headset"></i> اتصل بنا</a></li>
+            <li><a href="faq.html"><i class="fas fa-question-circle"></i> الأسئلة الشائعة </a></li>
+            <li><a href="policies.html"><i class="fas fa-headset"></i> السياسات والشحن</a></li>
+
+        </ul>
     </div>
-    
-    <ul class="sidebar-links">
-        <!-- 1. الحساب والمحفظة (اللي خفيناها من فوق) -->
-        <li><a href="login.html"><i class="fas fa-wallet"></i> المحفظة / تسجيل دخول</a></li>
-        
-        <!-- 2. الإشعارات (اللي خفيناها من فوق) -->
-        <li>
-            <a href="notifications.html" style="display: flex; justify-content: space-between; align-items: center;">
-                <span><i class="fas fa-bell"></i> الإشعارات</span>
-                <!-- ممكن نضيف بادج هنا لو فيه اشعارات -->
-                <span class="badge" style="position:static; background:red; padding:2px 6px; border-radius:10px; font-size:0.7rem;">جديد</span>
-            </a>
-        </li>
-
-        <!-- 3. لوحة التاجر (اللي خفيناها من فوق) -->
-        <li><a href="merchant.html"><i class="fas fa-store"></i> حساب تاجر (بيع معنا)</a></li>
-
-        <hr style="border:0; border-top:1px solid #eee; margin:10px 0;">
-
-        <!-- باقي الروابط الأساسية -->
-        <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
-        <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
-        <li><a href="wishlist.html"><i class="fas fa-heart"></i> المفضلة</a></li>
-        <li><a href="deals.html"><i class="fas fa-fire" style="color:red;"></i> العروض والصفقات</a></li>
-        <li><a href="requests.html"><i class="fas fa-bullhorn"></i> طلبات خاصة</a></li>
-        
-        <!-- روابط الفوتر -->
-        <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
-        <li><a href="contact-en.html"><i class="fas fa-headset"></i> اتصل بنا</a></li>
-    </ul>
-</div>
     <div class="menu-overlay"></div>
 
     <!-- Hero Banner (Slider) -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="banner-card">
-                <div class="banner-content">
-                    <span class="tag">عروض متتفوتش 🔥</span>
-                    <h2>خصومات حصرية على جميع المنتجات</h2>
-                    <p>أرخص أسعار الجملة، اطلب الآن واستلم فوراً</p>
-                    <a href="offers.html" class="btn primary">تصفح العروض</a>
-                </div>
-                <div class="banner-image">
-                    <img src="images/hero.webp" alt="Offers">
-                </div>
+    <!-- Hero Banner -->
+<section class="hero-section">
+    <div class="container">
+        <div class="banner-card">
+            
+            <div class="banner-content">
+                <span class="tag">عروض متتفوتش 🔥</span>
+                
+                <!-- هنا السلوجان الجديد -->
+                <h1 class="brand-slogan">ديسكا.. <span style="color: var(--accent);">سوق الجملة</span> في جيبك</h1>
+                
+                <!-- وصف فرعي بسيط -->
+                <p class="slogan-desc">أسهل طريقة لطلب بضاعة محلك، من المصنع إليك مباشرة بأرخص سعر.</p>
+                
+                <a href="offers.html" class="btn primary">تصفح العروض</a>
+            </div>
+
+            <div class="banner-image">
+                <img src="images/hero.webp" alt="Offers">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Categories -->
     <section class="categories-section">

@@ -11,22 +11,49 @@
 <body>
 
     <!-- Header -->
-    <header class="main-header">
+     <header class="main-header">
         <div class="container header-container">
-       <a href="index.html" class="logo">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo">
                 <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
-                <!-- <span>Wholesale Deals Platform</span> -->
             </a>
+
+            <!-- Search Bar -->
             <div class="search-box">
-                <input type="text" placeholder="ابحث عن منتج...">
+                <input type="text" placeholder="ابحث عن منتج، مورد، أو علامة تجارية...">
                 <button><i class="fas fa-search"></i></button>
             </div>
+
+            <!-- User Actions -->
             <div class="header-actions">
-                <a href="cart.html" class="action-item cart-icon">
+
+
+                <!-- زر السلة -->
+                <a href="cart.html" class="action-item cart-icon" style="text-decoration: none;">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="badge">2</span>
+                    <span class="badge">0</span>
+                    <!-- <span class="icon-label">السلة</span> -->
                 </a>
-                <div class="action-item mobile-menu-btn"><i class="fas fa-bars"></i></div>
+
+                <!-- زر المفضلة -->
+                <a href="wishlist.html" class="action-item" style="text-decoration: none;">
+                    <i class="fas fa-heart"></i>
+                    <span class="icon-label">المفضلة</span>
+                </a>
+                <!-- زر الإشعارات -->
+                <a href="notifications.html" class="action-item notif-icon-container"
+                    style="text-decoration: none; position: relative;">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge notif-badge" style="background:red; display:none;">0</span>
+                    <span class="icon-label">إشعارات</span>
+                </a>
+                <!-- زر القائمة -->
+                <div class="action-item mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                    <!-- <span class="icon-label">القائمة</span> -->
+                </div>
+
             </div>
         </div>
     </header>
@@ -40,7 +67,7 @@
             <li><a href="login.html"><i class="fas fa-wallet"></i> المحفظة / دخول</a></li>
             <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
             <li><a href="offers.html"><i class="fas fa-tags"></i> العروض</a></li>
-            <li><a href="#"><i class="fas fa-headset"></i> اتصل بنا</a></li>
+            <li><a href="contact.html"><i class="fas fa-headset"></i> اتصل بنا</a></li>
         </ul>
     </div>
     <div class="menu-overlay"></div>
