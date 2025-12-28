@@ -23,19 +23,16 @@
                 <button><i class="fas fa-search"></i></button>
             </div>
             <div class="header-actions">
-                <!-- زر المفضلة -->
                 <a href="wishlist.html" class="action-item"
                     style="text-decoration: none; color: inherit; margin-left: 10px;">
                     <i class="fas fa-heart"></i>
                 </a>
 
-                <!-- زر السلة -->
                 <a href="cart.html" class="action-item cart-icon" style="text-decoration: none; color: inherit;">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="badge">0</span>
                 </a>
 
-                <!-- زر القائمة -->
                 <div class="action-item mobile-menu-btn">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -68,18 +65,14 @@
 
             <div class="details-grid">
 
-                <!-- Product Image (Left Side) -->
                 <div class="details-img">
                     <img src="images/pepsi.webp" alt="Pepsi">
                 </div>
 
-                <!-- Product Info (Right Side) -->
-                <!-- هام: أضفنا كلاس product-card وبيانات المنتج هنا عشان الـ JS يشوفها -->
                 <div class="details-info product-card merchant-product" data-id="product_detail_1" data-stock="500">
 
                     <span class="brand-tag">بيبسي</span>
 
-                    <!-- زر المفضلة -->
                     <button class="fav-btn"
                         style="position: relative; float: left; top: 0; left: 0; border: 1px solid #ddd;"><i
                             class="fas fa-heart"></i></button>
@@ -125,21 +118,16 @@
                         </table>
                     </div>
 
-                    <!-- Add to Cart Actions (الكود المعدل) -->
                     <div class="card-actions details-actions" style="display:flex; gap:15px; margin-top:20px;">
 
-                        <!-- العداد -->
                         <div class="qty-control-card"
                             style="display:flex; border:1px solid #ddd; border-radius:5px; height:50px;">
                             <button class="card-minus" style="width:40px; font-size:1.2rem;">-</button>
-                            <!-- حقل الكتابة اليدوية -->
                             <input type="number" class="manual-qty" value="1" min="1" max="500"
                                 style="width:60px; font-size:1.2rem; text-align:center; border:none; font-weight:bold;">
                             <button class="card-plus" style="width:40px; font-size:1.2rem;">+</button>
                         </div>
 
-                        <!-- زر الإضافة -->
-                        <!-- زر الإضافة بتصميم واضح -->
                         <button class="add-btn"
                             style="flex:1; height:50px; font-size:1.2rem; justify-content:center; border-radius: 8px; cursor: pointer; background-color: #FACC15; border: none; font-weight: bold; display: flex; align-items: center; gap: 10px;">
                             إضافة للسلة <i class="fas fa-cart-plus"></i>
@@ -157,8 +145,49 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 DISKA - Wholesale Deals Platform</p>
+     <footer>
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.png" alt="DISKA Logo">
+                        <!-- <span>Wholesale Deals Platform</span> -->
+                    </a>
+                    <p style="margin-top: 15px; color: #cbd5e1;">منصتك الأولى لتجارة الجملة في مصر. نربطك بأفضل الموردين
+                        بأقل الأسعار.</p>
+                </div>
+
+                <div>
+                    <h4>روابط هامة</h4>
+                    <ul>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="merchant.html">بيع معنا (للتجار)</a></li>
+                        <li><a href="requests.html">طلبات خاصة</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>المساعدة والسياسات</h4>
+                    <ul>
+                        <li><a href="policies.html#shipping">الشحن والتوصيل</a></li>
+                        <li><a href="policies.html#return">سياسة الإرجاع</a></li>
+                        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                        <li><a href="profile.html">حسابي</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="copyrights">
+                <p>&copy; 2025 DISKA - جميع الحقوق محفوظة</p>
+                  <p>Design and programming by<a
+                        href="https://www.facebook.com/profile.php?id=100090592885243&mibextid=ZbWKwL"
+                        target="_blank"><strong style="color: #FACC15;">GMTWEB</strong> </a> </p>
+            </div>
+        </div>
     </footer>
 
     <!-- Floating Buttons -->

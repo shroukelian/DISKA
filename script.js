@@ -293,9 +293,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================
     // 4. التفاعلات الشاملة (Event Delegation)
     // =========================================
- // =========================================
-    // 4. التفاعلات الشاملة (Event Delegation)
-    // =========================================
     document.addEventListener('click', function(e) {
 
         // أ. زر الإضافة للسلة
@@ -322,7 +319,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // 2. تجميع البيانات (التعديل هنا عشان يشتغل في كل الصفحات)
             
             // الاسم: بندور على h4 (في الرئيسية) أو h1 (في صفحة المنتج)
             let titleElement = card.querySelector('h4') || card.querySelector('h1');

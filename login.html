@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تسجيل الدخول | DISKA</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* تنسيق إضافي بسيط عشان الصورة تظهر مظبوطة في نص الصفحة */
+        .auth-logo-img {
+            height: 80px;
+            /* ارتفاع مناسب */
+            width: auto;
+            margin-bottom: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
+
 <body class="auth-body">
 
     <div class="auth-container">
         <div class="auth-header">
-            <div class="logo-icon">%</div>
+
+            <!-- التعديل هنا: وضعنا الصورة بدلاً من الأيقونة القديمة -->
+            <img src="images/logo.png" alt="DISKA Logo" class="auth-logo-img">
+
             <h2>مرحباً بك في DISKA</h2>
             <p>سجل دخولك لمتابعة طلبات الجملة</p>
-            <div style="margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
-    <p>هل تريد بيع منتجاتك؟ <a href="merchant.html" style="color: var(--accent); font-weight: bold;">سجل كتاجر الآن</a></p>
-</div>
         </div>
 
         <form class="auth-form">
@@ -32,12 +46,19 @@
         </form>
 
         <div class="auth-footer">
-            <p>ليس لديك حساب؟ <a href="#">إنشاء حساب جديد</a></p>
-            <a href="#" class="forgot-pass">نسيت كلمة المرور؟</a>
+            <p>ليس لديك حساب؟ <a href="signup.html">إنشاء حساب جديد</a></p> <a href="#" class="forgot-pass">نسيت كلمة
+                المرور؟</a>
         </div>
-        
+
+        <!-- نقلنا رابط التاجر هنا ليكون الشكل منسق أكثر -->
+        <div style="margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
+            <p>هل تريد بيع منتجاتك؟ <a href="merchant.html" style="color: var(--accent); font-weight: bold;">سجل كتاجر
+                    الآن</a></p>
+        </div>
+
         <a href="index.html" class="back-home">العودة للرئيسية</a>
     </div>
 
 </body>
+
 </html>

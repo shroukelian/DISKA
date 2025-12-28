@@ -2294,3 +2294,138 @@ input.error-input {
     color: var(--primary);
     transform: translateX(-5px); /* حركة خفيفة */
 }
+/* =========================================
+   صفحة الطلبات (Orders Page Style)
+   ========================================= */
+
+/* 1. التبويبات العلوية */
+.orders-tabs {
+    display: flex;
+    overflow-x: auto; /* يسمح بالسكرول لو الشاشة صغيرة */
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    gap: 10px;
+}
+
+.tab-btn {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 0.95rem;
+    color: #666;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.tab-btn.active {
+    color: var(--primary); /* أزرق كحلي */
+    font-weight: bold;
+    border-bottom-color: var(--accent); /* خط أصفر تحت النشط */
+}
+
+/* 2. كارت الطلب */
+.order-card-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.status-label {
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.status-label.pending { background: #fffbeb; color: #f59e0b; } /* أصفر */
+.status-label.confirmed { background: #e0f2fe; color: #0284c7; } /* أزرق */
+.status-label.shipped { background: #dcfce7; color: #16a34a; } /* أخضر */
+
+.order-id {
+    color: #999;
+    font-size: 0.85rem;
+    font-family: monospace; /* خط يشبه الكود */
+}
+
+.order-body {
+    margin-bottom: 15px;
+}
+
+.order-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.shop-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.order-price {
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.sub-info {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+    flex-wrap: wrap; /* للموبايل */
+    gap: 10px;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 6px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+.delivery-date {
+    font-size: 0.75rem;
+    color: #888;
+}
+
+/* للموبايل */
+@media (max-width: 768px) {
+    .order-footer {
+        flex-direction: column-reverse; /* الزرار تحت */
+        align-items: flex-start;
+    }
+    .btn-outline { width: 100%; }
+}

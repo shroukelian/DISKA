@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DISKA | منصة صفقات الجملة</title>
-    <!-- خط القاهرة -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <!-- مكتبة الأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -31,13 +29,12 @@
 
             <!-- User Actions -->
             <div class="header-actions">
-                
+
                 <!-- زر الوضع الليلي (القمر) -->
                 <!-- <div class="action-item" id="themeToggle" title="الوضع الليلي">
                     <i class="fas fa-moon"></i>
                 </div> -->
 
-                <!-- زر حساب التاجر -->
                 <a href="merchant.html" class="action-item merchant-link">
                     <i class="fas fa-store"></i>
                     <div class="info">
@@ -67,7 +64,8 @@
                 </a>
 
                 <!-- الإشعارات -->
-                <a href="notifications.html" class="action-item notif-icon-container" style="text-decoration: none; position: relative; margin-right: 5px;">
+                <a href="notifications.html" class="action-item notif-icon-container"
+                    style="text-decoration: none; position: relative; margin-right: 5px;">
                     <i class="fas fa-bell"></i>
                     <span class="badge notif-badge" style="background:red; display:none;">0</span>
                 </a>
@@ -80,7 +78,6 @@
             </div>
         </div>
     </header>
-    <!-- القائمة الجانبية (تعمل موبايل وديسكتوب الآن) -->
     <div class="mobile-sidebar">
         <div class="sidebar-header">
             <h3>القائمة الرئيسية</h3>
@@ -88,28 +85,26 @@
         </div>
 
         <ul class="sidebar-links">
-            <!-- روابط أساسية -->
             <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
             <li><a href="profile.html"><i class="fas fa-user-circle"></i> حسابي</a></li>
             <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
+            <li><a href="orders.html" style="color: var(--primary); font-weight: bold;"><i class="fas fa-box-open"></i>
+                    طلباتي </a></li>
 
-            <!-- روابط تجارية -->
+
             <li><a href="merchant.html"><i class="fas fa-store"></i> لوحة التاجر (بيع معنا)</a></li>
             <li><a href="deals.html"><i class="fas fa-fire" style="color:red;"></i> الصفقات والعروض</a></li>
             <li><a href="requests.html"><i class="fas fa-bullhorn"></i> طلبات خاصة</a></li>
 
-            <!-- فواصل للتنظيم -->
             <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
             <li style="color: #888; font-size: 0.9rem; padding-right: 10px; margin-bottom: 10px;">معلومات ودعم</li>
 
-            <!-- روابط الفوتر (تمت إضافتها هنا) -->
             <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
             <li><a href="policies.html"><i class="fas fa-shield-alt"></i> السياسات والشحن</a></li>
             <li><a href="faq.html"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
             <li><a href="contact-en.html"><i class="fas fa-headset"></i> اتصل بنا</a></li>
         </ul>
     </div>
-    <!-- Overlay (الخلفية الغامقة لما القائمة تفتح) -->
     <div class="menu-overlay"></div>
 
     <!-- Hero Banner (Slider) -->
@@ -123,7 +118,6 @@
                     <a href="offers.html" class="btn primary">تصفح العروض</a>
                 </div>
                 <div class="banner-image">
-                    <!-- ضع صورة معبرة هنا -->
                     <img src="images/مشروبات.webp" alt="Offers">
                 </div>
             </div>
@@ -176,11 +170,8 @@
 
             <div class="products-grid">
 
-                <!-- منتج 1: بيبسي (ثابت) -->
                 <div class="product-card merchant-product" data-id="static_pepsi" data-stock="100">
-                    <!-- زر المفضلة -->
                     <button class="fav-btn"><i class="fas fa-heart"></i></button>
-                    <!-- بادج الخصم -->
                     <div class="flash-badge"><i class="fas fa-star"></i> خصم 5%</div>
 
                     <a href="#" style="text-decoration:none;">
@@ -368,10 +359,8 @@
     <footer>
         <div class="container">
 
-            <!-- استخدمنا كلاس footer-grid بدلاً من الستايل المباشر -->
             <div class="footer-grid">
 
-                <!-- القسم الأول: اللوجو والوصف -->
                 <div>
                     <a href="index.html" class="logo">
                         <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png"
@@ -382,7 +371,6 @@
                         بأقل الأسعار.</p>
                 </div>
 
-                <!-- القسم الثاني: روابط هامة -->
                 <div>
                     <h4>روابط هامة</h4>
                     <ul>
@@ -393,7 +381,6 @@
                     </ul>
                 </div>
 
-                <!-- القسم الثالث: المساعدة -->
                 <div>
                     <h4>المساعدة والسياسات</h4>
                     <ul>
@@ -408,10 +395,12 @@
 
             <div class="copyrights">
                 <p>&copy; 2025 DISKA - جميع الحقوق محفوظة</p>
+                <p>Design and programming by<a
+                        href="https://www.facebook.com/profile.php?id=100090592885243&mibextid=ZbWKwL"
+                        target="_blank"><strong style="color: #FACC15;">GMTWEB</strong> </a> </p>
             </div>
         </div>
     </footer>
-    <!-- زر الواتساب العائم -->
     <a href="https://wa.me/201000000000" target="_blank" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
         <span>تواصل معنا</span>

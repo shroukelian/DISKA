@@ -9,16 +9,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* تنسيقات خاصة بصفحة اتصل بنا */
         .contact-page-wrapper {
             display: grid;
             grid-template-columns: 1fr 1.5fr;
-            /* العمود الأيسر (الفورم) أكبر */
             gap: 40px;
             margin-top: 30px;
         }
 
-        /* كارت المعلومات */
         .contact-info-card {
             background: #fff;
             padding: 30px;
@@ -64,7 +61,6 @@
             font-weight: bold;
         }
 
-        /* خريطة جوجل */
         .map-container {
             margin-top: 20px;
             border-radius: 10px;
@@ -73,7 +69,6 @@
             border: 1px solid var(--border);
         }
 
-        /* كارت الفورم */
         .contact-form-card {
             background: #fff;
             padding: 40px;
@@ -92,7 +87,6 @@
             margin-bottom: 30px;
         }
 
-        /* تجاوب للموبايل */
         @media (max-width: 768px) {
             .contact-page-wrapper {
                 grid-template-columns: 1fr;
@@ -106,7 +100,6 @@
                 display: none !important;
             }
 
-            /* تأكيد ظهور زر القائمة (التلات شرطات) */
             .mobile-menu-btn {
                 display: block !important;
             }
@@ -142,12 +135,10 @@
             <li><a href="profile.html"><i class="fas fa-user-circle"></i> حسابي / طلباتي</a></li>
             <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
 
-            <!-- الصفحات الجديدة -->
             <li><a href="deals.html" style="color: var(--danger);"><i class="fas fa-fire"></i> الصفقات (Deals)</a></li>
             <li><a href="requests.html"><i class="fas fa-bullhorn"></i> طلبات خاصة</a></li>
             <li><a href="merchant.html"><i class="fas fa-store"></i> لوحة التاجر</a></li>
 
-            <!-- الصفحات الثابتة -->
             <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
             <li><a href="faq.html"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
             <li><a href="contact.html"><i class="fas fa-headset"></i> اتصل بنا</a></li>
@@ -166,7 +157,6 @@
 
             <div class="contact-page-wrapper">
 
-                <!-- الجانب الأيمن: معلومات الاتصال -->
                 <div class="contact-info-card">
                     <div class="c-item">
                         <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
@@ -202,7 +192,6 @@
                         </div>
                     </div>
 
-                    <!-- الخريطة -->
                     <div class="map-container">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.665363714578!2d31.343167!3d30.046534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDAyJzQ3LjUiTiAzMcKwMjAnMzUuNCJF!5e0!3m2!1sar!2seg!4v1635000000000!5m2!1sar!2seg"
@@ -210,7 +199,6 @@
                     </div>
                 </div>
 
-                <!-- الجانب الأيسر: نموذج المراسلة -->
                 <div class="contact-form-card">
                     <h2>هل لديك استفسار؟</h2>
                     <p>املأ النموذج التالي وسيتم الرد عليك في أقرب وقت ممكن.</p>
@@ -262,10 +250,8 @@
     <footer>
         <div class="container">
 
-            <!-- استخدمنا كلاس footer-grid بدلاً من الستايل المباشر -->
             <div class="footer-grid">
 
-                <!-- القسم الأول: اللوجو والوصف -->
                 <div>
                     <a href="index.html" class="logo">
                         <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png"
@@ -276,7 +262,6 @@
                         بأقل الأسعار.</p>
                 </div>
 
-                <!-- القسم الثاني: روابط هامة -->
                 <div>
                     <h4>روابط هامة</h4>
                     <ul>
@@ -287,7 +272,6 @@
                     </ul>
                 </div>
 
-                <!-- القسم الثالث: المساعدة -->
                 <div>
                     <h4>المساعدة والسياسات</h4>
                     <ul>
@@ -302,6 +286,9 @@
 
             <div class="copyrights">
                 <p>&copy; 2025 DISKA - جميع الحقوق محفوظة</p>
+                  <p>Design and programming by<a
+                        href="https://www.facebook.com/profile.php?id=100090592885243&mibextid=ZbWKwL"
+                        target="_blank"><strong style="color: #FACC15;">GMTWEB</strong> </a> </p>
             </div>
         </div>
     </footer>

@@ -12,7 +12,6 @@
 
 <body class="bg-light">
 
-    <!-- Header بسيط للتاجر -->
     <header class="main-header">
         <div class="container header-container">
             <a href="index.html" class="logo">
@@ -30,13 +29,11 @@
         <div class="container">
             <div class="merchant-grid">
 
-                <!-- 1. فورم إضافة/تعديل المنتج -->
                 <div class="merchant-form-box">
                     <h2 style="margin-bottom: 20px; color: var(--primary);">إضافة بضاعة جديدة</h2>
 
                     <form id="addProductForm">
 
-                        <!-- رفع الصورة -->
                         <div class="form-group upload-box">
                             <label for="productImage" class="upload-label">
                                 <i class="fas fa-cloud-upload-alt"></i>
@@ -47,13 +44,11 @@
                             <input type="file" id="productImage" accept="image/*" style="display: none;">
                         </div>
 
-                        <!-- اسم المنتج -->
                         <div class="form-group">
                             <label>اسم المنتج</label>
                             <input type="text" id="productName" placeholder="مثال: كرتونة شيبسي عائلي" required>
                         </div>
 
-                        <!-- التواريخ (جديد) -->
                         <div class="form-row">
                             <div class="form-group">
                                 <label>تاريخ الإنتاج <span style="color:red">*</span></label>
@@ -65,7 +60,6 @@
                             </div>
                         </div>
 
-                        <!-- الأسعار -->
                         <div class="form-row">
                             <div class="form-group">
                                 <label>السعر الحالي (بيع)</label>
@@ -77,7 +71,6 @@
                             </div>
                         </div>
 
-                        <!-- تفاصيل البالته والمخزون -->
                         <div class="form-row">
                             <div class="form-group">
                                 <label>عدد العبوات (الكرتونة)</label>
@@ -89,14 +82,12 @@
                             </div>
                         </div>
 
-                        <!-- الوصف -->
                         <div class="form-group">
                             <label>وصف المنتج</label>
                             <textarea id="productDesc" rows="4" placeholder="تفاصيل المنتج، بلد المنشأ، ملاحظات..."
                                 required></textarea>
                         </div>
 
-                        <!-- التصنيف -->
                         <div class="form-group">
                             <label>التصنيف</label>
                             <select id="productCat">
@@ -107,11 +98,9 @@
                             </select>
                         </div>
 
-                        <!-- في آخر الفورم -->
-                        <input type="hidden" id="editIndex"> <!-- حقل مخفي لتخزين رقم المنتج عند التعديل -->
+                        <input type="hidden" id="editIndex">
                         <button type="submit" id="submitBtn" class="btn primary w-100">نشر المنتج</button>
-                        <button type="button" id="cancelEditBtn" class="btn primary w-100"
-                            style="display: none; margin-top: 10px; background: #e0f2fe;
+                        <button type="button" id="cancelEditBtn" class="btn primary w-100" style="display: none; margin-top: 10px; background: #e0f2fe;
     color: #0284c7;
     border: none;
     padding: 5px;
@@ -120,20 +109,16 @@
                     </form>
                 </div>
 
-                <!-- 2. القائمة الجانبية (نصائح + قائمة منتجاتي) -->
                 <div class="merchant-sidebar">
 
-                    <!-- قائمة منتجات التاجر (للحذف) -->
                     <div class="my-products-list"
                         style="background: #fff; padding: 20px; border-radius: 15px; border: 1px solid #eee; margin-bottom: 20px;">
                         <h3 style="color: var(--primary); margin-bottom: 15px;">منتجاتي المعروضة</h3>
                         <div id="merchantProductsList">
-                            <!-- سيتم ملء المنتجات هنا تلقائياً بواسطة JS -->
                             <p style="color: #777; font-size: 0.9rem;">لا توجد منتجات مضافة حالياً.</p>
                         </div>
                     </div>
 
-                    <!-- تعليمات للتاجر -->
                     <div class="merchant-info">
                         <h3><i class="fas fa-lightbulb"></i> نصائح للبيع</h3>
                         <ul>

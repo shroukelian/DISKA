@@ -12,7 +12,7 @@
 
 <body>
 
-    <!-- Header (نفس الهيدر) -->
+    <!-- Header  -->
     <header class="main-header">
         <div class="container header-container">
             <a href="index.html" class="logo">
@@ -35,14 +35,12 @@
             <h2 style="margin-bottom: 30px;">قائمة المفضلة ❤️</h2>
 
             <div class="products-grid-wishlist" id="wishlistContainer">
-                <!-- المنتجات هتنزل هنا بالجافاسكريبت -->
             </div>
         </div>
     </section>
 
     <script src="script.js"></script>
     <script>
-        // كود خاص بصفحة المفضلة فقط
         document.addEventListener('DOMContentLoaded', () => {
             const wishlistGrid = document.getElementById('wishlistGrid');
             const wishlist = JSON.parse(localStorage.getItem('DISKA_WISHLIST')) || [];

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلباتي | DISKA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="DISKA Logo">
+            </a>
+            <div class="header-actions">
+                <!-- <a href="index.html" class="action-item"><i class="fas fa-home"></i></a> -->
+                <div class="action-item mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar">
+        <div class="sidebar-header">
+            <h3>القائمة</h3>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="orders.html"><i class="fas fa-box"></i> طلباتي</a></li> <!-- رابط الصفحة دي -->
+            <li><a href="profile.html"><i class="fas fa-user-circle"></i> حسابي</a></li>
+        </ul>
+    </div>
+    <div class="menu-overlay"></div>
+
+    <!-- Orders Section -->
+    <section class="section-padding" style="padding-top: 20px;">
+        <div class="container">
+            
+            <div class="orders-page-wrapper">
+                <h2 class="page-title">سجل الطلبات</h2>
+
+                <!-- 1. التبويبات (Tabs) -->
+                <div class="orders-tabs">
+                    <button class="tab-btn active" data-filter="pending">قيد الانتظار</button>
+                    <button class="tab-btn" data-filter="confirmed">مؤكدة</button>
+                    <button class="tab-btn" data-filter="shipped">تم الشحن</button>
+                    <button class="tab-btn" data-filter="history">سابقة</button>
+                </div>
+
+                <!-- 2. قائمة الطلبات -->
+                <div id="ordersContainer" class="orders-list">
+                    <!-- الطلبات هتنزل هنا بالجافاسكريبت -->
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+                    <a href="index.html" class="logo">
+                        <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png"
+                            alt="DISKA Logo">
+                        <!-- <span>Wholesale Deals Platform</span> -->
+                    </a>
+                    <p style="margin-top: 15px; color: #cbd5e1;">منصتك الأولى لتجارة الجملة في مصر. نربطك بأفضل الموردين
+                        بأقل الأسعار.</p>
+                </div>
+
+                <div>
+                    <h4>روابط هامة</h4>
+                    <ul>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="merchant.html">بيع معنا (للتجار)</a></li>
+                        <li><a href="requests.html">طلبات خاصة</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>المساعدة والسياسات</h4>
+                    <ul>
+                        <li><a href="policies.html#shipping">الشحن والتوصيل</a></li>
+                        <li><a href="policies.html#return">سياسة الإرجاع</a></li>
+                        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                        <li><a href="profile.html">حسابي</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="copyrights">
+                <p>&copy; 2025 DISKA - جميع الحقوق محفوظة</p>
+                  <p>Design and programming by<a
+                        href="https://www.facebook.com/profile.php?id=100090592885243&mibextid=ZbWKwL"
+                        target="_blank"><strong style="color: #FACC15;">GMTWEB</strong> </a> </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // كود خاص للصفحة دي فقط (للمحاكاة)
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // بيانات وهمية (Mock Data) تشبه الصورة
+            const dummyOrders = [
+                { id: 'yMdxzX3M', status: 'pending', shop: 'كشك منه', total: 136.5, count: 1, date: 'غير محدد' },
+                { id: 'DaoGe6Ea', status: 'pending', shop: 'Breadfast', total: 243.7, count: 11, date: '29-05-2025' },
+                { id: 'yMdxpq9M', status: 'pending', shop: 'متجر رامي - test', total: 242.5, count: 3, date: 'غير محدد' },
+                { id: 'ABC12345', status: 'confirmed', shop: 'سوبر ماركت السلام', total: 1200.0, count: 20, date: '01-01-2026' },
+                { id: 'XYZ98765', status: 'shipped', shop: 'جملة ماركت', total: 5000.0, count: 50, date: 'تم التسليم' }
+            ];
+
+            const container = document.getElementById('ordersContainer');
+            const tabs = document.querySelectorAll('.tab-btn');
+
+            // دالة رسم الطلبات
+            function renderOrders(filter) {
+                container.innerHTML = '';
+                
+                // فلترة الطلبات (للمحاكاة فقط: pending بيجيب أول 3، والباقي بنوزعهم)
+                let filteredOrders = dummyOrders.filter(o => o.status === filter || (filter === 'history' && o.status === 'shipped'));
+                
+                // لو مفيش طلبات
+                if(filteredOrders.length === 0) {
+                    container.innerHTML = '<div style="text-align:center; padding:40px; color:#777;">لا توجد طلبات في هذه القائمة</div>';
+                    return;
+                }
+
+                filteredOrders.forEach(order => {
+                    // تحديد لون الحالة
+                    let badgeClass = 'pending';
+                    let badgeText = 'قيد الانتظار';
+                    if(order.status === 'confirmed') { badgeClass = 'confirmed'; badgeText = 'مؤكدة'; }
+                    if(order.status === 'shipped') { badgeClass = 'shipped'; badgeText = 'تم الشحن'; }
+
+                    const html = `
+                        <div class="order-card-box">
+                            <div class="order-header">
+                                <span class="status-label ${badgeClass}">${badgeText}</span>
+                                <span class="order-id">#${order.id}</span>
+                            </div>
+                            
+                            <div class="order-body">
+                                <div class="order-row">
+                                    <span class="shop-name">${order.shop}</span>
+                                    <span class="order-price">${order.total} ج.م</span>
+                                </div>
+                                <div class="order-row sub-info">
+                                    <span>All Egypt-Testing Retailers</span>
+                                    <span>إجمالي المنتجات: ${order.count}</span>
+                                </div>
+                            </div>
+
+                            <div class="order-footer">
+                                <button class="btn-outline">عرض التفاصيل</button>
+                                <span class="delivery-date">يوم التوصيل المتوقع: ${order.date}</span>
+                            </div>
+                        </div>
+                    `;
+                    container.insertAdjacentHTML('beforeend', html);
+                });
+            }
+
+            // تشغيل التبويبات
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    renderOrders(tab.dataset.filter);
+                });
+            });
+
+            // التشغيل المبدئي
+            renderOrders('pending');
+        });
+    </script>
+</body>
+</html>

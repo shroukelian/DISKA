@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* تنسيقات خاصة بالصفقات */
         .deal-card { border: 2px solid var(--accent); position: relative; overflow: hidden; }
         .deal-badge { position: absolute; top: 0; left: 0; background: var(--accent); color: var(--primary); padding: 5px 15px; font-weight: bold; border-bottom-right-radius: 10px; }
         .progress-container { background: #eee; height: 10px; border-radius: 5px; margin: 15px 0; overflow: hidden; }
@@ -21,7 +20,6 @@
 </head>
 <body>
 
-    <!-- Header (نفس الهيدر) -->
     <header class="main-header">
         <div class="container header-container">
              <a href="index.html" class="logo">
@@ -44,19 +42,16 @@
             <li><a href="profile.html"><i class="fas fa-user-circle"></i> حسابي / طلباتي</a></li>
             <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
 
-            <!-- الصفحات الجديدة -->
             <li><a href="deals.html" style="color: var(--danger);"><i class="fas fa-fire"></i> الصفقات (Deals)</a></li>
             <li><a href="requests.html"><i class="fas fa-bullhorn"></i> طلبات خاصة</a></li>
             <li><a href="merchant.html"><i class="fas fa-store"></i> لوحة التاجر</a></li>
 
-            <!-- الصفحات الثابتة -->
             <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
             <li><a href="faq.html"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
             <li><a href="contact.html"><i class="fas fa-headset"></i> اتصل بنا</a></li>
             <li><a href="policies.html"><i class="fas fa-headset"></i> السياسات والشحن</a></li>
         </ul>
     </div>
-    <!-- Overlay (الخلفية الغامقة لما القائمة تفتح) -->
     <div class="menu-overlay"></div>
 
     <section class="section-padding">
@@ -66,7 +61,6 @@
 
             <div class="products-grid" id="dealsGrid">
                 
-                <!-- صفقة 1 (محاكاة) -->
                 <div class="product-card deal-card">
                     <div class="deal-badge">صفقة نشطة</div>
                     <div class="product-img"><img src="images/pepsi.webp"></div>
@@ -77,14 +71,12 @@
                             <span class="old-price">191.99 ج.م</span>
                         </div>
                         
-                        <!-- العداد -->
                         <div class="timer-box">
                             <div class="time-unit"><strong class="days">02</strong><span>يوم</span></div>:
                             <div class="time-unit"><strong class="hours">14</strong><span>ساعة</span></div>:
                             <div class="time-unit"><strong class="mins">30</strong><span>دقيقة</span></div>
                         </div>
 
-                        <!-- شريط التقدم -->
                         <div style="font-size: 0.8rem; display: flex; justify-content: space-between;">
                             <span>تم حجز: 750</span>
                             <span>الهدف: 1000</span>
@@ -97,7 +89,6 @@
                     </div>
                 </div>
 
-                <!-- صفقة 2 -->
                 <div class="product-card deal-card">
                     <div class="deal-badge">باقي قليل</div>
                     <div class="product-img"><img src="images/زيت.webp"></div>
@@ -130,7 +121,6 @@
         </div>
     </section>
 
-    <!-- Modal عرض صفقة (للتاجر) -->
     <div id="dealModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:2000; align-items:center; justify-content:center;">
         <div style="background:#fff; padding:30px; border-radius:10px; width:90%; max-width:500px; position:relative;">
             <span onclick="document.getElementById('dealModal').style.display='none'" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:1.5rem;">&times;</span>
@@ -147,7 +137,6 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-sidebar">
-        <!-- (نفس كود القائمة اللي عندك) -->
         <ul class="sidebar-links">
             <li><a href="index.html">الرئيسية</a></li>
             <li><a href="deals.html">الصفقات 🔥</a></li>
@@ -161,10 +150,8 @@
   <footer>
     <div class="container">
         
-        <!-- استخدمنا كلاس footer-grid بدلاً من الستايل المباشر -->
         <div class="footer-grid">
             
-            <!-- القسم الأول: اللوجو والوصف -->
             <div>
                 <a href="index.html" class="logo">
                 <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
@@ -173,7 +160,6 @@
                 <p style="margin-top: 15px; color: #cbd5e1;">منصتك الأولى لتجارة الجملة في مصر. نربطك بأفضل الموردين بأقل الأسعار.</p>
             </div>
 
-            <!-- القسم الثاني: روابط هامة -->
             <div>
                 <h4>روابط هامة</h4>
                 <ul>
@@ -184,7 +170,6 @@
                 </ul>
             </div>
 
-            <!-- القسم الثالث: المساعدة -->
             <div>
                 <h4>المساعدة والسياسات</h4>
                 <ul>
@@ -199,6 +184,9 @@
 
         <div class="copyrights">
             <p>&copy; 2025 DISKA - جميع الحقوق محفوظة</p>
+              <p>Design and programming by<a
+                        href="https://www.facebook.com/profile.php?id=100090592885243&mibextid=ZbWKwL"
+                        target="_blank"><strong style="color: #FACC15;">GMTWEB</strong> </a> </p>
         </div>
     </div>
 </footer>
@@ -208,14 +196,12 @@
             document.getElementById('dealModal').style.display = 'flex';
         }
         
-        // محاكاة إرسال طلب الصفقة
         document.getElementById('dealForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('تم إرسال طلب الصفقة للإدارة! سيتم مراجعته والرد عليك.');
             document.getElementById('dealModal').style.display = 'none';
         });
 
-        // تشغيل زر القائمة
         const menuBtn = document.querySelector('.mobile-menu-btn');
         const sidebar = document.querySelector('.mobile-sidebar');
         const overlay = document.querySelector('.menu-overlay');

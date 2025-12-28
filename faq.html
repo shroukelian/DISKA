@@ -15,15 +15,10 @@
         .faq-item.active .faq-answer { padding: 20px; max-height: 200px; border-top: 1px solid #eee; }
         .faq-item.active .faq-question i { transform: rotate(180deg); }
         @media (max-width: 768px) {
-    
-    /* ... (أي أكواد قديمة للموبايل هنا سيبها زي ما هي) ... */
-
-    /* إخفاء زر العودة للرئيسية (أيقونة البيت) في الموبايل */
     .header-actions a.action-item {
         display: none !important;
     }
 
-    /* تأكيد ظهور زر القائمة (التلات شرطات) */
     .mobile-menu-btn {
         display: block !important;
     }
@@ -58,12 +53,10 @@
             <li><a href="profile.html"><i class="fas fa-user-circle"></i> حسابي / طلباتي</a></li>
             <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
 
-            <!-- الصفحات الجديدة -->
             <li><a href="deals.html" style="color: var(--danger);"><i class="fas fa-fire"></i> الصفقات (Deals)</a></li>
             <li><a href="requests.html"><i class="fas fa-bullhorn"></i> طلبات خاصة</a></li>
             <li><a href="merchant.html"><i class="fas fa-store"></i> لوحة التاجر</a></li>
 
-            <!-- الصفحات الثابتة -->
             <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
             <li><a href="faq.html"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
             <li><a href="contact.html"><i class="fas fa-headset"></i> اتصل بنا</a></li>
@@ -77,7 +70,6 @@
             <h2 class="page-title" style="padding-top: 20px;">الأسئلة الشائعة</h2>
 
             <div class="faq-list">
-                <!-- سؤال 1 -->
                 <div class="faq-item">
                     <div class="faq-question">
                         كيف يمكنني التسجيل كتاجر؟
@@ -88,7 +80,6 @@
                     </div>
                 </div>
 
-                <!-- سؤال 2 -->
                 <div class="faq-item">
                     <div class="faq-question">
                         ما هو الحد الأدنى للطلب؟
@@ -99,7 +90,6 @@
                     </div>
                 </div>
 
-                <!-- سؤال 3 -->
                 <div class="faq-item">
                     <div class="faq-question">
                         هل يوجد دفع عند الاستلام؟
@@ -117,10 +107,8 @@
     <footer>
         <div class="container">
 
-            <!-- استخدمنا كلاس footer-grid بدلاً من الستايل المباشر -->
             <div class="footer-grid">
 
-                <!-- القسم الأول: اللوجو والوصف -->
                 <div>
                     <a href="index.html" class="logo">
                         <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png"
@@ -131,7 +119,6 @@
                         بأقل الأسعار.</p>
                 </div>
 
-                <!-- القسم الثاني: روابط هامة -->
                 <div>
                     <h4>روابط هامة</h4>
                     <ul>
@@ -142,7 +129,6 @@
                     </ul>
                 </div>
 
-                <!-- القسم الثالث: المساعدة -->
                 <div>
                     <h4>المساعدة والسياسات</h4>
                     <ul>
@@ -157,12 +143,14 @@
 
             <div class="copyrights">
                 <p>&copy; 2025 DISKA - جميع الحقوق محفوظة</p>
+                  <p>Design and programming by<a
+                        href="https://www.facebook.com/profile.php?id=100090592885243&mibextid=ZbWKwL"
+                        target="_blank"><strong style="color: #FACC15;">GMTWEB</strong> </a> </p>
             </div>
         </div>
     </footer>
     <script src="script.js"></script>
     <script>
-        // كود بسيط لفتح وغلق الأسئلة
         document.querySelectorAll('.faq-question').forEach(item => {
             item.addEventListener('click', () => {
                 const parent = item.parentElement;
