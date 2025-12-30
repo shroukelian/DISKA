@@ -77,7 +77,6 @@
         </div>
     </section>
 
-    <!-- Modal إضافة طلب (محدث) -->
     <div id="reqModal"
         style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:2000; align-items:center; justify-content:center;">
         <div
@@ -89,21 +88,18 @@
 
             <form id="requestForm">
 
-                <!-- عنوان الطلب -->
                 <div class="form-group" style="margin-bottom: 15px;">
                     <label style="display:block; margin-bottom:5px; font-weight:bold;">عنوان الطلب</label>
                     <input type="text" id="reqTitle" placeholder="مثال: مطلوب سكر 1 طن" class="form-control"
                         style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px;" required>
                 </div>
 
-                <!-- التفاصيل -->
                 <div class="form-group" style="margin-bottom: 15px;">
                     <label style="display:block; margin-bottom:5px; font-weight:bold;">تفاصيل المنتج</label>
                     <textarea id="reqDesc" placeholder="اكتب المواصفات، الماركة، الكمية المطلوبة..." rows="3"
                         style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px;" required></textarea>
                 </div>
 
-                <!-- تواريخ الصلاحية المطلوبة -->
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
                     <div class="form-group">
                         <label style="display:block; margin-bottom:5px; font-size:0.9rem;">تاريخ الإنتاج المفضل</label>
@@ -117,7 +113,6 @@
                     </div>
                 </div>
 
-                <!-- الموقع وتاريخ التوصيل -->
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
                     <div class="form-group">
                         <label style="display:block; margin-bottom:5px; font-size:0.9rem;">مكان التوصيل
@@ -132,7 +127,6 @@
                     </div>
                 </div>
 
-                <!-- الميزانية -->
                 <div class="form-group" style="margin-bottom: 20px;">
                     <label style="display:block; margin-bottom:5px; font-weight:bold;">الميزانية المقترحة (ج.م)</label>
                     <input type="number" id="reqBudget" placeholder="0.00" class="form-control"
@@ -191,12 +185,10 @@
     </footer>
     <div class="floating-container">
     
-    <!-- زر الترجمة (الكرة الأرضية) -->
     <a href="javascript:void(0)" id="langSwitcher" class="float-btn lang-btn" title="Change Language">
         <i class="fas fa-globe"></i>
     </a>
 
-    <!-- زر الواتساب -->
     <a href="https://wa.me/201000000000" target="_blank" class="float-btn whatsapp-btn" title="تواصل معنا">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -204,22 +196,19 @@
 </div>
     <script src="script.js"></script>
     <script>
-        // التعامل مع طلبات الشراء
         const reqForm = document.getElementById('requestForm');
         const reqContainer = document.getElementById('requestsContainer');
 
-        // استرجاع الطلبات القديمة أو استخدام مصفوفة فارغة
         let requests = JSON.parse(localStorage.getItem('DISKA_REQUESTS')) || [];
 
         function renderRequests() {
-            reqContainer.innerHTML = ''; // تنظيف القائمة قبل الرسم
+            reqContainer.innerHTML = ''; 
 
             if (requests.length === 0) {
                 reqContainer.innerHTML = '<p style="text-align:center; padding:30px; color:#777;">لا توجد طلبات شراء حالياً. كن أول من يطلب!</p>';
                 return;
             }
 
-            // عرض الطلبات (الجديد في الأعلى)
             requests.slice().reverse().forEach(req => {
                 const html = `
                 <div class="request-card" style="background:#fff; padding:20px; border-radius:10px; margin-bottom:15px; border-right:5px solid var(--accent); box-shadow:0 2px 10px rgba(0,0,0,0.05);">
@@ -254,7 +243,6 @@
             });
         }
 
-        // عند إضافة طلب جديد
         reqForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
@@ -263,7 +251,6 @@
                 title: document.getElementById('reqTitle').value,
                 desc: document.getElementById('reqDesc').value,
                 budget: document.getElementById('reqBudget').value,
-                // البيانات الجديدة
                 prodDate: document.getElementById('reqProdDate').value,
                 expDate: document.getElementById('reqExpDate').value,
                 location: document.getElementById('reqLocation').value,
@@ -277,13 +264,11 @@
             alert('تم نشر طلبك بنجاح! سيقوم التجار بالرد عليك.');
             document.getElementById('reqModal').style.display = 'none';
             reqForm.reset();
-            renderRequests(); // إعادة رسم الطلبات
+            renderRequests(); 
         });
 
-        // دوال فتح وغلق المودال
         function openRequestModal() { document.getElementById('reqModal').style.display = 'flex'; }
 
-        // إغلاق المودال عند الضغط في الخارج
         window.onclick = function (event) {
             const modal = document.getElementById('reqModal');
             if (event.target == modal) {
@@ -291,7 +276,6 @@
             }
         }
 
-        // تشغيل العرض عند التحميل
         renderRequests();
     </script>
 

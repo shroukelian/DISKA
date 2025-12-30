@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalDisplay = document.getElementById('finalTotal');
     const subTotalDisplay = document.getElementById('subTotal');
     const itemsList = document.getElementById('checkoutItemsList');
-    const checkoutForm = document.getElementById('checkoutForm'); // الفورم نفسه
+    const checkoutForm = document.getElementById('checkoutForm'); 
 
     // 1. ملء قائمة المحافظات
     if (govSelect) {
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (selectedGov === "الإسكندرية") {
             shippingFees = 75;
         } else {
-            shippingFees = 100; // باقي المحافظات
+            shippingFees = 100;
         }
 
         // عرض الشحن وتحديث الإجمالي
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         checkoutForm.addEventListener('submit', function(e) {
             e.preventDefault(); // منع إعادة تحميل الصفحة
 
-            // أ. التحقق من البيانات (المحافظة والمنطقة)
+            // التحقق من البيانات (المحافظة والمنطقة)
             // باقي الحقول بيتحقق منها الـ required في الـ HTML
             if (govSelect.value === "" || citySelect.value === "") {
                 alert('يرجى اختيار المحافظة والمنطقة لحساب الشحن.');
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // ب. خصم الكميات من مخزون التاجر
+            //  خصم الكميات من مخزون التاجر
             let merchantProducts = JSON.parse(localStorage.getItem('DISKA_MERCHANT_PRODUCTS')) || [];
             let stockUpdated = false;
 
@@ -155,17 +155,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // ج. حفظ المخزون الجديد
+            //  حفظ المخزون الجديد
             if (stockUpdated) {
                 localStorage.setItem('DISKA_MERCHANT_PRODUCTS', JSON.stringify(merchantProducts));
             }
 
-            // د. حفظ الطلب في سجل الطلبات (اختياري للعرض في البروفايل)
-            // let orders = JSON.parse(localStorage.getItem('DISKA_ORDERS')) || [];
-            // orders.push({ id: Date.now(), total: document.getElementById('finalTotal').innerText, date: new Date().toLocaleDateString() });
-            // localStorage.setItem('DISKA_ORDERS', JSON.stringify(orders));
-
-            // هـ. إنهاء العملية
+            //  إنهاء العملية
             localStorage.removeItem('DISKA_CART'); // تفريغ السلة
             alert('تم تأكيد طلبك بنجاح! وتم خصم الكمية من المخزون.');
             window.location.href = 'index.html'; // العودة للرئيسية

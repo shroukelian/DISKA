@@ -39,18 +39,15 @@
                 <a href="notifications.html"
                     style="display: flex; justify-content: space-between; align-items: center;">
                     <span><i class="fas fa-bell"></i> الإشعارات</span>
-                    <!-- ممكن نضيف بادج هنا لو فيه اشعارات -->
                     <span class="badge"
                         style="position:static; background:red; padding:2px 6px; border-radius:10px; font-size:0.7rem;">جديد</span>
                 </a>
             </li>
 
-            <!-- 3. لوحة التاجر (اللي خفيناها من فوق) -->
             <li><a href="merchant.html"><i class="fas fa-store"></i> حساب تاجر (بيع معنا)</a></li>
 
             <hr style="border:0; border-top:1px solid #eee; margin:10px 0;">
 
-            <!-- باقي الروابط الأساسية -->
             <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
             <li><a href="orders.html"><i class="fas fa-box"></i> طلباتي</a></li> <!-- رابط الصفحة دي -->
             <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
@@ -58,7 +55,6 @@
             <li><a href="deals.html"><i class="fas fa-fire" style="color:red;"></i> العروض والصفقات</a></li>
             <li><a href="requests.html"><i class="fas fa-bullhorn"></i> طلبات خاصة</a></li>
 
-            <!-- روابط الفوتر -->
             <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
             <li><a href="contact.html"><i class="fas fa-headset"></i> اتصل بنا</a></li>
             <li><a href="faq.html"><i class="fas fa-question-circle"></i> الأسئلة الشائعة </a></li>
@@ -75,7 +71,6 @@
             <div class="orders-page-wrapper">
                 <h2 class="page-title">سجل الطلبات</h2>
 
-                <!-- 1. التبويبات (Tabs) -->
                 <div class="orders-tabs">
                     <button class="tab-btn active" data-filter="pending">قيد الانتظار</button>
                     <button class="tab-btn" data-filter="confirmed">مؤكدة</button>
@@ -83,9 +78,7 @@
                     <button class="tab-btn" data-filter="history">سابقة</button>
                 </div>
 
-                <!-- 2. قائمة الطلبات -->
                 <div id="ordersContainer" class="orders-list">
-                    <!-- الطلبات هتنزل هنا بالجافاسكريبت -->
                 </div>
             </div>
 
@@ -140,12 +133,10 @@
     </footer>
 <div class="floating-container">
     
-    <!-- زر الترجمة (الكرة الأرضية) -->
     <a href="javascript:void(0)" id="langSwitcher" class="float-btn lang-btn" title="Change Language">
         <i class="fas fa-globe"></i>
     </a>
 
-    <!-- زر الواتساب -->
     <a href="https://wa.me/201000000000" target="_blank" class="float-btn whatsapp-btn" title="تواصل معنا">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -153,10 +144,8 @@
 </div>
     <script src="script.js"></script>
     <script>
-        // كود خاص للصفحة دي فقط (للمحاكاة)
         document.addEventListener('DOMContentLoaded', () => {
             
-            // بيانات وهمية (Mock Data) تشبه الصورة
             const dummyOrders = [
                 { id: 'yMdxzX3M', status: 'pending', shop: 'كشك منه', total: 136.5, count: 1, date: 'غير محدد' },
                 { id: 'DaoGe6Ea', status: 'pending', shop: 'Breadfast', total: 243.7, count: 11, date: '29-05-2025' },
@@ -168,21 +157,17 @@
             const container = document.getElementById('ordersContainer');
             const tabs = document.querySelectorAll('.tab-btn');
 
-            // دالة رسم الطلبات
             function renderOrders(filter) {
                 container.innerHTML = '';
                 
-                // فلترة الطلبات (للمحاكاة فقط: pending بيجيب أول 3، والباقي بنوزعهم)
                 let filteredOrders = dummyOrders.filter(o => o.status === filter || (filter === 'history' && o.status === 'shipped'));
                 
-                // لو مفيش طلبات
                 if(filteredOrders.length === 0) {
                     container.innerHTML = '<div style="text-align:center; padding:40px; color:#777;">لا توجد طلبات في هذه القائمة</div>';
                     return;
                 }
 
                 filteredOrders.forEach(order => {
-                    // تحديد لون الحالة
                     let badgeClass = 'pending';
                     let badgeText = 'قيد الانتظار';
                     if(order.status === 'confirmed') { badgeClass = 'confirmed'; badgeText = 'مؤكدة'; }
@@ -216,7 +201,6 @@
                 });
             }
 
-            // تشغيل التبويبات
             tabs.forEach(tab => {
                 tab.addEventListener('click', () => {
                     tabs.forEach(t => t.classList.remove('active'));
@@ -225,7 +209,6 @@
                 });
             });
 
-            // التشغيل المبدئي
             renderOrders('pending');
         });
     </script>

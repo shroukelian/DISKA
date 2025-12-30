@@ -10,22 +10,21 @@
 }
 
 /* =========================================
-   DARK MODE STYLES (الوضع الليلي)
+   DARK MODE STYLES 
    ========================================= */
 
 body.dark-mode {
-    background-color: #111827; /* خلفية سوداء */
-    color: #f3f4f6; /* نص أبيض */
+    background-color: #111827;
+    color: #f3f4f6;
 }
 
-/* تعديل الهيدر في الوضع الليلي */
 body.dark-mode .main-header {
-    background-color: #1f2937; /* رمادي غامق */
+    background-color: #1f2937; 
     box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 body.dark-mode .search-box {
-    background-color: #374151; /* خلفية البحث */
+    background-color: #374151; 
     border-color: #4b5563;
 }
 body.dark-mode .search-box input {
@@ -33,16 +32,15 @@ body.dark-mode .search-box input {
 }
 
 body.dark-mode .action-item {
-    color: #e5e7eb !important; /* أيقونات فاتحة */
+    color: #e5e7eb !important; 
 }
 body.dark-mode .action-item:hover {
     color: var(--accent) !important;
 }
 
-/* تعديل الكروت والخلفيات البيضاء */
 body.dark-mode .bg-light,
 body.dark-mode .section-padding.bg-light {
-    background-color: #0f172a; /* خلفية الأقسام */
+    background-color: #0f172a;
 }
 
 body.dark-mode .product-card,
@@ -53,7 +51,7 @@ body.dark-mode .contact-form-card,
 body.dark-mode .sidebar,
 body.dark-mode .order-summary-box,
 body.dark-mode .checkout-form {
-    background-color: #1f2937; /* كروت غامقة */
+    background-color: #1f2937; 
     border-color: #374151;
     color: #fff;
 }
@@ -63,7 +61,6 @@ body.dark-mode .cat-item span {
     color: #e5e7eb;
 }
 
-/* تعديل القائمة الجانبية للموبايل */
 body.dark-mode .mobile-sidebar {
     background-color: #1f2937;
     color: #fff;
@@ -75,7 +72,6 @@ body.dark-mode .sidebar-links a:hover {
     background-color: #374151;
 }
 
-/* تعديل المدخلات (Inputs) */
 body.dark-mode input, 
 body.dark-mode select, 
 body.dark-mode textarea {
@@ -128,13 +124,10 @@ ul { list-style: none; }
 
 .bg-light { background-color: var(--bg-light); }
 
-/* =========================================
-   تنسيق الهيدر الأبيض (للوجو الجديد)
-   ========================================= */
 
 .main-header {
-    background-color: var(--primary); /* خلفية بيضاء */
-    color: var(--accent);     /* النصوص والأيقونات كحلي */
+    background-color: var(--primary); 
+    color: var(--accent);     
     padding: 10px 0;
     position: sticky;
     top: 0;
@@ -149,7 +142,6 @@ ul { list-style: none; }
     gap: 20px;
 }
 
-/* تنسيق اللوجو */
 .logo {
     display: flex;
     align-items: center;
@@ -159,11 +151,10 @@ ul { list-style: none; }
 
 
 
-/* شريط البحث (لون خلفية مختلف عشان يبان) */
 .search-box {
     flex: 1;
     display: flex;
-    background: #f8fafc; /* رمادي فاتح جداً */
+    background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
     overflow: hidden;
@@ -172,7 +163,7 @@ ul { list-style: none; }
 }
 
 .search-box:focus-within {
-    border-color: var(--accent); /* حدود صفراء عند الكتابة */
+    border-color: var(--accent); 
     background: #fff;
 }
 
@@ -195,7 +186,6 @@ ul { list-style: none; }
     font-size: 1.1rem;
 }
 
-/* الأيقونات والإجراءات */
 .header-actions {
     display: flex;
     align-items: center;
@@ -207,7 +197,7 @@ ul { list-style: none; }
     align-items: center;
     gap: 8px;
     cursor: pointer;
-    color: var(--accent) ;/* لون كحلي إجباري */
+    color: var(--accent) ;
     text-decoration: none;
     transition: 0.3s;
 }
@@ -217,10 +207,9 @@ ul { list-style: none; }
 }
 
 .action-item:hover {
-    color: var(--bg-light) ; /* يتحول أصفر عند اللمس */
+    color: var(--bg-light) ;
 }
 
-/* النصوص الصغيرة (محفظة، تسجيل دخول) */
 .action-item .info {
     display: flex;
     flex-direction: column;
@@ -230,7 +219,6 @@ ul { list-style: none; }
 .action-item .info span { color: #64748b; font-size: 0.75rem; }
 .action-item .info strong { color: var(--primary); }
 
-/* زر التاجر المميز */
 .merchant-link {
     background-color: #fffbeb; 
     padding: 5px 12px;
@@ -238,78 +226,65 @@ ul { list-style: none; }
     border: 1px solid var(--accent);
 }
 
-/* زر القائمة للموبايل */
 .mobile-menu-btn {
     display: none;
     font-size: 1.5rem;
     color: var(--accent);
 }
 
-/* --- تعديلات الموبايل --- */
 @media (max-width: 768px) {
     
-    /* 1. زيادة المسافة بين اللوجو وباقي الأيقونات */
     .header-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 10px; /* هوامش جانبية صغيرة */
-        gap: 15px; /* (مهم) زيادة الفراغ بين العناصر */
+        padding: 10px 10px; 
+        gap: 15px; 
     }
 
-    /* 2. ضبط اللوجو ليكون في أقصى اليمين ومفصول عن اللي جنبه */
     .logo {
         order: 1;
-        flex: 0 0 auto; /* يمنع اللوجو إنه يكبر وياخد مكان غيره */
-        margin-left: 100px; /* (مهم) يزق الأيقونة اللي جنبه (التاجر) مسافة 10 بكسل */
-        max-width: 120px; /* نحدد عرض أقصى عشان مياكلش الشاشة */
+        flex: 0 0 auto;
+        margin-left: 100px; 
+        max-width: 120px; 
     }
 
 
 
-    /* 3. تظبيط الأيقونات عشان متتزحمش */
     .header-actions {
         order: 2;
-        gap: 8px; /* تقليل المسافة بين الأيقونات الصغيرة وبعضها عشان يسيبوا مكان للوجو */
+        gap: 8px;
     }
     
-    /* تصغير زر التاجر في الموبايل */
     .merchant-link {
-        padding: 5px; /* تقليل الحشو */
+        padding: 5px;
     }
 }
-/* =========================================
-   تعديلات الهيدر النهائية (ديسكتوب وموبايل)
-   ========================================= */
 
-/* 1. إخفاء زر التاجر والمحفظة في كل الشاشات */
 .header-actions .merchant-link, 
 .header-actions .wallet-btn {
     display: none !important;
 }
 
-/* 2. إظهار أسماء الأيقونات في الديسكتوب */
 .icon-label {
-    display: block; /* كان مخفي */
+    display: block; 
     font-size: 0.7rem;
     font-weight: bold;
     margin-top: 2px;
 }
 
-/* 3. تنسيق الأيقونات لتكون عمودية (أيقونة فوق واسم تحت) */
 .header-actions .action-item, 
 .mobile-menu-btn {
     flex-direction: column;
     gap: 2px;
     align-items: center;
     justify-content: center;
-    padding: 0 5px; /* مسافة بين الأيقونات */
+    padding: 0 5px; 
 }
 
-/* 4. تكبير منطقة البحث عشان تملأ الفراغ */
 .search-box {
-    max-width: 700px; /* نكبره شوية عشان ياخد راحته */
+    max-width: 700px;
 }
 /* Hero Section */
 .hero-section {
@@ -409,29 +384,29 @@ ul { list-style: none; }
 }
 
 .badge {
-    position: absolute; /* عشان يطير فوق العنصر */
-    top: -15px;          /* يرفع لفوق عن الأيقونة */
-    right: 15px;         /* ييجي يمين شوية (ناحية كتف الأيقونة) */
+    position: absolute; 
+    top: -15px;          
+    right: 15px;        
     
     width: 18px;
     height: 18px;
     
-    background-color: #ef4444; /* لون أحمر */
+    background-color: #ef4444;
     color: #fff;
     font-size: 0.7rem;
     font-weight: bold;
     border-radius: 50%;
     
-    display: flex;       /* عشان الرقم ييجي في نص الدايرة */
+    display: flex;  
     align-items: center;
     justify-content: center;
     
     z-index: 10;
     padding: 0;
-    border: 1px solid var(--primary); /* حدود كحلي عشان يفصل عن الخلفية */
+    border: 1px solid var(--primary);
 }
 .action-item {
-    position: relative; /* ضروري عشان البادج يتحرك جوه حدود الأيقونة */
+    position: relative; 
 }
 .discount-badge { background: var(--danger); color: #fff; font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; }
 .special-badge { background: var(--accent); color: var(--primary); font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; font-weight: bold; }
@@ -533,12 +508,10 @@ footer {
     .banner-card { flex-direction: column; text-align: center; }
     .banner-image { margin-top: 20px; }
 }
-/* إخفاء زر الموبايل بشكل افتراضي */
 .mobile-menu-btn {
     display: none; 
 }
 
-/* إظهاره فقط في الموبايل */
 @media (max-width: 768px) {
     .mobile-menu-btn {
         display: block;
@@ -549,29 +522,28 @@ footer {
 }
 
 
-/* في الموبايل نصغر اللوجو شوية عشان المساحة */
 @media (max-width: 768px) {
  
 }
 @media (max-width: 768px) {
     .header-container {
-        flex-wrap: wrap; /* يسمح للعناصر تنزل سطر جديد لو مفيش مكان */
+        flex-wrap: wrap; 
         gap: 15px;
     }
     
     .search-box {
-        order: 3; /* ينزل البحث تحت اللوجو والأزرار */
-        width: 100%; /* ياخد عرض الشاشة بالكامل */
+        order: 3; 
+        width: 100%; 
         margin-top: 10px;
     }
     
     .logo {
-        flex: 1; /* ياخد مساحة عشان يزق الأزرار لليمين واليسار */
+        flex: 1; 
     }
 }
 
 /* =========================================
-   صفحة تفاصيل المنتج (Product Page)
+  (Product Page)
    ========================================= */
 .product-details-section { padding: 40px 0; }
 .breadcrumb { margin-bottom: 20px; color: #666; font-size: 0.9rem; }
@@ -602,13 +574,12 @@ footer {
 .main-price { font-size: 2rem; color: var(--primary); font-weight: 900; margin-bottom: 20px; }
 .main-price .old { font-size: 1.2rem; color: #999; text-decoration: line-through; margin-right: 10px; }
 
-/* جدول الأسعار */
 .wholesale-table { margin-bottom: 30px; }
 .wholesale-table h4 { margin-bottom: 10px; color: var(--text-dark); }
 .wholesale-table table { width: 100%; border-collapse: collapse; text-align: center; }
 .wholesale-table th { background: #f1f5f9; padding: 10px; border: 1px solid #e2e8f0; }
 .wholesale-table td { padding: 10px; border: 1px solid #e2e8f0; font-weight: bold; }
-.wholesale-table tr.highlight { background: #fef9c3; } /* تمييز الصف الأوسط */
+.wholesale-table tr.highlight { background: #fef9c3; } 
 
 .details-actions { display: flex; gap: 20px; margin-bottom: 20px; }
 .qty-control { display: flex; align-items: center; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; }
@@ -620,7 +591,7 @@ footer {
 .meta-info i { color: var(--success); width: 25px; }
 
 /* =========================================
-   صفحة السلة (Cart Page)
+  (Cart Page)
    ========================================= */
 .cart-section { padding: 40px 0; }
 .cart-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
@@ -662,7 +633,7 @@ footer {
     .item-actions { width: 100%; justify-content: space-between; }
 }
 /* =========================================
-   صفحة إتمام الطلب (Checkout)
+  (Checkout)
    ========================================= */
 .checkout-section { padding: 40px 0; }
 .checkout-grid {
@@ -694,7 +665,6 @@ footer {
 
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 
-/* خيارات الدفع */
 .payment-options { display: flex; flex-direction: column; gap: 15px; }
 .payment-card {
     border: 1px solid var(--border);
@@ -712,13 +682,12 @@ footer {
 }
 .payment-card i { font-size: 1.5rem; color: var(--primary); }
 
-/* ملخص الطلب */
 .s-item { display: flex; justify-content: space-between; margin-bottom: 10px; color: #666; font-size: 0.9rem; }
 .summary-divider { height: 1px; background: #eee; margin: 15px 0; }
 .free { color: var(--success); font-weight: bold; }
 
 /* =========================================
-   صفحة الدخول (Login)
+  (Login)
    ========================================= */
 .auth-body {
     background-color: var(--bg-light);
@@ -755,13 +724,13 @@ footer {
 
 
 /* =========================================
-   صفحة التصنيف (Category Page)
+  (Category Page)
    ========================================= */
 .category-section { padding: 40px 0; }
 
 .category-layout {
     display: grid;
-    grid-template-columns: 250px 1fr; /* السايد بار 250 بكسل والباقي للمنتجات */
+    grid-template-columns: 250px 1fr; 
     gap: 30px;
     align-items: start;
 }
@@ -772,7 +741,7 @@ footer {
     padding: 20px;
     border: 1px solid var(--border);
     border-radius: 10px;
-    position: sticky; /* يفضل ثابت وانت بتنزل */
+    position: sticky; 
     top: 90px;
 }
 
@@ -835,22 +804,20 @@ footer {
 
 
 .logo img {
-    height: 90px; /* كبرنا الارتفاع (كان 50 أو 70) */
-    width: auto;  /* العرض يتظبط تلقائي */
+    height: 90px; 
+    width: auto;
     object-fit: contain;
-    max-width: 280px; /* أقصى عرض عشان مياخدش مكان البحث */
-    transition: transform 0.3s ease; /* تأثير ناعم */
+    max-width: 280px; 
+    transition: transform 0.3s ease; 
 }
 
-/* حركة بسيطة لما الماوس يجي عليه */
 .logo:hover img {
     transform: scale(1.05); 
 }
 
-/* --- تنسيق اللوجو في الموبايل --- */
 @media (max-width: 768px) {
     .logo img {
-        height: 55px; /* حجم مناسب للموبايل (أكبر من الأول بس مش ضخم) */
+        height: 55px;
         max-width: 180px;
         
     }
@@ -862,12 +829,11 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
     .category-layout {
-        grid-template-columns: 1fr; /* عمود واحد في الموبايل */
+        grid-template-columns: 1fr;
     }
     
     .sidebar {
-        display: none; /* إخفاء الفلاتر مؤقتاً في الموبايل أو عمل زر لإظهارها */
-        /* يمكن عمل زر "تصفية" يظهر السايد بار */
+        display: none; 
     }
     
     .products-header {
@@ -876,20 +842,17 @@ footer {
         align-items: flex-start;
     }
 }
-/* --- تعديلات الموبايل (تحسين المسافات والشكل) --- */
 @media (max-width: 768px) {
     
-    /* 1. ضغط الهيدر وتقليل الفراغات */
     .header-container {
         display: flex;
         flex-wrap: wrap; 
         justify-content: space-between;
         align-items: center;
-        padding: 10px 15px; /* تقليل حواف الهيدر */
-        gap: 10px; /* تقليل المسافة بين السطر الأول والبحث */
+        padding: 10px 15px; 
+        gap: 10px; 
     }
 
-    /* 2. ضبط اللوجو */
     .logo {
         order: 1;
         display: flex;
@@ -901,7 +864,6 @@ footer {
 
 
 
-    /* 3. ضبط الأزرار (القائمة والسلة) */
     .header-actions {
         order: 2;
         display: flex;
@@ -915,30 +877,27 @@ footer {
         color: #fff;
     }
 
-    .action-item .info { display: none; } /* إخفاء كلمة المحفظة */
+    .action-item .info { display: none; } 
 
-    /* 4. ضبط شريط البحث (إزالة الفراغ الكبير فوقه) */
     .search-box {
         order: 3;
         width: 100%;
-        margin-top: 5px; /* تقليل المسافة العلوية */
-        margin-bottom: 5px; /* تقليل المسافة السفلية */
+        margin-top: 5px;
+        margin-bottom: 5px; 
     }
 
-    /* 5. تقليل المسافة بين الهيدر والبنر (Hero Section) */
     .hero-section {
-        padding-top: 15px; /* كانت 30px، قللناها للنص */
+        padding-top: 15px; 
         padding-bottom: 15px;
     }
     
-    /* تحسين شكل البانر في الموبايل */
     .banner-card {
         padding: 20px;
-        flex-direction: column-reverse; /* الصورة تطلع فوق والكلام تحت أو العكس حسب الرغبة */
+        flex-direction: column-reverse; 
     }
     
     .banner-content h2 {
-        font-size: 1.5rem; /* تصغير خط العنوان الكبير */
+        font-size: 1.5rem; 
     }
 }
 /* =========================================
@@ -949,7 +908,7 @@ footer {
     top: 0;
     right: -300px;
     width: 280px;
-    height: 100vh; /* طول الشاشة بالكامل */
+    height: 100vh; 
     background: #fff;
     z-index: 99999;
     transition: 0.4s ease;
@@ -958,13 +917,12 @@ footer {
     display: flex;
     flex-direction: column;
 
-    /* --- التعديل هنا (عشان السكرول يشتغل) --- */
-    overflow-y: auto; /* يسمح بالسكرول الراسي */
-    padding-bottom: 50px; /* مسافة تحت عشان آخر عنصر يبان */
+    overflow-y: auto;
+    padding-bottom: 50px; 
 }
 
 .mobile-sidebar.active {
-    right: 0; /* تظهر */
+    right: 0; 
 }
 
 .sidebar-header {
@@ -1002,7 +960,6 @@ footer {
     color: var(--primary);
 }
 
-/* الخلفية المظللة */
 .menu-overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -1053,46 +1010,43 @@ footer {
 @media (max-width: 768px) {
     .merchant-grid { grid-template-columns: 1fr; }
 }
-/* --- زر لوحة التاجر --- */
 .merchant-link {
-    background-color: rgba(250, 204, 21, 0.1); /* خلفية صفراء خفيفة */
+    background-color: rgba(250, 204, 21, 0.1); 
     padding: 5px 10px;
     border-radius: 8px;
-    border: 1px solid var(--accent); /* حدود صفراء */
+    border: 1px solid var(--accent); 
     transition: 0.3s;
     text-decoration: none;
     color: inherit;
 }
 
 .merchant-link:hover {
-    background-color: var(--accent); /* يملأ أصفر عند الوقوف عليه */
-    color: var(--primary) !important; /* النص يبقى كحلي */
+    background-color: var(--accent); 
+    color: var(--primary) !important;
 }
 
 .merchant-link i {
-    color: var(--accent); /* الأيقونة صفراء */
+    color: var(--accent);
 }
 
 .merchant-link:hover i {
-    color: var(--primary); /* الأيقونة تبقى كحلي */
+    color: var(--primary);
 }
 
-/* إخفاء التفاصيل في الموبايل عشان الزحمة */
 @media (max-width: 768px) {
     .merchant-link .info {
         display: none;
     }
     .merchant-link {
-        padding: 5px; /* تصغير الحجم */
+        padding: 5px;
     }
 }
 /* =========================================
-   تحديثات صفحة الدفع (Checkout Updates)
+ (Checkout Updates)
    ========================================= */
 
-/* 1. تكبير اللوجو في صفحة الدفع */
 .checkout-logo img {
-    height: 70px !important; /* تكبير */
+    height: 70px !important; 
     width: auto;
     max-width: 250px;
 }
@@ -1105,10 +1059,9 @@ footer {
     font-weight: 800;
 }
 
-/* 2. تصميم ملخص الطلب الجديد (شكل الفاتورة) */
 .order-summary-box.new-design {
     background: #fff;
-    padding: 0; /* هنشيل البادنج العام */
+    padding: 0; 
     border: 2px solid #eee;
     border-radius: 16px;
     overflow: hidden;
@@ -1128,7 +1081,7 @@ footer {
 .checkout-items {
     padding: 20px;
     max-height: 250px;
-    overflow-y: auto; /* سكرول لو المنتجات كتير */
+    overflow-y: auto;
 }
 
 .c-item {
@@ -1172,7 +1125,6 @@ footer {
     font-size: 1.1rem;
 }
 
-/* 3. تنسيق اختيار طريقة الدفع */
 .payment-card {
     border: 2px solid #eee;
     padding: 15px;
@@ -1200,41 +1152,34 @@ footer {
    Flash Sale & New Product Info Styles
    ========================================= */
 
-/* بادج الفلاش سيل */
 .flash-badge {
      position: absolute;
     top: 10px;
-    right: 10px; /* مكانه يمين */
+    right: 10px; 
     z-index: 2;
-    
-    /* التعديل هنا: يخلي العرض على قد الكلام بس */
     width: fit-content; 
-    display: inline-flex; /* عشان الأيقونة والنص يبقوا مظبوطين */
+    display: inline-flex; 
     align-items: center;
     gap: 5px;
 
-    /* تقليل الحواف عشان يبقى شكله ألطف */
     padding: 4px 10px; 
-    border-radius: 6px; /* حواف دائرية بسيطة */
+    border-radius: 6px; 
     
-    background: linear-gradient(45deg, #ef4444, #b91c1c); /* لون أحمر */
+    background: linear-gradient(45deg, #ef4444, #b91c1c);
     color: #fff;
-    font-size: 0.75rem; /* حجم خط صغير ومناسب */
+    font-size: 0.75rem;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     
-    /* الأنيميشن (اختياري لو حابب تخليه) */
     animation: flashPulse 2s infinite; 
 }
 
-/* حركة نبض بسيطة للبادج */
 @keyframes flashPulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
 }
 
-/* معلومات العبوات والمخزون */
 .product-meta {
     display: flex;
     justify-content: space-between;
@@ -1254,9 +1199,6 @@ footer {
 .stock-info.low {
     color: var(--danger);
 }
-/* =========================================
-   تنسيق عداد الكمية داخل كارت المنتج
-   ========================================= */
 .card-actions {
     display: flex;
     gap: 10px;
@@ -1301,9 +1243,8 @@ footer {
     color: var(--text-dark);
 }
 
-/* تعديل زر الإضافة ليأخذ باقي المساحة */
 .add-btn {
-    flex: 1; /* ياخد باقي المساحة */
+    flex: 1;
     height: 40px;
     border-radius: 8px;
     background: var(--primary);
@@ -1327,11 +1268,6 @@ footer {
     background: #ccc;
     cursor: not-allowed;
 }
-/* =========================================
-   تحديثات الطلبات الجديدة
-   ========================================= */
-
-/* 1. التواريخ والوصف في الكارت (طلب 6 و 7) */
 .product-dates {
     font-size: 0.7rem;
     color: #666;
@@ -1354,11 +1290,10 @@ footer {
     overflow: hidden;
 }
 
-/* 2. أيقونة المفضلة (طلب 9) */
 .fav-btn {
     position: absolute;
     top: 10px;
-    left: 10px; /* عكس البادج */
+    left: 10px; 
     background: #fff;
     border: 1px solid #eee;
     border-radius: 50%;
@@ -1377,15 +1312,13 @@ footer {
     border-color: var(--danger);
 }
 
-/* 3. الكتابة اليدوية (طلب 2) */
-/* بنشيل الاسهم بتاعت المتصفح من حقل الرقم */
+
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
   margin: 0; 
 }
 
-/* 4. بادج الكمية في السلة (طلب 4) */
 .in-cart-badge {
     background-color: var(--primary);
     color: #fff;
@@ -1393,11 +1326,10 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 2px 8px;
     border-radius: 10px;
     margin-right: 5px;
-    display: none; /* مخفي لو مش في السلة */
+    display: none; 
 }
 .in-cart-badge.show { display: inline-block; }
 
-/* 5. زر التنبيه (طلب 10) */
 .notify-btn {
     width: 100%;
     background: #ff9800;
@@ -1413,7 +1345,6 @@ input[type=number]::-webkit-outer-spin-button {
     gap: 5px;
 }
 
-/* قائمة منتجات التاجر */
 .merchant-item {
     background: #fff;
     padding: 10px;
@@ -1432,18 +1363,16 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 5px;
     cursor: pointer;
 }
-/* --- إصلاح التداخل في الكارت --- */
 
 .product-card {
-    position: relative; /* ضروري عشان العناصر المطلقة تتموضع جواه */
+    position: relative; 
 }
 
-/* 1. بادج الخصم (يمين) */
 .flash-badge {
     position: absolute;
     top: 10px;
-    right: 10px; /* خليناه يمين */
-    left: auto;  /* لغينا اليسار */
+    right: 10px; 
+    left: auto;  
     background: linear-gradient(45deg, #ff0000, #ff5722);
     color: #fff;
     padding: 3px 8px;
@@ -1454,11 +1383,10 @@ input[type=number]::-webkit-outer-spin-button {
     animation: flashPulse 2s infinite;
 }
 
-/* 2. زر المفضلة (يسار) */
 .fav-btn {
     position: absolute;
     top: 10px;
-    left: 10px; /* خليناه يسار */
+    left: 10px; 
     background: #fff;
     border: 1px solid #eee;
     border-radius: 50%;
@@ -1475,21 +1403,17 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .fav-btn.active {
-    color: #ef4444; /* لون أحمر لما يتاس عليه */
+    color: #ef4444;
     border-color: #ef4444;
 }
-/* تنسيق شبكة المفضلة (نفس تنسيق المنتجات العادية) */
 .products-grid-wishlist {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 25px;
     padding-bottom: 50px;
 }
-/* =========================================
-   تحديثات الطلبات الأخيرة (Toast, Edit, Badges)
-   ========================================= */
 
-/* 1. التنبيهات الذكية (Toast) */
+/* 1. (Toast) */
 .toast-container {
     position: fixed;
     bottom: 20px;
@@ -1517,7 +1441,6 @@ input[type=number]::-webkit-outer-spin-button {
 .toast.warning { background: #f59e0b; color: #fff; }
 @keyframes slideUp { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
-/* 2. بادج الكمية في السلة (في الكارت من بره) */
 .in-cart-indicator {
     background-color: var(--primary);
     color: #fff;
@@ -1526,12 +1449,11 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 4px;
     margin-top: 5px;
     display: inline-block;
-    opacity: 0; /* مخفي افتراضياً */
+    opacity: 0; 
     transition: 0.3s;
 }
 .in-cart-indicator.show { opacity: 1; }
 
-/* 3. الوصف المختصر تحت الصورة */
 .product-desc-short {
     font-size: 0.8rem;
     color: #64748b;
@@ -1541,19 +1463,17 @@ input[type=number]::-webkit-outer-spin-button {
     text-overflow: ellipsis;
 }
 
-/* 4. أزرار تعديل التاجر */
 .merchant-actions { display: flex; gap: 5px; }
 .btn-edit { background: #e0f2fe; color: #0284c7; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; }
 .btn-delete { background: #fee2e2; color: #dc2626; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; }
 
-/* 5. إزالة أسهم الإدخال الرقمي */
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
   margin: 0; 
 }
 /* =========================================
-   1. زر الواتساب العائم (WhatsApp Float)
+  (WhatsApp Float)
    ========================================= */
 .whatsapp-float {
     position: fixed;
@@ -1582,15 +1502,14 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 1.5rem;
 }
 
-/* للموبايل: نصغر الزرار ونخليه أيقونة بس لو حابب */
 @media (max-width: 768px) {
-    .whatsapp-float span { display: none; } /* إخفاء كلمة تواصل معنا */
+    .whatsapp-float span { display: none; }
     .whatsapp-float { padding: 12px; border-radius: 50%; width: 55px; height: 55px; justify-content: center; }
 }
 
 
 /* =========================================
-   2. صفحة الإشعارات (Notifications Page)
+ (Notifications Page)
    ========================================= */
 .notif-header {
     display: flex;
@@ -1622,7 +1541,6 @@ input[type=number]::-webkit-outer-spin-button {
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* أنواع الإشعارات (ألوان مختلفة) */
 .notif-card .icon {
     width: 45px;
     height: 45px;
@@ -1642,7 +1560,7 @@ input[type=number]::-webkit-outer-spin-button {
 .notif-card p { margin: 0; color: #666; font-size: 0.95rem; }
 .notif-card .time { display: block; margin-top: 10px; font-size: 0.8rem; color: #999; }
 /* =========================================
-   تنسيقات الفوتر (Footer Styling)
+  (Footer Styling)
    ========================================= */
 
 footer {
@@ -1650,10 +1568,9 @@ footer {
     color: #fff;
     padding: 50px 0 20px;
     margin-top: 50px;
-    text-align: right; /* الافتراضي للديسكتوب */
+    text-align: right;
 }
 
-/* تنسيق شبكة الفوتر */
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1661,21 +1578,19 @@ footer {
     padding-bottom: 20px;
 }
 
-/* عناوين الأقسام */
 footer h4 {
-    color: var(--accent); /* أصفر */
+    color: var(--accent); 
     margin-bottom: 20px;
     font-size: 1.2rem;
     font-weight: bold;
 }
 
-/* الروابط في الفوتر */
 footer ul li {
     margin-bottom: 12px;
 }
 
 footer ul li a {
-    color: #cbd5e1; /* لون رصاصي فاتح */
+    color: #cbd5e1; 
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-block;
@@ -1683,12 +1598,11 @@ footer ul li a {
 }
 
 footer ul li a:hover {
-    color: var(--accent) !important; /* اللون الأصفر */
-    transform: translateX(-5px); /* حركة بسيطة لليسار */
+    color: var(--accent) !important; 
+    transform: translateX(-5px);
     padding-right: 5px;
 }
 
-/* حقوق الملكية */
 .copyrights {
     border-top: 1px solid #334155;
     padding-top: 20px;
@@ -1699,45 +1613,40 @@ footer ul li a:hover {
 }
 
 /* =========================================
-   تعديلات الموبايل للفوتر (Mobile Footer)
+  (Mobile Footer)
    ========================================= */
 @media (max-width: 768px) {
     
     footer {
-        text-align: center !important; /* توسيط كل شيء */
+        text-align: center !important; 
     }
 
     .footer-grid {
-        grid-template-columns: 1fr !important; /* عمود واحد */
+        grid-template-columns: 1fr !important; 
         gap: 30px;
     }
 
-    /* توسيط اللوجو في الفوتر */
     footer .logo {
         justify-content: center !important;
         margin-bottom: 10px;
     }
 
-    /* ضبط النصوص */
     footer p {
         margin: 0 auto;
         max-width: 300px;
         line-height: 1.6;
     }
 
-    /* المسافات بين الروابط */
     footer ul li {
         margin-bottom: 15px;
-        border-bottom: 1px solid rgba(255,255,255,0.05); /* خط خفيف */
+        border-bottom: 1px solid rgba(255,255,255,0.05); 
         padding-bottom: 5px;
     }
     
-    /* إزالة الخط من آخر رابط */
     footer ul li:last-child {
         border-bottom: none;
     }
 }
-/* تنسيق صفحة من نحن */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1757,14 +1666,13 @@ footer ul li a:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* للموبايل */
 @media (max-width: 768px) {
     .stats-grid {
-        grid-template-columns: 1fr; /* الإحصائيات تحت بعض */
+        grid-template-columns: 1fr; 
     }
     
     .about-content {
-        padding: 20px !important; /* تقليل الحواف */
+        padding: 20px !important; 
     }
     
     .about-content h1 {
@@ -1776,19 +1684,17 @@ footer ul li a:hover {
     }
 }
 /* =========================================
-   تعديلات صفحة البروفايل للموبايل (Profile Mobile Fix)
+(Profile Mobile Fix)
    ========================================= */
 
 @media (max-width: 768px) {
     
-    /* 1. إلغاء التقسيم العمودي (Grid) */
     .profile-grid {
         display: flex !important;
-        flex-direction: column; /* العناصر تحت بعض */
+        flex-direction: column; 
         gap: 20px;
     }
 
-    /* 2. تنسيق الكارت الشخصي (اللي فوق) */
     .profile-sidebar {
         text-align: center;
         padding: 20px !important;
@@ -1797,28 +1703,27 @@ footer ul li a:hover {
         box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
 
-    /* 3. تحويل القائمة لأزرار بالعرض */
     .profile-sidebar ul {
         display: flex;
-        flex-wrap: wrap; /* ينزل سطر جديد لو مفيش مكان */
+        flex-wrap: wrap; 
         justify-content: center;
         gap: 10px;
         margin-top: 15px;
         padding: 0;
-        border: none; /* إزالة الخطوط القديمة */
+        border: none;
     }
 
     .profile-sidebar li {
-        border: none !important; /* إزالة الخطوط الفاصلة */
+        border: none !important;
         padding: 0 !important;
-        width: auto; /* العرض حسب الكلام */
+        width: auto; 
     }
 
     .profile-sidebar li a {
         display: block;
         background-color: #f1f5f9;
         padding: 8px 15px;
-        border-radius: 20px; /* شكل دائري */
+        border-radius: 20px; 
         font-size: 0.85rem;
         color: var(--text-dark);
         font-weight: bold;
@@ -1830,13 +1735,11 @@ footer ul li a:hover {
         color: #fff !important;
     }
 
-    /* زر تسجيل الخروج بلون مختلف */
     .profile-sidebar li a[style*="color:red"] {
         background-color: #fee2e2;
         color: #dc2626 !important;
     }
 
-    /* 4. تنسيق كروت الطلبات */
     .profile-content h2 {
         font-size: 1.3rem;
         text-align: center;
@@ -1844,13 +1747,9 @@ footer ul li a:hover {
     }
 
 }
-/* =========================================
-   تأثيرات الهوفر لقائمة البروفايل (Desktop)
-   ========================================= */
 
-/* 1. التنسيق الأساسي للينكات في الديسكتوب */
 .profile-sidebar ul li {
-    border-bottom: 1px solid #f0f0f0; /* خط فاصل خفيف */
+    border-bottom: 1px solid #f0f0f0;
     margin-bottom: 5px;
 }
 
@@ -1861,130 +1760,113 @@ footer ul li a:hover {
 .profile-sidebar ul li a {
     display: block;
     padding: 12px 15px;
-    color: var(--text-dark); /* اللون الأصلي */
+    color: var(--text-dark); 
     font-weight: 600;
     text-decoration: none;
-    border-radius: 8px; /* حواف ناعمة */
-    transition: all 0.3s ease-in-out; /* نعومة الحركة */
+    border-radius: 8px; 
+    transition: all 0.3s ease-in-out; 
 }
 
-/* 2. شكل اللينك لما الماوس يقف عليه (Hover) */
 .profile-sidebar ul li a:hover {
-    background-color: var(--primary); /* الخلفية تبقى كحلي */
-    color: #fff !important;           /* الكلام يبقى أبيض */
-    padding-right: 25px;              /* اللينك يتحرك للشمال شوية */
-    box-shadow: 0 5px 15px rgba(15, 23, 42, 0.2); /* ظل خفيف */
+    background-color: var(--primary); 
+    color: #fff !important;          
+    padding-right: 25px;            
+    box-shadow: 0 5px 15px rgba(15, 23, 42, 0.2);
 }
 
-/* 3. تنسيق خاص لزر "تسجيل خروج" عند الهوفر */
 .profile-sidebar li a[style*="color:red"]:hover {
-    background-color: #fee2e2; /* خلفية حمراء فاتحة */
-    color: #dc2626 !important; /* نص أحمر غامق */
-    padding-right: 15px; /* حركة بسيطة */
+    background-color: #fee2e2; 
+    color: #dc2626 !important; 
+    padding-right: 15px;
     box-shadow: none;
 }
-/* =========================================
-   تظبيط صفحة الإشعارات للموبايل
-   ========================================= */
+
 
 @media (max-width: 768px) {
 
-
-
-    /* 2. تظبيط رأس الصفحة (العنوان والزرار) */
     .notif-header {
-        flex-direction: column; /* يخلي العنوان فوق والزرار تحت */
-        gap: 15px; /* مسافة بينهم */
-        align-items: center; /* توسيط */
+        flex-direction: column; 
+        gap: 15px;
+        align-items: center;
         text-align: center;
     }
 
     .notif-header h2 {
-        font-size: 1.5rem; /* تصغير خط العنوان شوية */
+        font-size: 1.5rem;
         margin: 0;
     }
 
     .notif-header .btn {
-        width: 100%; /* زر "مسح الكل" ياخد عرض الشاشة بالكامل عشان يبقى سهل الضغط */
+        width: 100%; 
         padding: 10px;
     }
 
-    /* 3. تظبيط كارت الإشعار نفسه */
     .notif-card {
-        padding: 15px; /* تقليل الحواف الداخلية */
-        gap: 12px; /* تقريب الأيقونة من الكلام */
+        padding: 15px; 
+        gap: 12px;
         align-items: center;
     }
 
     .notif-card .icon {
-        width: 40px; /* تصغير الأيقونة */
+        width: 40px;
         height: 40px;
         font-size: 1.1rem;
     }
 
     .notif-card h4 {
-        font-size: 1rem; /* تصغير العنوان */
+        font-size: 1rem; 
     }
 
     .notif-card p {
-        font-size: 0.85rem; /* تصغير الوصف */
+        font-size: 0.85rem;
         line-height: 1.4;
     }
 
-    /* 4. تظبيط الحاوية العامة عشان ميكونش لازق في الحواف */
     .section-padding {
         padding: 30px 0;
     }
 }
-/* =========================================
-   تعديلات صفحة التاجر للموبايل
-   ========================================= */
 
 @media (max-width: 768px) {
     
-    /* 1. جعل الأعمدة تحت بعض */
     .merchant-grid {
         grid-template-columns: 1fr !important;
         gap: 20px;
     }
 
-    /* 2. تظبيط الفورم */
     .merchant-form-box {
-        padding: 20px; /* تقليل الحواف */
+        padding: 20px; 
         border-radius: 12px;
     }
 
     .form-row {
-        grid-template-columns: 1fr; /* الحقول اللي جنب بعض تنزل تحت بعض */
+        grid-template-columns: 1fr; 
         gap: 15px;
     }
 
-    /* 3. تظبيط قائمة "منتجاتي المعروضة" */
     .my-products-list {
-        order: 2; /* تنزل تحت الفورم أو العكس لو حابب */
+        order: 2; 
         margin-top: 20px;
     }
 
-    /* 4. كارت المنتج المصغر في لوحة التحكم */
     .merchant-item {
-        flex-direction: row; /* يفضلوا جنب بعض */
+        flex-direction: row; 
         padding: 12px;
         gap: 15px;
     }
 
     .merchant-item img {
-        width: 60px; /* تكبير الصورة شوية */
+        width: 60px;
         height: 60px;
     }
 
-    /* 5. أزرار التعديل والحذف */
     .merchant-actions {
         display: flex;
-        gap: 10px; /* مسافة بين الزرارين */
+        gap: 10px; 
     }
 
     .merchant-actions button {
-        padding: 8px 12px; /* تكبير منطقة الضغط */
+        padding: 8px 12px; 
         font-size: 1rem;
     }
 
@@ -1995,10 +1877,9 @@ footer ul li a:hover {
     }
 }
 /* =========================================
-   ANIMATIONS & EFFECTS (إضافات الحركة)
+   ANIMATIONS & EFFECTS 
    ========================================= */
 
-/* 1. حركة ظهور الصفحة (Fade In) */
 body {
     animation: fadeInPage 0.8s ease-out;
 }
@@ -2008,21 +1889,18 @@ body {
     to { opacity: 1; }
 }
 
-/* 2. حركة طفو لصورة البانر (Floating Hero Image) */
 .banner-image img {
     animation: floatImage 4s ease-in-out infinite;
 }
 
 @keyframes floatImage {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); } /* تطلع لفوق */
+    50% { transform: translateY(-15px); } 
     100% { transform: translateY(0px); }
 }
-
-/* 3. حركة ظهور العناصر عند السكرول (Scroll Reveal) */
 .reveal {
     opacity: 0;
-    transform: translateY(30px); /* تكون نازلة لتحت */
+    transform: translateY(30px);
     transition: all 0.8s ease-out;
 }
 
@@ -2031,17 +1909,15 @@ body {
     transform: translateY(0);
 }
 
-/* 4. تحسين هوفر كروت المنتجات (Card Hover) */
 .product-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
-    transform: translateY(-8px) scale(1.01); /* تطلع لفوق وتكبر سنة */
+    transform: translateY(-8px) scale(1.01); 
     box-shadow: 0 15px 30px rgba(0,0,0,0.08);
 }
 
-/* 5. حركة اهتزاز للسلة عند الإضافة (Cart Shake) */
 @keyframes shakeCart {
     0% { transform: rotate(0deg); }
     25% { transform: rotate(-10deg); }
@@ -2054,7 +1930,6 @@ body {
     animation: shakeCart 0.5s ease-in-out;
 }
 
-/* 6. حركة نبض للأزرار المهمة (Pulse) */
 .btn.primary {
     position: relative;
     overflow: hidden;
@@ -2083,19 +1958,14 @@ body {
 .btn.primary:active:after {
     animation: ripple 0.6s ease-out;
 }
-/* =========================================
-   أنيميشن زر تصفح العروض (نبض مستمر)
-   ========================================= */
-
-/* 1. تعريف الحركة (تكبير + هالة ضوئية) */
 @keyframes glowPulse {
     0% {
         transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.7); /* لون أصفر */
+        box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.7);
     }
     70% {
-        transform: scale(1.05); /* يكبر شوية */
-        box-shadow: 0 0 0 15px rgba(250, 204, 21, 0); /* الظل يكبر ويختفي */
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(250, 204, 21, 0);
     }
     100% {
         transform: scale(1);
@@ -2103,52 +1973,45 @@ body {
     }
 }
 
-/* 2. تطبيق الحركة على الزر داخل البانر */
 .banner-content .btn.primary {
-    animation: glowPulse 2s infinite; /* يشتغل باستمرار كل ثانيتين */
+    animation: glowPulse 2s infinite;
     transition: all 0.3s ease;
 }
 
-/* 3. إيقاف الحركة عند وقوف الماوس (عشان العميل يعرف يدوس) */
 .banner-content .btn.primary:hover {
     animation: none;
-    transform: scale(1.1); /* يفضل كبير وثابت */
-    background-color: #fff; /* تغيير لون بسيط */
+    transform: scale(1.1);
+    background-color: #fff; 
     color: var(--primary);
 }
 /* =========================================
-   أنيميشن الطفو لزر الواتساب (Floating Animation)
+  (Floating Animation)
    ========================================= */
 
-/* 1. تعريف الحركة (طلوع ونزول ناعم) */
 @keyframes floatUpDown {
     0% {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-12px); /* يطلع لفوق 12 بكسل */
+        transform: translateY(-12px); 
     }
     100% {
-        transform: translateY(0); /* يرجع مكانه */
+        transform: translateY(0); 
     }
 }
 
-/* 2. تطبيق الحركة على زر الواتساب */
 .whatsapp-float {
-    /* اسم الحركة - المدة (3 ثواني) - النوع (ناعم) - التكرار (للانهاية) */
     animation: floatUpDown 3s ease-in-out infinite;
 }
 
-/* 3. إيقاف الحركة عند وقوف الماوس (عشان العميل يعرف يضغط) */
 .whatsapp-float:hover {
-    animation: none; /* وقف الحركة */
-    transform: translateY(-5px); /* يثبت مرفوع سنة بسيطة */
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6); /* زيادة الظل */
+    animation: none;
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6); 
 }
-/* تأثير اللمعة */
 .flash-badge {
     position: relative;
-    overflow: hidden; /* عشان اللمعة متخرجش بره */
+    overflow: hidden;
 }
 
 .flash-badge::before {
@@ -2172,7 +2035,7 @@ body {
         left: 100%;
     }
 }
-/* تأثير الضغط (Click Effect) */
+/* (Click Effect) */
 @keyframes pop {
     0% { transform: scale(1); }
     50% { transform: scale(0.9); }
@@ -2183,7 +2046,6 @@ body {
     animation: pop 0.2s ease-in-out;
 }
 
-/* لما الزرار يتحول لـ "تم" */
 .add-btn.success-anim {
     animation: successPop 0.5s ease-out;
 }
@@ -2194,27 +2056,25 @@ body {
     100% { transform: scale(1); }
 }
 /* =========================================
-   تحديثات (Validation & Notification)
+    (Validation & Notification)
    ========================================= */
 
-/* 1. تنسيق الخطأ في الكمية */
 input.error-input {
     border: 2px solid #ef4444 !important;
     background-color: #fef2f2 !important;
     color: #ef4444 !important;
 }
 
-/* تعطيل زر إتمام الشراء */
 .btn.disabled-btn {
     background-color: #ccc !important;
     cursor: not-allowed !important;
-    pointer-events: none; /* يمنع الضغط */
+    pointer-events: none; 
 }
 
-/* 2. تصميم إشعار الموبايل (Fake Push Notification) */
+/* (Fake Push Notification) */
 .push-notification {
     position: fixed;
-    top: -100px; /* مخفي فوق */
+    top: -100px; 
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -2232,7 +2092,7 @@ input.error-input {
 }
 
 .push-notification.show {
-    top: 20px; /* يظهر */
+    top: 20px; 
 }
 
 .push-icon {
@@ -2270,18 +2130,15 @@ input.error-input {
     border: none;
 }
 
-/* =========================================
-   تنسيق زر الحذف في السلة
-   ========================================= */
 
 .cart-remove {
-    background-color: #fee2e2; /* خلفية حمراء فاتحة */
-    color: #dc2626;            /* لون الأيقونة أحمر */
+    background-color: #fee2e2; 
+    color: #dc2626;         
     border: 1px solid #fecaca;
     
-    width: 40px;               /* عرض ثابت */
-    height: 40px;              /* طول ثابت */
-    border-radius: 8px;        /* حواف دائرية */
+    width: 40px;              
+    height: 40px;              
+    border-radius: 8px;    
     
     display: flex;
     align-items: center;
@@ -2290,36 +2147,33 @@ input.error-input {
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 1.1rem;
-    margin-right: 15px; /* مسافة بينه وبين السعر */
+    margin-right: 15px; 
 }
 
-/* تأثير عند الوقوف عليه */
+
 .cart-remove:hover {
-    background-color: #dc2626; /* الخلفية تحمر */
-    color: #fff;               /* الأيقونة تبيض */
-    transform: scale(1.1);     /* تكبير بسيط */
+    background-color: #dc2626; 
+    color: #fff;              
+    transform: scale(1.1);    
     box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
 }
-/* =========================================
-   تفعيل زر القائمة (3 شرطات) في الديسكتوب
-   ========================================= */
 
-/* إظهار الزر دائماً */
+
 .mobile-menu-btn {
-    display: flex !important; /* إجبار الظهور */
+    display: flex !important; 
     align-items: center;
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: rgba(255, 255, 255, 0.1); /* خلفية شفافة خفيفة */
+    background-color: rgba(255, 255, 255, 0.1); 
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
-    color: #fff; /* لون الأيقونة */
+    color: #fff; 
 }
 
 .mobile-menu-btn:hover {
-    background-color: var(--accent); /* يصفر لما تقف عليه */
+    background-color: var(--accent); 
     color: var(--primary);
 }
 
@@ -2327,13 +2181,11 @@ input.error-input {
     font-size: 1.4rem;
 }
 
-/* تنسيق القائمة الجانبية لتكون شيك على الديسكتوب */
 .mobile-sidebar {
-    width: 300px; /* عرض مناسب */
-    box-shadow: -5px 0 30px rgba(0,0,0,0.2); /* ظل قوي */
+    width: 300px;
+    box-shadow: -5px 0 30px rgba(0,0,0,0.2); 
 }
 
-/* ترتيب العناصر داخل القائمة */
 .sidebar-links li a {
     padding: 10px;
     border-radius: 8px;
@@ -2343,16 +2195,15 @@ input.error-input {
 .sidebar-links li a:hover {
     background-color: #f8fafc;
     color: var(--primary);
-    transform: translateX(-5px); /* حركة خفيفة */
+    transform: translateX(-5px); 
 }
 /* =========================================
-   صفحة الطلبات (Orders Page Style)
+  (Orders Page Style)
    ========================================= */
 
-/* 1. التبويبات العلوية */
 .orders-tabs {
     display: flex;
-    overflow-x: auto; /* يسمح بالسكرول لو الشاشة صغيرة */
+    overflow-x: auto; 
     background: #fff;
     padding: 10px;
     border-radius: 10px;
@@ -2375,12 +2226,11 @@ input.error-input {
 }
 
 .tab-btn.active {
-    color: var(--primary); /* أزرق كحلي */
+    color: var(--primary); 
     font-weight: bold;
-    border-bottom-color: var(--accent); /* خط أصفر تحت النشط */
+    border-bottom-color: var(--accent); 
 }
 
-/* 2. كارت الطلب */
 .order-card-box {
     background: #fff;
     border-radius: 12px;
@@ -2403,14 +2253,14 @@ input.error-input {
     font-size: 0.8rem;
     font-weight: bold;
 }
-.status-label.pending { background: #fffbeb; color: #f59e0b; } /* أصفر */
-.status-label.confirmed { background: #e0f2fe; color: #0284c7; } /* أزرق */
-.status-label.shipped { background: #dcfce7; color: #16a34a; } /* أخضر */
+.status-label.pending { background: #fffbeb; color: #f59e0b; } 
+.status-label.confirmed { background: #e0f2fe; color: #0284c7; } 
+.status-label.shipped { background: #dcfce7; color: #16a34a; } 
 
 .order-id {
     color: #999;
     font-size: 0.85rem;
-    font-family: monospace; /* خط يشبه الكود */
+    font-family: monospace; 
 }
 
 .order-body {
@@ -2447,7 +2297,7 @@ input.error-input {
     align-items: center;
     border-top: 1px solid #f0f0f0;
     padding-top: 15px;
-    flex-wrap: wrap; /* للموبايل */
+    flex-wrap: wrap; 
     gap: 10px;
 }
 
@@ -2472,38 +2322,27 @@ input.error-input {
     color: #888;
 }
 
-/* للموبايل */
 @media (max-width: 768px) {
     .order-footer {
-        flex-direction: column-reverse; /* الزرار تحت */
+        flex-direction: column-reverse; 
         align-items: flex-start;
     }
     .btn-outline { width: 100%; }
 }
-/* =========================================
-   تنسيق الهيدر للموبايل (إخفاء العناصر الزائدة)
-   ========================================= */
-
 @media (max-width: 768px) {
     
  
-    /* تظبيط المسافات بين اللي فاضلين (القائمة، السلة، المفضلة) */
     .header-actions {
-        gap: 10px; /* مسافة مناسبة */
+        gap: 10px; 
     }
     
-    /* تكبير الأيقونات المتبقية شوية عشان تكون واضحة */
     .action-item i {
         font-size: 1.3rem;
     }
 }
-/* =========================================
-   تنسيق السلوجان في البانر
-   ========================================= */
-
 .brand-slogan {
-    font-size: 3rem; /* حجم كبير */
-    font-weight: 900; /* سميك جداً */
+    font-size: 3rem; 
+    font-weight: 900; 
     color: #fff;
     margin: 15px 0;
     line-height: 1.2;
@@ -2511,80 +2350,66 @@ input.error-input {
 
 .slogan-desc {
     font-size: 1.2rem;
-    color: #e2e8f0; /* لون أبيض مائل للرمادي ليكون مريح للعين */
+    color: #e2e8f0; 
     margin-bottom: 25px;
-    max-width: 500px; /* عشان السطر ميكونش طويل أوي */
+    max-width: 500px; 
 }
 
-/* تنسيق للموبايل عشان الكلام ميبقاش ضخم */
 @media (max-width: 768px) {
     .brand-slogan {
-        font-size: 2rem; /* تصغير الخط في الموبايل */
+        font-size: 2rem; 
     }
     
     .slogan-desc {
         font-size: 1rem;
     }
 }
-/* =========================================
-   ENGLISH (LTR) SUPPORT
-   ========================================= */
 
-/* تغيير الخط والاتجاه في النسخة الإنجليزية */
 html[dir="ltr"] body {
-    font-family: 'Roboto', sans-serif; /* خط إنجليزي */
+    font-family: 'Roboto', sans-serif;
     direction: ltr;
     text-align: left;
 }
 
-/* عكس اتجاهات العناصر في الإنجليزي */
 html[dir="ltr"] .header-actions { margin-left: auto; margin-right: 0; }
 html[dir="ltr"] .logo { margin-right: auto; margin-left: 0; }
 html[dir="ltr"] .search-box button { border-radius: 0 8px 8px 0; }
-html[dir="ltr"] .product-meta { flex-direction: row-reverse; } /* عكس ترتيب الميتا */
+html[dir="ltr"] .product-meta { flex-direction: row-reverse; } 
 
-/* تعديل بادج الخصم ليكون يسار */
 html[dir="ltr"] .flash-badge {
     right: auto;
     left: 10px;
 }
 
-/* تعديل زر المفضلة ليكون يمين */
 html[dir="ltr"] .fav-btn {
     left: auto;
     right: 10px;
 }
 
-/* تعديل زر الواتساب */
 html[dir="ltr"] .whatsapp-float {
     right: auto;
     left: 25px;
     flex-direction: row-reverse;
 }
-/* =========================================
-   تنسيق البانر الأفقي (الصورة جانب النص)
-   ========================================= */
 
 .banner-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 50px; /* مساحة داخلية مريحة */
-    background: var(--primary); /* اللون الكحلي */
+    padding: 40px 50px; 
+    background: var(--primary); 
     border-radius: 20px;
     gap: 30px;
     position: relative;
     overflow: hidden;
 }
 
-/* تنسيق النصوص */
 .banner-content {
-    flex: 1; /* يأخذ مساحة النص */
-    text-align: right; /* محاذاة لليمين */
+    flex: 1;
+    text-align: right;
     z-index: 2;
 }
 
-/* 1. اسم ديسكا والسلوجان */
 .hero-brand-block {
     margin-bottom: 20px;
 }
@@ -2601,18 +2426,16 @@ html[dir="ltr"] .whatsapp-float {
 
 .brand-slogan {
     font-size: 1.4rem;
-    color: var(--accent); /* أصفر */
+    color: var(--accent); 
     font-weight: bold;
     display: block;
     margin-top: 5px;
 }
 
-/* 2. المربع الأحمر */
 .tag-box {
     margin-bottom: 15px;
 }
 
-/* 3. العنوان الرئيسي */
 .main-headline {
     font-size: 2.2rem;
     color: #fff;
@@ -2628,7 +2451,6 @@ html[dir="ltr"] .whatsapp-float {
     max-width: 500px;
 }
 
-/* تنسيق الصورة */
 .banner-image {
     flex: 1;
     display: flex;
@@ -2640,7 +2462,7 @@ html[dir="ltr"] .whatsapp-float {
     height: auto;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    transform: rotate(-3deg); /* ميلان بسيط جمالي */
+    transform: rotate(-3deg); 
     transition: 0.3s;
 }
 
@@ -2649,10 +2471,9 @@ html[dir="ltr"] .whatsapp-float {
 }
 
 
-/* --- للموبايل (عشان يرجعوا تحت بعض) --- */
 @media (max-width: 900px) {
     .banner-card {
-        flex-direction: column-reverse; /* الصورة فوق والكلام تحت */
+        flex-direction: column-reverse; 
         text-align: center;
         padding: 30px 20px;
     }
@@ -2665,53 +2486,46 @@ html[dir="ltr"] .whatsapp-float {
     .main-headline { font-size: 1.5rem; }
     
     .banner-image img {
-        width: 80%; /* تصغير الصورة في الموبايل */
+        width: 80%;
         transform: rotate(0);
         margin-bottom: 20px;
     }
 }
-/* =========================================
-   تنسيق لوجو البانر (الصورة)
-   ========================================= */
+
 
 .hero-logo-img {
-    height: 100px; /* ارتفاع كبير ومناسب للبانر */
+    height: 100px; 
     width: auto;
     object-fit: contain;
     display: block;
-    margin-bottom: 10px; /* مسافة بين اللوجو والسلوجان */
+    margin-bottom: 10px; 
     
-    /* 💡 ملحوظة: لو اللوجو لونه أسود والخلفية كحلي، شيل علامة التعليق من السطر اللي تحته عشان يقلب أبيض */
-    /* filter: brightness(0) invert(1); */
+  
 }
 
-/* تنسيق السلوجان تحت الصورة */
 .brand-slogan {
     font-size: 1.5rem;
-    color: var(--accent); /* أصفر */
+    color: var(--accent); 
     font-weight: bold;
     display: block;
 }
 
-/* --- تعديلات الموبايل --- */
 @media (max-width: 900px) {
     .hero-logo-img {
-        height: 70px; /* تصغير اللوجو في الموبايل */
-        margin: 0 auto 10px auto; /* توسيط الصورة */
+        height: 70px;
+        margin: 0 auto 10px auto; 
     }
 }
-/* =========================================
-   Floating Buttons Container (اللغة + واتساب)
-   ========================================= */
+
 
 .floating-container {
     position: fixed;
     bottom: 25px;
-    right: 25px; /* يمين الشاشة */
+    right: 25px; 
     z-index: 9999;
     display: flex;
-    flex-direction: column-reverse; /* الواتساب تحت واللغة فوقه */
-    gap: 15px; /* مسافة بين الزرارين */
+    flex-direction: column-reverse; 
+    gap: 15px; 
     align-items: center;
 }
 
@@ -2725,7 +2539,7 @@ html[dir="ltr"] .whatsapp-float {
     color: #fff;
     font-size: 1.8rem;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* تأثير ناعم */
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
     text-decoration: none;
     position: relative;
 }
@@ -2734,10 +2548,9 @@ html[dir="ltr"] .whatsapp-float {
     transform: scale(1.1);
 }
 
-/* تنسيق زر الواتساب */
 .whatsapp-btn {
     background-color: #25D366;
-    animation: floatUpDown 3s ease-in-out infinite; /* الأنيميشن اللي عملناه قبل كده */
+    animation: floatUpDown 3s ease-in-out infinite;
 }
 
 .whatsapp-btn:hover {
@@ -2745,10 +2558,9 @@ html[dir="ltr"] .whatsapp-float {
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
 }
 
-/* تنسيق زر اللغة (الكرة الأرضية) */
 .lang-btn {
-    background-color: var(--accent); /* اللون الكحلي */
-    width: 50px; /* أصغر قليلاً من الواتس */
+    background-color: var(--accent); 
+    width: 50px; 
     height: 50px;
     font-size: 1.4rem;
     color: var(--primary);
@@ -2756,11 +2568,10 @@ html[dir="ltr"] .whatsapp-float {
 }
 
 .lang-btn:hover {
-    background-color: var(--primary); /* يصفر عند اللمس */
+    background-color: var(--primary); 
     color: var(--bg-light);
 }
 
-/* للموبايل: تعديل المسافات */
 @media (max-width: 768px) {
     .floating-container {
         bottom: 20px;
@@ -2773,57 +2584,47 @@ html[dir="ltr"] .whatsapp-float {
         width: 45px; height: 45px; font-size: 1.2rem;
     }
 }
-/* =========================================
-   تعديل محاذاة البانر للغة الإنجليزية (LTR)
-   ========================================= */
 
 html[dir="ltr"] .banner-card {
-    flex-direction: row; /* يخلي الصورة والكلمة جنب بعض */
-    text-align: left;    /* يخلي الكلام يبدأ من الشمال */
+    flex-direction: row;
+    text-align: left;    
 }
 
 html[dir="ltr"] .banner-content {
-    align-items: flex-start; /* يحاذي العناصر (الزرار والتاج) لليسار */
+    align-items: flex-start; 
     display: flex;
     flex-direction: column;
 }
 
 html[dir="ltr"] .hero-brand-block {
-    align-items: flex-start; /* يحاذي اللوجو والسلوجان لليسار */
+    align-items: flex-start;
     text-align: left;
 }
 
-/* في الموبايل للانجليزي */
 @media (max-width: 768px) {
     html[dir="ltr"] .banner-card {
-        flex-direction: column-reverse; /* الصورة فوق والكلام تحت */
-        text-align: center; /* في الموبايل يفضل يكون في النص */
+        flex-direction: column-reverse;
+        text-align: center; 
     }
     
     html[dir="ltr"] .banner-content,
     html[dir="ltr"] .hero-brand-block {
-        align-items: center; /* توسيط في الموبايل */
+        align-items: center;
     }
 }
-/* =========================================
-   إصلاح تنسيق صفحة اتصل بنا (إنجليزي LTR)
-   ========================================= */
 
-/* 1. ضبط محاذاة النصوص لليسار في الكارت */
 html[dir="ltr"] .contact-info-card {
     text-align: left;
 }
 
-/* 2. ترتيب الأيقونة والنص بجانب بعضهما */
 html[dir="ltr"] .c-item {
     display: flex;
-    flex-direction: row; /* الأيقونة يسار والنص يمين */
-    align-items: flex-start; /* محاذاة من الأعلى */
-    justify-content: flex-start; /* كل العناصر تبدأ من اليسار */
-    gap: 20px; /* مسافة مناسبة بين الأيقونة والنص */
+    flex-direction: row; 
+    align-items: flex-start;
+    justify-content: flex-start; 
+    gap: 20px; 
 }
 
-/* 3. التأكد من أن النصوص داخل العنصر محاذية لليسار */
 html[dir="ltr"] .c-item div {
     text-align: left;
 }
@@ -2836,54 +2637,46 @@ html[dir="ltr"] .c-item a {
     margin-left: 0;
 }
 
-/* 4. منع الأيقونة من الانكماش أو التحرك */
 html[dir="ltr"] .c-item .icon {
     flex-shrink: 0;
     margin: 0;
 }
 
-/* 5. ضبط العناوين الرئيسية */
 html[dir="ltr"] .page-title,
 html[dir="ltr"] .contact-form-card h2,
 html[dir="ltr"] .contact-form-card p {
     text-align: left;
 }
-/* =========================================
-   إصلاح هيدر الموبايل (انجليزي LTR) - النهائي
-   ========================================= */
+
 
 @media (max-width: 768px) {
     
-    /* 1. ضبط الحاوية لتوزيع العناصر يمين ويسار */
     html[dir="ltr"] .header-container {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between !important; /* مسافة بين اللوجو والأيقونات */
+        justify-content: space-between !important; 
         align-items: center;
         padding: 10px 15px;
     }
 
-    /* 2. اللوجو (أقصى اليسار) */
     html[dir="ltr"] .logo {
         order: 1;
-        margin-right: auto !important; /* يدفع الأيقونات لليمين */
+        margin-right: auto !important; 
         margin-left: 0 !important;
     }
 
-    /* 3. الأيقونات (أقصى اليمين) */
     html[dir="ltr"] .header-actions {
         order: 2;
         margin-left: 110px;
-        gap: 12px; /* مسافة بين الأيقونات */
+        gap: 12px; 
         justify-content: flex-end;
     }
 
-    /* 5. ضبط حواف شريط البحث (Input شمال والزر يمين) */
     html[dir="ltr"] .search-box {
         order: 3;
         width: 100%;
         margin-top: 10px;
-        flex-direction: row; /* التأكد من الاتجاه */
+        flex-direction: row; 
     }
     
     html[dir="ltr"] .search-box input {
