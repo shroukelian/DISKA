@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchant Panel | Product Management</title>
+    <!-- English Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-light">
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="index-en.html" class="logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+            </a>
+            <div class="header-actions" >
+                <a href="index-en.html" class="action-item" style="color: #fff; font-size: 0.9rem;margin-left: 140px;" >
+                    <i class="fas fa-home" ></i> Back to Store
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="merchant-grid">
+
+                <!-- Add Product Form -->
+                <div class="merchant-form-box">
+                    <h2 style="margin-bottom: 20px; color: var(--primary);">Add New Product</h2>
+
+                    <form id="addProductForm">
+
+                        <!-- Image Upload -->
+                        <div class="form-group upload-box">
+                            <label for="productImage" class="upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Click to upload product image</span>
+                                <img id="imagePreview" src="" style="display: none; max-height: 100px; margin-top: 10px;">
+                            </label>
+                            <input type="file" id="productImage" accept="image/*" style="display: none;">
+                        </div>
+
+                        <!-- Product Name -->
+                        <div class="form-group">
+                            <label>Product Name</label>
+                            <input type="text" id="productName" placeholder="Ex: Family Size Chips Carton" required>
+                        </div>
+
+                        <!-- Dates -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Production Date <span style="color:red">*</span></label>
+                                <input type="date" id="prodDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Expiry Date <span style="color:red">*</span></label>
+                                <input type="date" id="expDate" required>
+                            </div>
+                        </div>
+
+                        <!-- Pricing -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Current Price (Sell)</label>
+                                <input type="number" id="productPrice" placeholder="0.00" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Price Before Discount</label>
+                                <input type="number" id="oldPrice" placeholder="To show discount %" required>
+                            </div>
+                        </div>
+
+                        <!-- Stock & Units -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Units per Carton</label>
+                                <input type="number" id="unitsPerCarton" placeholder="Ex: 12" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Stock (Available Qty)</label>
+                                <input type="number" id="stockQty" placeholder="Ex: 100" required>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="form-group">
+                            <label>Product Description</label>
+                            <textarea id="productDesc" rows="4" placeholder="Product details, origin, notes..." required></textarea>
+                        </div>
+
+                        <!-- Category -->
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select id="productCat">
+                                <option value="Beverages">Beverages</option>
+                                <option value="Snacks">Snacks</option>
+                                <option value="Cleaning">Cleaning</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </div>
+
+                        <input type="hidden" id="editIndex">
+                        <button type="submit" id="submitBtn" class="btn primary w-100">Publish Product</button>
+                        <button type="button" id="cancelEditBtn" class="btn primary w-100" style="display: none; margin-top: 10px; background: #e0f2fe; color: #0284c7; border: none; padding: 5px; border-radius: 4px;">Cancel Edit</button>
+                    </form>
+                </div>
+
+                <!-- Sidebar (Tips + List) -->
+                <div class="merchant-sidebar">
+
+                    <div class="my-products-list" style="background: #fff; padding: 20px; border-radius: 15px; border: 1px solid #eee; margin-bottom: 20px;">
+                        <h3 style="color: var(--primary); margin-bottom: 15px;">My Listed Products</h3>
+                        <div id="merchantProductsList">
+                            <p style="color: #777; font-size: 0.9rem;">No products added yet.</p>
+                        </div>
+                    </div>
+
+                    <div class="merchant-info">
+                        <h3><i class="fas fa-lightbulb"></i> Selling Tips</h3>
+                        <ul>
+                            <li>Upload clear product images with white background if possible.</li>
+                            <li>Ensure expiration dates are entered accurately.</li>
+                            <li>Competitive pricing ensures faster sales.</li>
+                            <li>Selling will automatically stop when stock runs out.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Buttons -->
+    <div class="floating-container">
+        
+        <!-- Language Switcher -->
+        <a href="javascript:void(0)" id="langSwitcher" class="float-btn lang-btn" title="Change Language">
+            <i class="fas fa-globe"></i>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/201000000000" target="_blank" class="float-btn whatsapp-btn" title="Contact Us">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

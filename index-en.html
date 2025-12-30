@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr"> <!-- التغيير هنا -->
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -32,9 +32,9 @@
             <div class="header-actions">
                 
                 <!-- Dark Mode -->
-                <div class="action-item" id="themeToggle" style="cursor: pointer;" title="Dark Mode">
+                <!-- <div class="action-item" id="themeToggle" style="cursor: pointer;" title="Dark Mode">
                     <i class="fas fa-moon"></i>
-                </div>
+                </div> -->
 
                 <!-- Merchant -->
                 <a href="merchant.html" class="action-item merchant-link">
@@ -46,7 +46,7 @@
                 </a>
 
                 <!-- Wallet -->
-                <a href="login.html" class="action-item wallet-btn" style="text-decoration: none;">
+                <a href="login-en.html" class="action-item wallet-btn" style="text-decoration: none;">
                     <i class="fas fa-wallet"></i>
                     <div class="info">
                         <span>Wallet</span>
@@ -55,34 +55,28 @@
                 </a>
 
                 <!-- Cart -->
-                <a href="cart.html" class="action-item cart-icon" style="text-decoration: none;">
+                <a href="cart-en.html" class="action-item cart-icon" style="text-decoration: none;">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="badge">0</span>
                     <span class="icon-label">Cart</span>
                 </a>
 
                 <!-- Wishlist -->
-                <a href="wishlist.html" class="action-item" style="text-decoration: none; margin-right: 5px;">
+                <a href="wishlist-en.html" class="action-item" style="text-decoration: none; margin-right: 5px;">
                     <i class="fas fa-heart"></i>
                     <span class="icon-label">Wishlist</span>
                 </a>
 
                 <!-- Notifications -->
-                <a href="notifications.html" class="action-item notif-icon-container" style="text-decoration: none; position: relative; margin-right: 5px;">
+                <a href="notifications-en.html" class="action-item notif-icon-container" style="text-decoration: none; position: relative; margin-right: 5px;">
                     <i class="fas fa-bell"></i>
                     <span class="badge notif-badge" style="background:red; display:none;">0</span>
                     <span class="icon-label">Alerts</span>
                 </a>
 
-                <!-- Language Switcher (Ar) -->
-                <a href="index.html" class="action-item" style="font-weight: bold; font-family: 'Cairo';">
-                    عربي 🇪🇬
-                </a>
-
-                <!-- Mobile Menu -->
-                <div class="action-item mobile-menu-btn">
+                 <div class="action-item mobile-menu-btn">
                     <i class="fas fa-bars"></i>
-                    <span class="icon-label">Menu</span>
+                    <!-- <span class="icon-label">القائمة</span> -->
                 </div>
 
             </div>
@@ -91,22 +85,42 @@
 
     <!-- Mobile Side Menu -->
     <div class="mobile-sidebar">
+        
         <div class="sidebar-header">
             <h3>Main Menu</h3>
             <button class="close-menu"><i class="fas fa-times"></i></button>
         </div>
-        
+
         <ul class="sidebar-links">
+            <li><a href="login-en.html"><i class="fas fa-wallet"></i> Wallet / Login</a></li>
+            <li><a href="profile-en.html"><i class="fas fa-user-circle"></i> My Account</a></li>
+
+            <li>
+                <a href="notifications-en.html" style="display: flex; justify-content: space-between; align-items: center;">
+                    <span><i class="fas fa-bell"></i> Notifications</span>
+                    <span class="badge" style="position:static; background:red; padding:2px 6px; border-radius:10px; font-size:0.7rem;">New</span>
+                </a>
+            </li>
+
+            <!-- Merchant Panel -->
+            <li><a href="merchant-en.html"><i class="fas fa-store"></i> Merchant Panel (Sell with us)</a></li>
+
+            <hr style="border:0; border-top:1px solid #eee; margin:10px 0;">
+
+            <!-- Main Links -->
             <li><a href="index-en.html"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="profile.html"><i class="fas fa-user-circle"></i> My Account</a></li>
-            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
-            <li><a href="merchant.html"><i class="fas fa-store"></i> Merchant Panel</a></li>
-            <li><a href="deals.html"><i class="fas fa-fire" style="color:red;"></i> Deals & Offers</a></li>
-            <li><a href="requests.html"><i class="fas fa-bullhorn"></i> Special Requests</a></li>
-            <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
-            <li><a href="index.html">🇪🇬 العربية</a></li>
-            <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="orders-en.html"><i class="fas fa-box"></i> My Orders</a></li>
+            <li><a href="cart-en.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+            <li><a href="wishlist-en.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+            <li><a href="deals-en.html"><i class="fas fa-fire" style="color:red;"></i> Deals & Offers</a></li>
+            <li><a href="requests-en.html"><i class="fas fa-bullhorn"></i> Special Requests</a></li>
+
+            <!-- Footer Links -->
+            <li><a href="about-en.html"><i class="fas fa-info-circle"></i> About Us</a></li>
             <li><a href="contact-en.html"><i class="fas fa-headset"></i> Contact Us</a></li>
+            <li><a href="faq-en.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+            <li><a href="policies-en.html"><i class="fas fa-shield-alt"></i> Policies & Shipping</a></li>
+
         </ul>
     </div>
     <div class="menu-overlay"></div>
@@ -116,15 +130,35 @@
     <section class="hero-section">
         <div class="container">
             <div class="banner-card">
-                <div class="banner-content">
-                    <span class="tag">Hot Deals 🔥</span>
-                    <h1 class="brand-slogan">DISKA.. <span style="color: var(--accent);">Wholesale</span> in your pocket</h1>
+
+                <!-- Text Content -->
+                <div class="banner-content" style="text-align: left;">
+
+                    <!-- 1. Logo & Slogan -->
+                    <div class="hero-brand-block">
+                        <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA" class="hero-logo-img">
+                        <span class="brand-slogan">Wholesale in your pocket</span>
+                    </div>
+
+                    <!-- 2. Red Tag -->
+                    <div class="tag-box">
+                        <span class="tag">Hot Deals 🔥</span>
+                    </div>
+
+                    <!-- 3. Main Headline -->
+                    <h2 class="main-headline">Exclusive Discounts on All Products</h2>
+
+                    <!-- 4. Description & Button -->
                     <p class="slogan-desc">The easiest way to order stock for your shop, directly from factories at the best prices.</p>
-                    <a href="offers.html" class="btn primary">Browse Offers</a>
+
+                    <a href="offers-en.html" class="btn primary">Browse Offers</a>
                 </div>
+
+                <!-- Image -->
                 <div class="banner-image">
                     <img src="images/مشروبات.webp" alt="Offers">
                 </div>
+
             </div>
         </div>
     </section>
@@ -132,23 +166,34 @@
     <!-- Categories -->
     <section class="categories-section">
         <div class="container">
-            <h3 class="section-title">Shop by Category</h3>
+            <h3 class="section-title" style="margin-bottom: 20px;">Shop by Category</h3>
             <div class="categories-grid">
-                <a href="category.html" class="cat-item">
-                    <div class="icon" style="background-color: #e3f2fd;"><i class="fas fa-bottle-water" style="color: #2196f3;"></i></div>
+                <a href="category-en.html" class="cat-item">
+                    <div class="icon" style="background-color: #e3f2fd;">
+                        <i class="fas fa-bottle-water" style="color: #2196f3;"></i>
+                    </div>
                     <span>Beverages</span>
                 </a>
-                <a href="category.html" class="cat-item">
-                    <div class="icon" style="background-color: #ffebee;"><i class="fas fa-cookie-bite" style="color: #f44336;"></i></div>
+                <a href="category-en.html" class="cat-item">
+                    <div class="icon" style="background-color: #ffebee;">
+                        <i class="fas fa-cookie-bite" style="color: #f44336;"></i>
+                    </div>
                     <span>Snacks</span>
                 </a>
-                <a href="category.html" class="cat-item">
-                    <div class="icon" style="background-color: #e8f5e9;"><i class="fas fa-pump-soap" style="color: #4caf50;"></i></div>
+                <a href="category-en.html" class="cat-item">
+                    <div class="icon" style="background-color: #e8f5e9;"><i class="fas fa-pump-soap"
+                            style="color: #4caf50;"></i></div>
                     <span>Cleaning</span>
                 </a>
-                <a href="category.html" class="cat-item">
-                    <div class="icon" style="background-color: #fff3e0;"><i class="fas fa-box-open" style="color: #ff9800;"></i></div>
+                <a href="category-en.html" class="cat-item">
+                    <div class="icon" style="background-color: #fff3e0;"><i class="fas fa-box-open"
+                            style="color: #ff9800;"></i></div>
                     <span>Offers</span>
+                </a>
+                <a href="category-en.html" class="cat-item">
+                    <div class="icon" style="background-color: #f3e5f5;"><i class="fas fa-truck-loading"
+                            style="color: #9c27b0;"></i></div>
+                    <span>Fast Delivery</span>
                 </a>
             </div>
         </div>
@@ -162,33 +207,123 @@
                 <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
             </div>
 
-            <!-- المنتجات هنا بيتم تحميلها بالجافاسكريبت أو ممكن تحط منتجات ثابتة مترجمة -->
             <div class="products-grid">
-                <!-- مثال لمنتج ثابت مترجم -->
+
+                <!-- Product 1: Pepsi (Static) -->
                 <div class="product-card merchant-product" data-id="static_pepsi" data-stock="100">
                     <button class="fav-btn"><i class="fas fa-heart"></i></button>
                     <div class="flash-badge"><i class="fas fa-star"></i> 5% OFF</div>
                     
-                    <a href="product.html"><div class="product-img"><img src="images/pepsi.webp" alt="Pepsi"></div></a>
+                    <a href="product-en.html" style="text-decoration:none;">
+                        <div class="product-img"><img src="images/pepsi.webp" alt="Pepsi"></div>
+                    </a>
                     
                     <div class="product-info">
                         <div class="in-cart-indicator"></div>
-                        <a href="#" style="text-decoration:none; color:inherit;"><h4>Pepsi 2.5L (Carton)</h4></a>
+                        <a href="product-en.html" style="text-decoration:none; color:inherit;">
+                            <h4>Pepsi 2.5L - Carton</h4>
+                        </a>
                         <p class="product-desc-short">Refreshing soft drink, family size.</p>
-                        <div class="product-meta"><span>6 / Carton</span><span class="stock-info">Stock: 100</span></div>
-                        <div class="pricing"><span class="current-price">191.99 EGP</span><span class="old-price">201.00 EGP</span></div>
+
+                        <div class="product-meta">
+                            <span><i class="fas fa-box-open"></i> 6 / Carton</span>
+                            <span class="stock-info">Stock: 100</span>
+                        </div>
+
+                        <div class="pricing">
+                            <span class="current-price">191.99 EGP</span>
+                            <span class="old-price">201.00 EGP</span>
+                        </div>
                         
                         <!-- Actions -->
                         <div class="card-actions" style="display:flex; gap:10px; margin-top:10px;">
                             <div class="qty-control-card" style="display:flex; border:1px solid #ddd; border-radius:5px;">
-                                <button class="card-minus" style="border:none; background:#eee; width:30px;">-</button>
+                                <button class="card-minus" style="border:none; background:#eee; width:30px; cursor:pointer;">-</button>
                                 <input type="number" class="manual-qty" value="1" min="1" max="100" style="width:50px; text-align:center; border:none; font-weight:bold;">
-                                <button class="card-plus" style="border:none; background:#eee; width:30px;">+</button>
+                                <button class="card-plus" style="border:none; background:#eee; width:30px; cursor:pointer;">+</button>
                             </div>
-                            <button class="add-btn" style="flex:1; border:none; background:var(--primary); color:#fff; border-radius:5px;">Add <i class="fas fa-cart-plus"></i></button>
+                            <button class="add-btn" style="flex:1; border:none; background:var(--primary); color:#fff; border-radius:5px; cursor:pointer;">Add <i class="fas fa-cart-plus"></i></button>
                         </div>
                     </div>
                 </div>
+
+                <!-- Product 2: Tea (Static) -->
+                <div class="product-card merchant-product" data-id="static_tea" data-stock="50">
+                    <button class="fav-btn"><i class="fas fa-heart"></i></button>
+                    <div class="flash-badge" style="background:var(--accent); color:#000;"><i class="fas fa-fire"></i> Best Seller</div>
+
+                    <a href="product-en.html" style="text-decoration:none;">
+                        <div class="product-img"><img src="images/شاى العروسه.webp" alt="Tea"></div>
+                    </a>
+
+                    <div class="product-info">
+                        <div class="in-cart-indicator"></div>
+                        <a href="product.html" style="text-decoration:none; color:inherit;">
+                            <h4>El Arosa Tea - 40g</h4>
+                        </a>
+                        <p class="product-desc-short">Egypt's #1 Tea brand.</p>
+                        <div class="product-meta"><span>12 / Carton</span><span class="stock-info">Stock: 50</span></div>
+
+                        <div class="pricing"><span class="current-price">206.25 EGP</span></div>
+
+                        <div class="card-actions" style="display:flex; gap:10px; margin-top:10px;">
+                            <div class="qty-control-card" style="display:flex; border:1px solid #ddd; border-radius:5px;">
+                                <button class="card-minus" style="border:none; background:#eee; width:30px; cursor:pointer;">-</button>
+                                <input type="number" class="manual-qty" value="1" min="1" max="50" style="width:50px; text-align:center; border:none; font-weight:bold;">
+                                <button class="card-plus" style="border:none; background:#eee; width:30px; cursor:pointer;">+</button>
+                            </div>
+                            <button class="add-btn" style="flex:1; border:none; background:var(--primary); color:#fff; border-radius:5px; cursor:pointer;">Add <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Oil (Static) -->
+                <div class="product-card merchant-product" data-id="static_oil" data-stock="200">
+                    <button class="fav-btn"><i class="fas fa-heart"></i></button>
+
+                    <a href="product.html" style="text-decoration:none;">
+                        <div class="product-img"><img src="images/زيت.webp" alt="Oil"></div>
+                    </a>
+
+                    <div class="product-info">
+                        <div class="in-cart-indicator"></div>
+                        <a href="product.html" style="text-decoration:none; color:inherit;"><h4>Crystal Oil - 800ml</h4></a>
+                        <p class="product-desc-short">Pure sunflower oil for cooking.</p>
+                        <div class="product-meta"><span>12 / Carton</span><span class="stock-info">Stock: 200</span></div>
+                        <div class="pricing"><span class="current-price">450.00 EGP</span></div>
+                        <div class="card-actions" style="display:flex; gap:10px; margin-top:10px;">
+                            <div class="qty-control-card" style="display:flex; border:1px solid #ddd; border-radius:5px;">
+                                <button class="card-minus" style="border:none; background:#eee; width:30px; cursor:pointer;">-</button>
+                                <input type="number" class="manual-qty" value="1" min="1" max="200" style="width:50px; text-align:center; border:none; font-weight:bold;">
+                                <button class="card-plus" style="border:none; background:#eee; width:30px; cursor:pointer;">+</button>
+                            </div>
+                            <button class="add-btn" style="flex:1; border:none; background:var(--primary); color:#fff; border-radius:5px; cursor:pointer;">Add <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: Milk (Static) -->
+                <div class="product-card merchant-product" data-id="static_milk" data-stock="80">
+                    <button class="fav-btn"><i class="fas fa-heart"></i></button>
+                    <div class="flash-badge"><i class="fas fa-star"></i> Save 50 EGP</div>
+                    <a href="product.html" style="text-decoration:none;"><div class="product-img"><img src="images/حليب.webp" alt="Milk"></div></a>
+                    <div class="product-info">
+                        <div class="in-cart-indicator"></div>
+                        <a href="product.html" style="text-decoration:none; color:inherit;"><h4>Bekhero Milk Full Cream - 500ml</h4></a>
+                        <p class="product-desc-short">Natural milk for the whole family.</p>
+                        <div class="product-meta"><span>24 / Carton</span><span class="stock-info">Stock: 80</span></div>
+                        <div class="pricing"><span class="current-price">482.75 EGP</span><span class="old-price">532.00 EGP</span></div>
+                        <div class="card-actions" style="display:flex; gap:10px; margin-top:10px;">
+                            <div class="qty-control-card" style="display:flex; border:1px solid #ddd; border-radius:5px;">
+                                <button class="card-minus" style="border:none; background:#eee; width:30px; cursor:pointer;">-</button>
+                                <input type="number" class="manual-qty" value="1" min="1" max="80" style="width:50px; text-align:center; border:none; font-weight:bold;">
+                                <button class="card-plus" style="border:none; background:#eee; width:30px; cursor:pointer;">+</button>
+                            </div>
+                            <button class="add-btn" style="flex:1; border:none; background:var(--primary); color:#fff; border-radius:5px; cursor:pointer;">Add <i class="fas fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -198,15 +333,27 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <a href="index-en.html" class="logo"><img src="images/logo.png" alt="DISKA Logo"></a>
-                    <p style="margin-top: 15px; color: #cbd5e1;">Your #1 Wholesale Platform in Egypt.</p>
+                    <a href="index-en.html" class="logo">
+                        <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+                    </a>
+                    <p style="margin-top: 15px; color: #cbd5e1;">Your #1 Wholesale Platform in Egypt. Connecting you with top suppliers at best prices.</p>
                 </div>
                 <div>
                     <h4>Important Links</h4>
                     <ul>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="merchant.html">Sell with us</a></li>
+                        <li><a href="requests.html">Special Requests</a></li>
                         <li><a href="contact-en.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Support & Policies</h4>
+                    <ul>
+                        <li><a href="policies.html#shipping">Shipping & Delivery</a></li>
+                        <li><a href="policies.html#return">Return Policy</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="profile.html">My Account</a></li>
                     </ul>
                 </div>
             </div>
@@ -214,11 +361,17 @@
         </div>
     </footer>
 
-    <!-- WhatsApp -->
-    <a href="https://wa.me/201000000000" target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-        <span>Contact Us</span>
-    </a>
+    <!-- Floating Buttons -->
+    <div class="floating-container">
+        <!-- Language Switcher -->
+        <a href="javascript:void(0)" id="langSwitcher" class="float-btn lang-btn" title="تغيير اللغة">
+            <i class="fas fa-globe"></i>
+        </a>
+        <!-- WhatsApp -->
+        <a href="https://wa.me/201000000000" target="_blank" class="float-btn whatsapp-btn" title="Contact Us">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
     <script src="script.js"></script>
 </body>

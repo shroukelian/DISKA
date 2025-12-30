@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | DISKA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .faq-item { background: #fff; margin-bottom: 15px; border-radius: 8px; overflow: hidden; border: 1px solid #eee; }
+        .faq-question { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: bold; color: var(--primary); }
+        .faq-question:hover { background: #f9f9f9; }
+        .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: 0.3s ease; color: #666; line-height: 1.6; }
+        .faq-item.active .faq-answer { padding: 20px; max-height: 200px; border-top: 1px solid #eee; }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        @media (max-width: 768px) {
+            .header-actions a.action-item {
+                display: none !important;
+            }
+            .mobile-menu-btn {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="index-en.html" class="logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+            </a>
+
+            <div class="header-actions">
+                <div class="action-item mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Side Menu -->
+    <div class="mobile-sidebar">
+        <div class="sidebar-header">
+            <h3>Main Menu</h3>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <ul class="sidebar-links">
+            <li><a href="index-en.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="profile-en.html"><i class="fas fa-user-circle"></i> My Account</a></li>
+            <li><a href="cart-en.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+            
+            <li><a href="deals-en.html" style="color: var(--danger);"><i class="fas fa-fire"></i> Deals & Offers</a></li>
+            <li><a href="requests-en.html"><i class="fas fa-bullhorn"></i> Special Requests</a></li>
+            <li><a href="merchant-en.html"><i class="fas fa-store"></i> Merchant Panel</a></li>
+
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
+
+            <li><a href="about-en.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="faq-en.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+            <li><a href="contact-en.html"><i class="fas fa-headset"></i> Contact Us</a></li>
+            <li><a href="policies-en.html"><i class="fas fa-shield-alt"></i> Policies</a></li>
+        </ul>
+    </div>
+    <div class="menu-overlay"></div>
+
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="page-title" style="padding-top: 20px;">Frequently Asked Questions</h2>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How can I register as a merchant?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        You can click on the "Merchant Panel" button on the homepage, upload the required documents (Commercial Register and Tax Card), and your account will be activated within 24 hours.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is the minimum order value?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        The minimum order varies by supplier, but generally, the minimum for wholesale orders is 1000 EGP.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is Cash on Delivery available?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, we offer Cash on Delivery (COD) service for all governorates, in addition to electronic payments and wallets.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index-en.html" class="logo">
+                        <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+                    </a>
+                    <p style="margin-top: 15px; color: #cbd5e1;">Your #1 Wholesale Platform in Egypt. Connecting you with top suppliers at best prices.</p>
+                </div>
+                <div>
+                    <h4>Important Links</h4>
+                    <ul>
+                        <li><a href="about-en.html">About Us</a></li>
+                        <li><a href="merchant-en.html">Sell with us</a></li>
+                        <li><a href="requests-en.html">Special Requests</a></li>
+                        <li><a href="contact-en.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Support & Policies</h4>
+                    <ul>
+                        <li><a href="policies-en.html#shipping">Shipping & Delivery</a></li>
+                        <li><a href="policies-en.html#return">Return Policy</a></li>
+                        <li><a href="faq-en.html">FAQ</a></li>
+                        <li><a href="profile-en.html">My Account</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyrights">
+                <p>&copy; 2025 DISKA - All Rights Reserved</p>
+                <p>Design and programming by <a href="https://www.facebook.com/profile.php?id=100090592885243&mibextid=ZbWKwL" target="_blank"><strong style="color: #FACC15;">GMTWEB</strong></a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-container">
+        
+        <!-- Language Switcher -->
+        <a href="javascript:void(0)" id="langSwitcher" class="float-btn lang-btn" title="Change Language">
+            <i class="fas fa-globe"></i>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/201000000000" target="_blank" class="float-btn whatsapp-btn" title="Contact Us">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

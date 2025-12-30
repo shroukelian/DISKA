@@ -36,6 +36,49 @@
             </div>
         </div>
     </header>
+       <div class="mobile-sidebar">
+        
+        <div class="sidebar-header">
+            <h3>القائمة الرئيسية</h3>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+
+        <ul class="sidebar-links">
+            <li><a href="login.html"><i class="fas fa-wallet"></i> المحفظة / تسجيل دخول</a></li>
+            <li><a href="profile.html"><i class="fas fa-user-circle"></i> حسابي </a></li>
+
+            <li>
+                <a href="notifications.html"
+                    style="display: flex; justify-content: space-between; align-items: center;">
+                    <span><i class="fas fa-bell"></i> الإشعارات</span>
+                    <!-- ممكن نضيف بادج هنا لو فيه اشعارات -->
+                    <span class="badge"
+                        style="position:static; background:red; padding:2px 6px; border-radius:10px; font-size:0.7rem;">جديد</span>
+                </a>
+            </li>
+
+            <!-- 3. لوحة التاجر (اللي خفيناها من فوق) -->
+            <li><a href="merchant.html"><i class="fas fa-store"></i> حساب تاجر (بيع معنا)</a></li>
+
+            <hr style="border:0; border-top:1px solid #eee; margin:10px 0;">
+
+            <!-- باقي الروابط الأساسية -->
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="orders.html"><i class="fas fa-box"></i> طلباتي</a></li> <!-- رابط الصفحة دي -->
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات</a></li>
+            <li><a href="wishlist.html"><i class="fas fa-heart"></i> المفضلة</a></li>
+            <li><a href="deals.html"><i class="fas fa-fire" style="color:red;"></i> العروض والصفقات</a></li>
+            <li><a href="requests.html"><i class="fas fa-bullhorn"></i> طلبات خاصة</a></li>
+
+            <!-- روابط الفوتر -->
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
+            <li><a href="contact.html"><i class="fas fa-headset"></i> اتصل بنا</a></li>
+            <li><a href="faq.html"><i class="fas fa-question-circle"></i> الأسئلة الشائعة </a></li>
+            <li><a href="policies.html"><i class="fas fa-headset"></i> السياسات والشحن</a></li>
+
+        </ul>
+    </div>
+    <div class="menu-overlay"></div>
 
     <section class="section-padding" style="padding-top: 50px;">
         <div class="container">
@@ -59,11 +102,19 @@
         </div>
     </section>
 
-    <!-- زر الواتساب العائم -->
-    <a href="https://wa.me/201000000000" target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-        <span>تواصل معنا</span>
+<div class="floating-container">
+    
+    <!-- زر الترجمة (الكرة الأرضية) -->
+    <a href="javascript:void(0)" id="langSwitcher" class="float-btn lang-btn" title="Change Language">
+        <i class="fas fa-globe"></i>
     </a>
+
+    <!-- زر الواتساب -->
+    <a href="https://wa.me/201000000000" target="_blank" class="float-btn whatsapp-btn" title="تواصل معنا">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</div>
 
     <script src="script.js"></script>
 </body>

@@ -2486,13 +2486,7 @@ input.error-input {
 
 @media (max-width: 768px) {
     
-    /* إخفاء زر التاجر، المحفظة، والإشعارات من الهيدر في الموبايل */
-    .header-actions .merchant-link,     /* زر التاجر */
-    .header-actions .wallet-btn,        /* زر المحفظة */
-    .header-actions .notif-icon-container { /* زر الإشعارات */
-        display: none !important;
-    }
-
+ 
     /* تظبيط المسافات بين اللي فاضلين (القائمة، السلة، المفضلة) */
     .header-actions {
         gap: 10px; /* مسافة مناسبة */
@@ -2566,4 +2560,345 @@ html[dir="ltr"] .whatsapp-float {
     right: auto;
     left: 25px;
     flex-direction: row-reverse;
+}
+/* =========================================
+   تنسيق البانر الأفقي (الصورة جانب النص)
+   ========================================= */
+
+.banner-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 50px; /* مساحة داخلية مريحة */
+    background: var(--primary); /* اللون الكحلي */
+    border-radius: 20px;
+    gap: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* تنسيق النصوص */
+.banner-content {
+    flex: 1; /* يأخذ مساحة النص */
+    text-align: right; /* محاذاة لليمين */
+    z-index: 2;
+}
+
+/* 1. اسم ديسكا والسلوجان */
+.hero-brand-block {
+    margin-bottom: 20px;
+}
+
+.brand-name {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fff;
+    margin: 0;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.brand-slogan {
+    font-size: 1.4rem;
+    color: var(--accent); /* أصفر */
+    font-weight: bold;
+    display: block;
+    margin-top: 5px;
+}
+
+/* 2. المربع الأحمر */
+.tag-box {
+    margin-bottom: 15px;
+}
+
+/* 3. العنوان الرئيسي */
+.main-headline {
+    font-size: 2.2rem;
+    color: #fff;
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.slogan-desc {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    margin-bottom: 25px;
+    max-width: 500px;
+}
+
+/* تنسيق الصورة */
+.banner-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transform: rotate(-3deg); /* ميلان بسيط جمالي */
+    transition: 0.3s;
+}
+
+.banner-image img:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+
+/* --- للموبايل (عشان يرجعوا تحت بعض) --- */
+@media (max-width: 900px) {
+    .banner-card {
+        flex-direction: column-reverse; /* الصورة فوق والكلام تحت */
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .banner-content {
+        text-align: center;
+    }
+
+    .brand-name { font-size: 2.5rem; }
+    .main-headline { font-size: 1.5rem; }
+    
+    .banner-image img {
+        width: 80%; /* تصغير الصورة في الموبايل */
+        transform: rotate(0);
+        margin-bottom: 20px;
+    }
+}
+/* =========================================
+   تنسيق لوجو البانر (الصورة)
+   ========================================= */
+
+.hero-logo-img {
+    height: 100px; /* ارتفاع كبير ومناسب للبانر */
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin-bottom: 10px; /* مسافة بين اللوجو والسلوجان */
+    
+    /* 💡 ملحوظة: لو اللوجو لونه أسود والخلفية كحلي، شيل علامة التعليق من السطر اللي تحته عشان يقلب أبيض */
+    /* filter: brightness(0) invert(1); */
+}
+
+/* تنسيق السلوجان تحت الصورة */
+.brand-slogan {
+    font-size: 1.5rem;
+    color: var(--accent); /* أصفر */
+    font-weight: bold;
+    display: block;
+}
+
+/* --- تعديلات الموبايل --- */
+@media (max-width: 900px) {
+    .hero-logo-img {
+        height: 70px; /* تصغير اللوجو في الموبايل */
+        margin: 0 auto 10px auto; /* توسيط الصورة */
+    }
+}
+/* =========================================
+   Floating Buttons Container (اللغة + واتساب)
+   ========================================= */
+
+.floating-container {
+    position: fixed;
+    bottom: 25px;
+    right: 25px; /* يمين الشاشة */
+    z-index: 9999;
+    display: flex;
+    flex-direction: column-reverse; /* الواتساب تحت واللغة فوقه */
+    gap: 15px; /* مسافة بين الزرارين */
+    align-items: center;
+}
+
+.float-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* تأثير ناعم */
+    text-decoration: none;
+    position: relative;
+}
+
+.float-btn:hover {
+    transform: scale(1.1);
+}
+
+/* تنسيق زر الواتساب */
+.whatsapp-btn {
+    background-color: #25D366;
+    animation: floatUpDown 3s ease-in-out infinite; /* الأنيميشن اللي عملناه قبل كده */
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ebc57;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+/* تنسيق زر اللغة (الكرة الأرضية) */
+.lang-btn {
+    background-color: var(--accent); /* اللون الكحلي */
+    width: 50px; /* أصغر قليلاً من الواتس */
+    height: 50px;
+    font-size: 1.4rem;
+    color: var(--primary);
+
+}
+
+.lang-btn:hover {
+    background-color: var(--primary); /* يصفر عند اللمس */
+    color: var(--bg-light);
+}
+
+/* للموبايل: تعديل المسافات */
+@media (max-width: 768px) {
+    .floating-container {
+        bottom: 20px;
+        right: 20px;
+    }
+    .float-btn {
+        width: 55px; height: 55px; font-size: 1.6rem;
+    }
+    .lang-btn {
+        width: 45px; height: 45px; font-size: 1.2rem;
+    }
+}
+/* =========================================
+   تعديل محاذاة البانر للغة الإنجليزية (LTR)
+   ========================================= */
+
+html[dir="ltr"] .banner-card {
+    flex-direction: row; /* يخلي الصورة والكلمة جنب بعض */
+    text-align: left;    /* يخلي الكلام يبدأ من الشمال */
+}
+
+html[dir="ltr"] .banner-content {
+    align-items: flex-start; /* يحاذي العناصر (الزرار والتاج) لليسار */
+    display: flex;
+    flex-direction: column;
+}
+
+html[dir="ltr"] .hero-brand-block {
+    align-items: flex-start; /* يحاذي اللوجو والسلوجان لليسار */
+    text-align: left;
+}
+
+/* في الموبايل للانجليزي */
+@media (max-width: 768px) {
+    html[dir="ltr"] .banner-card {
+        flex-direction: column-reverse; /* الصورة فوق والكلام تحت */
+        text-align: center; /* في الموبايل يفضل يكون في النص */
+    }
+    
+    html[dir="ltr"] .banner-content,
+    html[dir="ltr"] .hero-brand-block {
+        align-items: center; /* توسيط في الموبايل */
+    }
+}
+/* =========================================
+   إصلاح تنسيق صفحة اتصل بنا (إنجليزي LTR)
+   ========================================= */
+
+/* 1. ضبط محاذاة النصوص لليسار في الكارت */
+html[dir="ltr"] .contact-info-card {
+    text-align: left;
+}
+
+/* 2. ترتيب الأيقونة والنص بجانب بعضهما */
+html[dir="ltr"] .c-item {
+    display: flex;
+    flex-direction: row; /* الأيقونة يسار والنص يمين */
+    align-items: flex-start; /* محاذاة من الأعلى */
+    justify-content: flex-start; /* كل العناصر تبدأ من اليسار */
+    gap: 20px; /* مسافة مناسبة بين الأيقونة والنص */
+}
+
+/* 3. التأكد من أن النصوص داخل العنصر محاذية لليسار */
+html[dir="ltr"] .c-item div {
+    text-align: left;
+}
+
+html[dir="ltr"] .c-item h4,
+html[dir="ltr"] .c-item p,
+html[dir="ltr"] .c-item a {
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+}
+
+/* 4. منع الأيقونة من الانكماش أو التحرك */
+html[dir="ltr"] .c-item .icon {
+    flex-shrink: 0;
+    margin: 0;
+}
+
+/* 5. ضبط العناوين الرئيسية */
+html[dir="ltr"] .page-title,
+html[dir="ltr"] .contact-form-card h2,
+html[dir="ltr"] .contact-form-card p {
+    text-align: left;
+}
+/* =========================================
+   إصلاح هيدر الموبايل (انجليزي LTR) - النهائي
+   ========================================= */
+
+@media (max-width: 768px) {
+    
+    /* 1. ضبط الحاوية لتوزيع العناصر يمين ويسار */
+    html[dir="ltr"] .header-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between !important; /* مسافة بين اللوجو والأيقونات */
+        align-items: center;
+        padding: 10px 15px;
+    }
+
+    /* 2. اللوجو (أقصى اليسار) */
+    html[dir="ltr"] .logo {
+        order: 1;
+        margin-right: auto !important; /* يدفع الأيقونات لليمين */
+        margin-left: 0 !important;
+    }
+
+    /* 3. الأيقونات (أقصى اليمين) */
+    html[dir="ltr"] .header-actions {
+        order: 2;
+        margin-left: 110px;
+        gap: 12px; /* مسافة بين الأيقونات */
+        justify-content: flex-end;
+    }
+
+    /* 5. ضبط حواف شريط البحث (Input شمال والزر يمين) */
+    html[dir="ltr"] .search-box {
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
+        flex-direction: row; /* التأكد من الاتجاه */
+    }
+    
+    html[dir="ltr"] .search-box input {
+        border-radius: 8px 0 0 8px !important;
+    }
+    
+    html[dir="ltr"] .search-box button {
+        border-radius: 0 8px 8px 0 !important;
+    }
+}
+
+.header-actions .action-item, .mobile-menu-btn {
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 11px;
 }

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Products | DISKA</title>
+    <!-- English Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
+
+            <!-- Logo -->
+            <a href="index-en.html" class="logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+            </a>
+
+            <!-- Search Bar -->
+            <div class="search-box">
+                <input type="text" placeholder="Search for products, suppliers...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
+            <!-- User Actions -->
+            <div class="header-actions">
+
+                <!-- Cart -->
+                <a href="cart-en.html" class="action-item cart-icon" style="text-decoration: none;">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge">0</span>
+                    <span class="icon-label">Cart</span>
+                </a>
+
+                <!-- Wishlist -->
+                <a href="wishlist-en.html" class="action-item" style="text-decoration: none;">
+                    <i class="fas fa-heart"></i>
+                    <span class="icon-label">Wishlist</span>
+                </a>
+
+                <!-- Notifications -->
+                <a href="notifications-en.html" class="action-item notif-icon-container"
+                    style="text-decoration: none; position: relative;">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge notif-badge" style="background:red; display:none;">0</span>
+                    <span class="icon-label">Alerts</span>
+                </a>
+
+                <!-- Menu -->
+                     <div class="action-item mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                    <!-- <span class="icon-label">القائمة</span> -->
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Side Menu -->
+    <div class="mobile-sidebar">
+        <div class="sidebar-header">
+            <h3>Main Menu</h3>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+
+        <ul class="sidebar-links">
+            <li><a href="index-en.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="profile-en.html"><i class="fas fa-user-circle"></i> My Account</a></li>
+            <li><a href="cart-en.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+
+            <li><a href="merchant-en.html"><i class="fas fa-store"></i> Merchant Panel</a></li>
+            <li><a href="deals-en.html"><i class="fas fa-fire" style="color:red;"></i> Deals & Offers</a></li>
+            <li><a href="requests-en.html"><i class="fas fa-bullhorn"></i> Special Requests</a></li>
+
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
+
+            <li><a href="about-en.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="contact-en.html"><i class="fas fa-headset"></i> Contact Us</a></li>
+            <li><a href="faq-en.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+            <li><a href="policies-en.html"><i class="fas fa-shield-alt"></i> Policies</a></li>
+        </ul>
+    </div>
+    <div class="menu-overlay"></div>
+
+    <!-- Category Content -->
+    <section class="category-section">
+        <div class="container">
+
+            <div class="breadcrumb">
+                <a href="index-en.html">Home</a> / <span>Beverages</span>
+            </div>
+
+            <div class="category-layout">
+
+                <!-- Sidebar Filters -->
+                <aside class="sidebar">
+                    <div class="filter-group">
+                        <h3>Subcategories</h3>
+                        <label><input type="checkbox"> Soft Drinks</label>
+                        <label><input type="checkbox"> Juices</label>
+                        <label><input type="checkbox"> Mineral Water</label>
+                        <label><input type="checkbox"> Energy Drinks</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Brand</h3>
+                        <label><input type="checkbox"> Pepsi</label>
+                        <label><input type="checkbox"> Coca-Cola</label>
+                        <label><input type="checkbox"> Juhayna</label>
+                        <label><input type="checkbox"> Fayrouz</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Price Range</h3>
+                        <div class="price-range">
+                            <input type="number" placeholder="Min">
+                            <input type="number" placeholder="Max">
+                        </div>
+                    </div>
+
+                    <button class="btn primary w-100">Apply Filter</button>
+                </aside>
+
+                <!-- Products Grid -->
+                <main class="category-products">
+                    <div class="products-header">
+                        <h2>Beverages (24 items)</h2>
+                        <select>
+                            <option>Sort by: Best Selling</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                        </select>
+                    </div>
+
+                    <div class="products-grid">
+
+                        <!-- Product 1 -->
+                        <div class="product-card">
+                            <div class="badges"><span class="discount-badge">5% OFF</span></div>
+                            <a href="product-en.html">
+                                <div class="product-img"><img src="images/pepsi.webp" alt="Pepsi"></div>
+                            </a>
+                            <div class="product-info">
+                                <h4>Pepsi 2.5L - Carton</h4>
+                                <div class="pricing">
+                                    <span class="current-price">191.99 EGP</span>
+                                    <span class="old-price">201.00 EGP</span>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button class="add-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="product-card">
+                            <a href="product-en.html">
+                                <div class="product-img"><img src="images/مشروبات.webp" alt="Juice"></div>
+                            </a>
+                            <div class="product-info">
+                                <h4>Juhayna Mango Juice 1L (12 Packs)</h4>
+                                <div class="pricing">
+                                    <span class="current-price">320.00 EGP</span>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button class="add-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="product-card">
+                            <a href="product-en.html">
+                                <div class="product-img"><img src="images/pepsi.webp" alt="Pepsi"></div>
+                            </a>
+                            <div class="product-info">
+                                <h4>Fayrouz Pineapple 330ml (Cans)</h4>
+                                <div class="pricing"><span class="current-price">250.00 EGP</span></div>
+                                <div class="add-to-cart"><button class="add-btn">Add to Cart</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index-en.html" class="logo">
+                        <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png"
+                            alt="DISKA Logo">
+                    </a>
+                    <p style="margin-top: 15px; color: #cbd5e1;">Your #1 Wholesale Platform in Egypt. Connecting you
+                        with top suppliers at best prices.</p>
+                </div>
+                <div>
+                    <h4>Important Links</h4>
+                    <ul>
+                        <li><a href="about-en.html">About Us</a></li>
+                        <li><a href="merchant.html">Sell with us</a></li>
+                        <li><a href="requests.html">Special Requests</a></li>
+                        <li><a href="contact-en.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Support & Policies</h4>
+                    <ul>
+                        <li><a href="policies.html#shipping">Shipping & Delivery</a></li>
+                        <li><a href="policies.html#return">Return Policy</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="profile.html">My Account</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyrights">
+                <p>&copy; 2025 DISKA - All Rights Reserved</p>
+                <p>Design and programming by <a
+                        href="https://www.facebook.com/profile.php?id=100090592885243&mibextid=ZbWKwL"
+                        target="_blank"><strong style="color: #FACC15;">GMTWEB</strong></a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-container">
+        <!-- Language Switcher -->
+        <a href="javascript:void(0)" id="langSwitcher" class="float-btn lang-btn" title="Change Language">
+            <i class="fas fa-globe"></i>
+        </a>
+        <!-- WhatsApp -->
+        <a href="https://wa.me/201000000000" target="_blank" class="float-btn whatsapp-btn" title="Contact Us">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

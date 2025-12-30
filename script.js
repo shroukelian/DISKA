@@ -1,5 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+// تحديد اللغة الحالية من ملف HTML
+    const currentLang = document.documentElement.lang || 'ar';
+    
+    // قاموس بسيط للترجمة
+    const t = {
+        added: currentLang === 'en' ? 'Item Added' : 'تمت الإضافة',
+        maxStock: currentLang === 'en' ? 'Max stock reached' : 'وصلت للحد الأقصى للمتاح',
+        noStock: currentLang === 'en' ? 'Out of stock' : 'الكمية غير متاحة',
+        favAdded: currentLang === 'en' ? 'Added to Wishlist' : 'تمت الإضافة للمفضلة',
+        favRemoved: currentLang === 'en' ? 'Removed from Wishlist' : 'تم الحذف من المفضلة'
+    };
+    
     // =========================================
     // 1. المتغيرات والبيانات (LocalStorage)
     // =========================================
@@ -439,6 +450,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (val > max) { showToast(`أقصى كمية ${max}`, 'error'); e.target.value = max; } 
             else if (val < 1 || isNaN(val)) { e.target.value = 1; }
         }
+
+
+        
     });
 
 
@@ -586,4 +600,47 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    // =========================================
+    // 11. تشغيل زر تغيير اللغة (النسخة النهائية)
+    // =========================================
+    
+    setTimeout(() => {
+        const langBtn = document.getElementById('langSwitcher');
+        
+        if (langBtn) {
+            console.log("تم العثور على زر اللغة!"); 
+
+            langBtn.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                
+                // 1. تحديد الملف الحالي
+                let path = window.location.pathname;
+                let filename = path.split('/').pop();
+
+                // لو الرابط فاضي، يبقي احنا في index.html
+                if (filename === '' || filename === '/') {
+                    filename = 'index.html';
+                }
+
+                let targetFile = '';
+
+                // 2. التحويل الذكي
+                if (filename.includes('-en.html')) {
+                    // من إنجليزي -> لعربي
+                    targetFile = filename.replace('-en.html', '.html');
+                } else {
+                    // من عربي -> لإنجليزي
+                    // (لو الملف اسمه index.html هيحوله index-en.html)
+                    targetFile = filename.replace('.html', '-en.html');
+                }
+
+                console.log(`Converting: ${filename} -> ${targetFile}`);
+
+                // 3. الانتقال
+                window.location.href = targetFile;
+            });
+        } else {
+            console.error("خطأ: لم يتم العثور على عنصر بـ ID='langSwitcher'");
+        }
+    }, 500); // تأخير نصف ثانية
 });

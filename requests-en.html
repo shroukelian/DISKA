@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Requests | DISKA</title>
+    <!-- English Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @media (max-width: 768px) {
+            .header-actions a.action-item {
+                display: none !important;
+            }
+            .mobile-menu-btn {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="index-en.html" class="logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+            </a>
+            <div class="header-actions">
+                <button class="btn primary small" onclick="openRequestModal()"><i class="fas fa-plus"></i> New Request</button>
+                <div class="action-item mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Side Menu -->
+    <div class="mobile-sidebar">
+        
+        <div class="sidebar-header">
+            <h3>Main Menu</h3>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+
+        <ul class="sidebar-links">
+            <li><a href="index-en.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="profile-en.html"><i class="fas fa-user-circle"></i> My Account</a></li>
+            <li><a href="cart-en.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+            <li><a href="wishlist-en.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+            
+            <li><a href="deals-en.html" style="color: var(--danger);"><i class="fas fa-fire"></i> Deals & Offers</a></li>
+            <li><a href="requests-en.html"><i class="fas fa-bullhorn"></i> Special Requests</a></li>
+            <li><a href="merchant-en.html"><i class="fas fa-store"></i> Merchant Panel</a></li>
+
+            <hr style="border:0; border-top:1px solid #eee; margin:10px 0;">
+
+            <li><a href="about-en.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="faq-en.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+            <li><a href="contact-en.html"><i class="fas fa-headset"></i> Contact Us</a></li>
+            <li><a href="policies-en.html"><i class="fas fa-shield-alt"></i> Policies</a></li>
+
+        </ul>
+    </div>
+    <div class="menu-overlay"></div>
+
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="page-title" style="padding-top: 20px;">Active Buying Requests</h2>
+
+            <div class="requests-list" id="requestsContainer">
+                <div class="request-card" style="background:#fff; padding:20px; border-radius:10px; margin-bottom:15px; border-left:5px solid var(--accent); box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+                    <div style="display:flex; justify-content:space-between; align-items:start;">
+                        <div>
+                            <h3 style="color:var(--primary); margin-bottom:5px;">Needed: 1000 Oil Cartons</h3>
+                            <p style="color:#666; font-size:0.9rem;">Looking for Crystal Sunflower Oil, delivery to October warehouse.</p>
+                            <span style="background:#e0f2fe; padding:2px 8px; border-radius:4px; font-size:0.8rem; color:#0284c7;">Budget: 450,000 EGP</span>
+                        </div>
+                        <div style="text-align:center;">
+                            <span style="font-size:1.5rem; font-weight:bold; color:var(--primary);">3</span>
+                            <small style="display:block; color:#888;">Offers</small>
+                        </div>
+                    </div>
+                    <hr style="margin:15px 0; border:0; border-top:1px solid #eee;">
+                    <button class="btn primary w-100" onclick="alert('Offer submission is for registered merchants only')">Submit Offer</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for New Request -->
+    <div id="reqModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:2000; align-items:center; justify-content:center;">
+        <div style="background:#fff; padding:30px; border-radius:15px; width:90%; max-width:600px; position:relative; max-height: 90vh; overflow-y: auto;">
+            <span onclick="document.getElementById('reqModal').style.display='none'" style="position:absolute; top:15px; right:20px; cursor:pointer; font-size:1.5rem; color:#999;">&times;</span>
+            
+            <h3 style="color: var(--primary); margin-bottom: 20px; text-align: center;">New Buying Request</h3>
+            
+            <form id="requestForm">
+                
+                <!-- Title -->
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label style="display:block; margin-bottom:5px; font-weight:bold;">Request Title</label>
+                    <input type="text" id="reqTitle" placeholder="Ex: Needed 1 Ton Sugar" class="form-control" style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px;" required>
+                </div>
+
+                <!-- Description -->
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label style="display:block; margin-bottom:5px; font-weight:bold;">Product Details</label>
+                    <textarea id="reqDesc" placeholder="Specs, Brand, Quantity..." rows="3" style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px;" required></textarea>
+                </div>
+
+                <!-- Dates -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div class="form-group">
+                        <label style="display:block; margin-bottom:5px; font-size:0.9rem;">Preferred Prod. Date</label>
+                        <input type="date" id="reqProdDate" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
+                    </div>
+                    <div class="form-group">
+                        <label style="display:block; margin-bottom:5px; font-size:0.9rem;">Min Expiry Date</label>
+                        <input type="date" id="reqExpDate" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
+                    </div>
+                </div>
+
+                <!-- Location & Deadline -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div class="form-group">
+                        <label style="display:block; margin-bottom:5px; font-size:0.9rem;">Delivery Location</label>
+                        <input type="text" id="reqLocation" placeholder="Ex: Cairo Warehouse" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;" required>
+                    </div>
+                    <div class="form-group">
+                        <label style="display:block; margin-bottom:5px; font-size:0.9rem;">Delivery Deadline</label>
+                        <input type="date" id="reqDeadline" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
+                    </div>
+                </div>
+
+                <!-- Budget -->
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:5px; font-weight:bold;">Suggested Budget (EGP)</label>
+                    <input type="number" id="reqBudget" placeholder="0.00" class="form-control" style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px;" required>
+                </div>
+
+                <button class="btn primary w-100" style="padding: 12px; font-size: 1.1rem;">Post Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index-en.html" class="logo">
+                        <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+                    </a>
+                    <p style="margin-top: 15px; color: #cbd5e1;">Your #1 Wholesale Platform in Egypt. Connecting you with top suppliers at best prices.</p>
+                </div>
+                <div>
+                    <h4>Important Links</h4>
+                    <ul>
+                        <li><a href="about-en.html">About Us</a></li>
+                        <li><a href="merchant-en.html">Sell with us</a></li>
+                        <li><a href="requests-en.html">Special Requests</a></li>
+                        <li><a href="contact-en.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Support & Policies</h4>
+                    <ul>
+                        <li><a href="policies-en.html#shipping">Shipping & Delivery</a></li>
+                        <li><a href="policies-en.html#return">Return Policy</a></li>
+                        <li><a href="faq-en.html">FAQ</a></li>
+                        <li><a href="profile-en.html">My Account</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyrights">
+                <p>&copy; 2025 DISKA - All Rights Reserved</p>
+                <p>Design and programming by <a href="https://www.facebook.com/profile.php?id=100090592885243&mibextid=ZbWKwL" target="_blank"><strong style="color: #FACC15;">GMTWEB</strong></a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-container">
+        
+        <!-- Language Switcher -->
+        <a href="javascript:void(0)" id="langSwitcher" class="float-btn lang-btn" title="Change Language">
+            <i class="fas fa-globe"></i>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/201000000000" target="_blank" class="float-btn whatsapp-btn" title="Contact Us">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const reqForm = document.getElementById('requestForm');
+        const reqContainer = document.getElementById('requestsContainer');
+        
+        let requests = JSON.parse(localStorage.getItem('DISKA_REQUESTS')) || [];
+
+        function renderRequests() {
+            reqContainer.innerHTML = '';
+            
+            if(requests.length === 0) {
+                reqContainer.innerHTML = '<p style="text-align:center; padding:30px; color:#777;">No requests yet. Be the first!</p>';
+                return;
+            }
+
+            requests.slice().reverse().forEach(req => {
+                const html = `
+                <div class="request-card" style="background:#fff; padding:20px; border-radius:10px; margin-bottom:15px; border-left:5px solid var(--accent); box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+                    <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom:10px;">
+                        <h3 style="color:var(--primary); margin:0;">${req.title}</h3>
+                        <span style="background:#e0f2fe; padding:2px 8px; border-radius:4px; font-size:0.8rem; color:#0284c7; white-space:nowrap;">Budget: ${req.budget} EGP</span>
+                    </div>
+                    <p style="color:#555; font-size:0.95rem; margin-bottom:10px; line-height:1.6;">${req.desc}</p>
+                    
+                    <div style="background:#f9fafb; padding:10px; border-radius:8px; font-size:0.85rem; color:#666; display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                        <span><i class="fas fa-calendar-alt" style="color:var(--primary);"></i> Prod: ${req.prodDate || 'N/A'}</span>
+                        <span><i class="fas fa-hourglass-end" style="color:var(--danger);"></i> Exp: ${req.expDate || 'N/A'}</span>
+                        <span><i class="fas fa-map-marker-alt" style="color:var(--accent);"></i> Loc: ${req.location}</span>
+                        <span><i class="fas fa-clock" style="color:#666;"></i> Deadline: ${req.deadline || 'ASAP'}</span>
+                    </div>
+
+                    <hr style="margin:15px 0; border:0; border-top:1px solid #eee;">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <div style="text-align:left;">
+                            <span style="font-size:1.2rem; font-weight:bold; color:var(--primary);">0</span>
+                            <small style="color:#888;">Offers</small>
+                        </div>
+                        <button class="btn primary small" onclick="alert('Only registered merchants can submit offers')" style="width: 70%;">Submit Offer</button>
+                    </div>
+                </div>`;
+                reqContainer.insertAdjacentHTML('beforeend', html);
+            });
+        }
+
+        reqForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newReq = {
+                id: Date.now(),
+                title: document.getElementById('reqTitle').value,
+                desc: document.getElementById('reqDesc').value,
+                budget: document.getElementById('reqBudget').value,
+                prodDate: document.getElementById('reqProdDate').value,
+                expDate: document.getElementById('reqExpDate').value,
+                location: document.getElementById('reqLocation').value,
+                deadline: document.getElementById('reqDeadline').value,
+                datePosted: new Date().toLocaleDateString('en-US')
+            };
+            requests.push(newReq);
+            localStorage.setItem('DISKA_REQUESTS', JSON.stringify(requests));
+            
+            alert('Request posted successfully! Merchants will reply soon.');
+            document.getElementById('reqModal').style.display = 'none';
+            reqForm.reset();
+            renderRequests();
+        });
+
+        function openRequestModal() { document.getElementById('reqModal').style.display = 'flex'; }
+        
+        window.onclick = function(event) {
+            const modal = document.getElementById('reqModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        renderRequests();
+    </script>
+
+</body>
+</html>

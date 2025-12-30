@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist | DISKA</title>
+    <!-- English Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Mobile Menu Fix */
+        @media (max-width: 768px) {
+            .header-actions a.action-item {
+                display: none !important;
+            }
+            .mobile-menu-btn {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="index-en.html" class="logo">
+                <img src="images/ChatGPT_Image_22_ديسمبر_2025__12_14_35_ص-removebg-preview.png" alt="DISKA Logo">
+            </a>
+            <div class="header-actions">
+                <a href="wishlist-en.html" class="action-item"><i class="fas fa-heart" style="color: var(--accent);"></i></a>
+                <a href="cart-en.html" class="action-item cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge">0</span>
+                </a>
+                <div class="action-item mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Side Menu -->
+    <div class="mobile-sidebar">
+        <div class="sidebar-header">
+            <h3>Main Menu</h3>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+
+        <ul class="sidebar-links">
+            <li><a href="login-en.html"><i class="fas fa-wallet"></i> Wallet / Login</a></li>
+            <li><a href="profile-en.html"><i class="fas fa-user-circle"></i> My Account</a></li>
+
+            <li>
+                <a href="notifications-en.html" style="display: flex; justify-content: space-between; align-items: center;">
+                    <span><i class="fas fa-bell"></i> Notifications</span>
+                    <span class="badge" style="position:static; background:red; padding:2px 6px; border-radius:10px; font-size:0.7rem;">New</span>
+                </a>
+            </li>
+
+            <!-- Merchant Panel -->
+            <li><a href="merchant-en.html"><i class="fas fa-store"></i> Merchant Panel</a></li>
+
+            <hr style="border:0; border-top:1px solid #eee; margin:10px 0;">
+
+            <!-- Main Links -->
+            <li><a href="index-en.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="orders-en.html"><i class="fas fa-box"></i> My Orders</a></li>
+            <li><a href="cart-en.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+            <li><a href="wishlist-en.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+            <li><a href="deals-en.html"><i class="fas fa-fire" style="color:red;"></i> Deals & Offers</a></li>
+            <li><a href="requests-en.html"><i class="fas fa-bullhorn"></i> Special Requests</a></li>
+
+            <!-- Footer Links -->
+            <li><a href="about-en.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="contact-en.html"><i class="fas fa-headset"></i> Contact Us</a></li>
+            <li><a href="faq-en.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+            <li><a href="policies-en.html"><i class="fas fa-shield-alt"></i> Policies</a></li>
+        </ul>
+    </div>
+    <div class="menu-overlay"></div>
+
+    <section class="section-padding">
+        <div class="container">
+            <h2 style="margin-bottom: 30px;padding-top: 40px;">My Wishlist ❤️</h2>
+
+            <div class="products-grid-wishlist" id="wishlistContainer">
+                <!-- Products will be injected here via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Buttons -->
+    <div class="floating-container">
+        
+        <!-- Language Switcher -->
+        <a href="javascript:void(0)" id="langSwitcher" class="float-btn lang-btn" title="Change Language">
+            <i class="fas fa-globe"></i>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/201000000000" target="_blank" class="float-btn whatsapp-btn" title="Contact Us">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const wishlistContainer = document.getElementById('wishlistContainer');
+            // استدعاء البيانات من LocalStorage
+            const wishlist = JSON.parse(localStorage.getItem('DISKA_WISHLIST')) || [];
+            const allProducts = JSON.parse(localStorage.getItem('DISKA_MERCHANT_PRODUCTS')) || [];
+
+            if (wishlistContainer) {
+                if (wishlist.length === 0) {
+                    wishlistContainer.innerHTML = '<p style="text-align:center; width:100%; padding: 40px; color: #666;">Your wishlist is empty.</p>';
+                } else {
+                    // Loop through wishlist items
+                    wishlist.forEach(favItem => {
+                        // Find full product details if available (to get updated price/stock)
+                        let product = allProducts.find(p => p.id == favItem.id);
+                        
+                        // If not found in merchant products (e.g. static items), use the saved favItem data
+                        if (!product) { 
+                            product = favItem; 
+                        }
+
+                        if (product) {
+                            // Render Card (English)
+                            const html = `
+                                <div class="product-card">
+                                    <div class="product-img"><img src="${product.image}" alt="${product.name || product.title}"></div>
+                                    <div class="product-info">
+                                        <h4>${product.name || product.title}</h4>
+                                        <div class="pricing"><span class="current-price">${product.price} EGP</span></div>
+                                        <button class="btn primary w-100" onclick="removeFromWishlist('${product.id}')">Remove ❌</button>
+                                    </div>
+                                </div>
+                            `;
+                            wishlistContainer.innerHTML += html;
+                        }
+                    });
+                }
+            }
+        });
+
+        function removeFromWishlist(id) {
+            let wishlist = JSON.parse(localStorage.getItem('DISKA_WISHLIST')) || [];
+            // Filter out the item
+            wishlist = wishlist.filter(w => w.id != id);
+            // Update Storage
+            localStorage.setItem('DISKA_WISHLIST', JSON.stringify(wishlist));
+            // Reload page to see changes
+            location.reload(); 
+        }
+    </script>
+</body>
+</html>
